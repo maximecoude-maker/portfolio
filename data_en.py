@@ -62,7 +62,7 @@ PROJECTS_EN = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview", "Card sorting", "Survey", "ZeroHeight"],
  "phases": ["MVP Scope", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototyping & Testing"],
- "planning_text": "The project unfolded in 5 main phases: scope definition for the MVP, business research & user interviews, userflow & wireframing, final interface and design system creation, prototyping and user testing.",
+ "planning_text": "The project unfolded in 5 main phases: scope definition for the MVP, business research & user interviews, userflow & wireframing, final interface and design system creation, prototyping and user testing.", "planning_img": ("mma-planning.png", "MMA project planning"),
  "research": [
    ("Competition", ["Together with the MMA team, we benchmarked major competitors among other insurance apps with a similar product. We looked at how they present information and organize their home screen.",
                     "Among them: established brands such as GMF, Groupama and Pacifica, but also specialized pure players such as Alan and Luko."], ("mma-concurrence.png", "Competitive benchmark")),
@@ -90,6 +90,7 @@ PROJECTS_EN = [
 {
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro",
  "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF",
+ "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
  "hero_title": "The app suite for easier management than ever",
  "hero_desc": "Purchasing, invoicing, vendors, duty of care, time tracking… Discover the design process that simplified the way the intellectual-services ecosystem is managed.",
  "hero_img": ("sincro-saas-hero.png", "Sincro suite interface on desktop"),
@@ -107,6 +108,7 @@ PROJECTS_EN = [
  "toolkit": ["Miro", "Board", "Interview", "Survey", "Card sorting", "Maze", "Sketch", "Zeplin", "Figma", "After Effects"],
  "phases": ["Stakeholders Interview", "Scope Definition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Usability Testing", "Design Update"],
  "planning_text": "We mostly worked in an agile format, in 3-week sprints. Below is an example of how one of our Design sprints unfolded.",
+ "planning_img": ("sincro-saas-planning.png", "Sincro Design sprint planning"),
  "research": [
    ("Experience Map", ["For every partial redesign of the product and every new feature, we organized several workshops to deepen our understanding of users' expectations and behaviors. Whether by creating experience maps, running individual interviews, organizing card-sorting sessions or using the \"6 to 1\" method, these approaches and methodologies gave us a better understanding of our users and their expectations within their line of business.",
                        "Here is an example of an experience-map creation workshop we ran with a panel of 10 users ahead of the redesign of the Sourcing product."], ("sincro-saas-expmap.png", "Experience Map workshop")),
@@ -115,7 +117,7 @@ PROJECTS_EN = [
  "insights": [],
  "solution": [
    ("Dashboard", ["The customizable dashboard provides every user with a global view of their activity through interactive widgets. The widgets surface the essential information users need to do their job day to day. Combined with a notification center and a search engine, it guides and facilitates user actions and makes the experience even smoother."], ("sincro-saas-dashboard.png", "Sincro dashboard")),
-   ("Contracts list", ["In the management module you will find a list of sales contracts. This list is highly customizable, allowing users to get an overview, manipulate it and carry out individual or bulk actions as needed."], ("sincro-saas-contrats.png", "Contracts list — contract summary, absences")),
+   ("Contracts list", ["In the management module you will find a list of sales contracts. This list is highly customizable, allowing users to get an overview, manipulate it and carry out individual or bulk actions as needed."], ("sincro-saas-synthese-absences.png", "Contracts list — contract summary, absences")),
    ("Marketplace", ["Boosting the business means fostering growth thanks to the solution's ability to connect talents with each client's entire network. The Sincro Marketplace is a hub centralizing needs that every member company has the opportunity to answer by proposing highly qualified resources."], ("sincro-saas-marketplace.png", "Sincro Marketplace")),
    ("Design system", ["I led, transversally, the design and continuous update of the Sincro Design System. This documentation source allowed all our product and technical teams to dramatically improve our delivery velocity."], ("sincro-saas-designsystem.png", "Sincro Design System components")),
    ("Prototype", ["__PROTO__"], None),
@@ -143,7 +145,7 @@ PROJECTS_EN = [
  "tasks2": [],
  "toolkit": ["Miro", "Sketch", "Zeplin", "Interview", "After Effects", "Maze"],
  "phases": ["Scope Definition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototyping", "User testing"],
- "planning_text": "The project unfolded in 4 main phases: scope definition, user interviews, journeys & userflow, wireframing, interface finalization, prototyping and user testing.",
+ "planning_text": "The project unfolded in 4 main phases: scope definition, user interviews, journeys & userflow, wireframing, interface finalization, prototyping and user testing.", "planning_img": ("sincro-mobile-planning.png", "Sincro Mobile project planning"),
  "research": [
    ("Usage analysis", ["First, to build our research deck, we leveraged the web solution's data (KPIs) to analyze how users actually use the platform. Our analysis covered different criteria depending on user typologies: population/audience, mobility, timing of needs, frequency, engagement, performance and satisfaction. We also cross-referenced all this data with individual interviews.",
                        "For confidentiality reasons, the data in the visual above is masked."], ("sincro-mobile-kpi.png", "Web solution KPI analysis")),
@@ -181,7 +183,7 @@ PROJECTS_EN = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Eye Tracking"],
  "phases": ["Audit", "Shadowing & Eye Tracking", "Information architecture", "Wireframing", "User Interface Design & Prototyping"],
- "planning_text": "The project unfolded in 4 main phases: audit, shadowing & eye tracking, information architecture & wireframing, interface finalization & prototype.",
+ "planning_text": "The project unfolded in 4 main phases: audit, shadowing & eye tracking, information architecture & wireframing, interface finalization & prototype.", "planning_img": ("afnor-planning.png", "Afnor project planning"),
  "research": [
    ("Shadowing", ["Shadowing is one of the observation methods I set up at the start of the research phase. It allowed me to observe the behavior and interactions of a panel of users with the existing product.",
                   "During the workshop we individually involved 10 users and asked them to carry out their usual tasks on the Opéra 2 platform. We positioned ourselves behind them, taking care not to disturb their environment, in order to observe them using the service. Duration: 40-50 minutes. Finally, we wrapped up the workshop with an ergonomic evaluation grid."], ("afnor-shadowing.png", "Shadowing workshop")),
@@ -221,7 +223,7 @@ PROJECTS_EN = [
  "tasks2": [],
  "toolkit": ["Photoshop", "Illustrator"],
  "phases": ["Component creation", "Integration support"],
- "planning_text": "Component creation, then integration coordination.",
+ "planning_text": "Component creation, then integration coordination.", "planning_img": ("ratp-planning.png", "RATP project planning"),
  "research": [],
  "insights": [],
  "solution": [
@@ -248,7 +250,7 @@ PROJECTS_EN = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview"],
  "phases": ["Scope Definition", "Business Research", "User Interviews", "Wireframing", "User Interface Design"],
- "planning_text": "The project unfolded in 5 main phases: scope definition, business research & user interviews, journeys & userflow, wireframing, interface finalization & prototype.",
+ "planning_text": "The project unfolded in 5 main phases: scope definition, business research & user interviews, journeys & userflow, wireframing, interface finalization & prototype.", "planning_img": ("hello-promo-planning.png", "Hello Promo project planning"),
  "research": [
    ("Interviews", ["The research phase was carried out by the Médiaperformances teams. For confidentiality reasons the interviews cannot be shared, but here are the main insights that emerged from this phase."], None),
  ],

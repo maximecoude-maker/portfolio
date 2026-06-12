@@ -63,7 +63,7 @@ PROJECTS_FR = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview", "Card sorting", "Survey", "ZeroHeight"],
  "phases": ["Scope MVP", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototypage & Tests"],
- "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention MVP, business research & interviews utilisateurs, userflow & wireframing, conception des interfaces finales et du Design system, prototypage et tests utilisateurs.",
+ "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention MVP, business research & interviews utilisateurs, userflow & wireframing, conception des interfaces finales et du Design system, prototypage et tests utilisateurs.", "planning_img": ("mma-planning.png", "Planning du projet MMA"),
  "research": [
    ("Concurrence", ["En collaboration avec l’équipe MMA, nous avons comparé de grands concurrents parmi quelques autres applications du secteur de l'assurance qui possèdent une application et un produit similaires. Nous avons examiné comment ils présentent les informations et organisent leur page d'accueil.",
                     "Parmi eux, on retrouve des enseignes comme la GMF, Groupama, Pacifica, mais aussi des acteurs spécialisés (Pure Player) tels qu'Alan et Luko."], ("mma-concurrence.png", "Benchmark concurrentiel")),
@@ -91,6 +91,7 @@ PROJECTS_FR = [
 {
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro",
  "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF",
+ "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
  "hero_title": "La suite applicative pour une gestion plus facile que jamais",
  "hero_desc": "Achats, facture, fournisseurs, devoir de vigilance, saisie des temps… Découvrez le processus design qui a simplifié la manière de gérer l’écosystème de la prestation intellectuelle.",
  "hero_img": ("sincro-saas-hero.png", "Interface de la suite Sincro sur desktop"),
@@ -107,7 +108,8 @@ PROJECTS_FR = [
  "tasks2": ["Motion Designer : Animations", "Graphic Designer : Communication et slides deck", "Design évangéliste : Animation d’ateliers & partage de connaissances"],
  "toolkit": ["Miro", "Board", "Interview", "Survey", "Card sorting", "Maze", "Sketch", "Zeplin", "Figma", "After Effects"],
  "phases": ["Stakeholders Interview", "Scope Définition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Usability Testing", "Design Update"],
- "planning_text": "Nous avons le plus souvent travaillé dans un format agile en sprints de 3 semaines. Ci-dessous un exemple du déroulement de l’un de nos sprints Design.",
+ "planning_text": "Nous avons le plus souvent travaillé dans un format agile en sprints de 3 semaines. Ci-dessous un exemple du déroulement de l’un de nos sprints Design.", "planning_img": ("sincro-saas-planning.png", "Planning d’un sprint Design Sincro"),
+
  "research": [
    ("Experience Map", ["Pour chaque refonte partielle du produit et chaque nouvelle fonctionnalité, nous avons organisé plusieurs ateliers dans le but d'approfondir notre compréhension des attentes et des comportements des utilisateurs. Que ce soit en créant des expérience maps, en menant des entretiens individuels, en organisant des sessions de tri de cartes ou en utilisant la méthode du \"6 to 1\", ces approches et méthodologies nous ont permis d'acquérir une meilleure compréhension de nos utilisateurs ainsi que leurs attentes dans leur domaine métier.",
                        "Voici un exemple d'atelier de création d'une expérience map que nous avons réalisé en collaboration avec un panel de 10 utilisateurs lors d’un atelier réalisé en amont de la refonte du produit Sourcing."], ("sincro-saas-expmap.png", "Atelier Experience Map")),
@@ -116,7 +118,7 @@ PROJECTS_FR = [
  "insights": [],
  "solution": [
    ("Dashboard", ["Le tableau de bord personnalisable fournit à tous les utilisateurs une vue globale de leur activité grâce à l'intégration de widgets interactifs. Les widgets permettent de remonter en prime les informations essentielles dont l’utilisateur doit disposer pour réaliser son métier au quotidien. Couplé à un centre de notifications et à un moteur de recherche, cela guide et facilite la prise d’action de l’utilisateur et rend l'expérience encore plus fluide."], ("sincro-saas-dashboard.png", "Dashboard Sincro")),
-   ("Liste des contrats", ["Dans le module de gestion, vous trouverez une liste de contrats de vente. Cette liste est hautement personnalisable, ce qui permet aux utilisateurs d'avoir une vue d'ensemble, de manipuler et de réaliser des actions individuelles ou groupées en fonction du besoin."], ("sincro-saas-contrats.png", "Liste des contrats — synthèse contrat, absences")),
+   ("Liste des contrats", ["Dans le module de gestion, vous trouverez une liste de contrats de vente. Cette liste est hautement personnalisable, ce qui permet aux utilisateurs d'avoir une vue d'ensemble, de manipuler et de réaliser des actions individuelles ou groupées en fonction du besoin."], ("sincro-saas-synthese-absences.png", "Liste des contrats — synthèse contrat, absences")),
    ("Marketplace", ["Booster l’activité c’est permettre de favoriser la croissance de l'activité grâce à la capacité qu’offre la solution aux clients afin de mettre en relation des talents avec l'ensemble de son réseau. La Marketplace Sincro est un espace de centralisation des besoins auxquels chaque entreprise membre a l'opportunité de répondre en proposant des ressources ultra qualifiées."], ("sincro-saas-marketplace.png", "Marketplace Sincro")),
    ("Design system", ["J'ai dirigé de manière transversale la conception et la mise à jour continue du Design System Sincro. Cette source de documentation a permis à l’ensemble de nos équipes produits et techniques d’améliorer considérablement la vélocité de notre delivery."], ("sincro-saas-designsystem.png", "Composants du Design System Sincro")),
    ("Prototype", ["__PROTO__"], None),
@@ -144,7 +146,7 @@ PROJECTS_FR = [
  "tasks2": [],
  "toolkit": ["Miro", "Sketch", "Zeplin", "Interview", "After Effects", "Maze"],
  "phases": ["Scope Définition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototypage", "Tests utilisateurs"],
- "planning_text": "Le projet s’est déroulé en 4 grandes phases : définition du scope d’intervention, interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces, prototypage et tests utilisateurs.",
+ "planning_text": "Le projet s’est déroulé en 4 grandes phases : définition du scope d’intervention, interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces, prototypage et tests utilisateurs.", "planning_img": ("sincro-mobile-planning.png", "Planning du projet Sincro Mobile"),
  "research": [
    ("Analyse des usages", ["Premièrement pour constituer notre deck de recherche, nous avons exploité les données (KPI) de la solution web afin d'analyser les usages des utilisateurs de la plateforme. Notre analyse s'est portée sur différents critères en fonction des typologies d'utilisateurs : population/audience, mobilité/itinérants, temporalité des besoins, fréquence, engagement, performance et satisfaction. Nous avons également croisé l'ensemble de ces données avec des entretiens individuels.",
                           "Pour des raisons de confidentialité les données du visuel ci-dessus sont masquées."], ("sincro-mobile-kpi.png", "Analyse des KPI de la solution web")),
@@ -182,7 +184,7 @@ PROJECTS_FR = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Eye Tracking"],
  "phases": ["Audit", "Shadowing & Eye Tracking", "Architecture de l’information", "Wireframing", "User Interface Design & Prototypage"],
- "planning_text": "Le projet s’est déroulé en 4 grandes phases : audit, shadowing & eye tracking, architecture de l’information & wireframing, finalisation des interfaces & prototype.",
+ "planning_text": "Le projet s’est déroulé en 4 grandes phases : audit, shadowing & eye tracking, architecture de l’information & wireframing, finalisation des interfaces & prototype.", "planning_img": ("afnor-planning.png", "Planning du projet Afnor"),
  "research": [
    ("Shadowing", ["Le shadowing est une des méthodes d’observation que j’ai mises en place au début de la phase de recherche. Cette méthode m’a permis d’observer le comportement et les interactions d’un panel d’utilisateurs avec le produit existant.",
                   "Lors de l’atelier nous avons sollicité individuellement 10 utilisateurs et leur avons demandé d’effectuer des tâches habituelles sur la plateforme Opéra 2. On s’est positionné derrière eux, en évitant de trop perturber leur environnement afin de les observer manipuler le service. Durée 40-50 minutes. Enfin nous avons finalisé l’atelier par une grille d’évaluation ergonomique."], ("afnor-shadowing.png", "Atelier de shadowing")),
@@ -222,7 +224,7 @@ PROJECTS_FR = [
  "tasks2": [],
  "toolkit": ["Photoshop", "Illustrator"],
  "phases": ["Création des composants", "Accompagnement dans l’intégration"],
- "planning_text": "Création des composants, puis coordination de l’intégration.",
+ "planning_text": "Création des composants, puis coordination de l’intégration.", "planning_img": ("ratp-planning.png", "Planning du projet RATP"),
  "research": [],
  "insights": [],
  "solution": [
@@ -249,7 +251,7 @@ PROJECTS_FR = [
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview"],
  "phases": ["Scope Définition", "Business Research", "User Interviews", "Wireframing", "User Interface Design"],
- "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention, business research & interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces & prototype.",
+ "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention, business research & interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces & prototype.", "planning_img": ("hello-promo-planning.png", "Planning du projet Hello Promo"),
  "research": [
    ("Interviews", ["La phase de recherche a été réalisée par les équipes de Médiaperformances. Pour des raisons de confidentialité les interviews ne peuvent être partagées, mais voici les principaux insights qui ont émergé durant cette phase."], None),
  ],

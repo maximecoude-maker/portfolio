@@ -29,6 +29,7 @@ def head(title, css_rel, lang):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css_rel}assets/css/style.css">
+<link rel="icon" type="image/png" href="{css_rel}assets/img/icon-notes.png">
 </head>
 <body>"""
 
@@ -65,28 +66,52 @@ def img_or_ph(rel, img, tall=True):
     t = ' data-tall="true"' if tall else ''
     return f'<figure class="fig"><img src="{rel}assets/img/{src}" alt="{html.escape(alt)}" data-ph="{html.escape(alt)} — exporter depuis Figma : {src}"{t} loading="lazy"><figcaption>{html.escape(alt)}</figcaption></figure>'
 
+# Icônes toolkit disponibles dans assets/img/icons/
+TOOL_ICONS = {
+    "Miro": "miro", "Figma": "figma", "Interview": "interview",
+    "Card sorting": "card-sorting", "Survey": "survey", "Board": "board",
+    "Sketch": "sketch", "Zeplin": "zeplin", "After Effects": "after-effects",
+}
+
+def chip_html(rel, t):
+    icon = TOOL_ICONS.get(t)
+    icon_tag = f'<img src="{rel}assets/img/icons/{icon}.png" alt="" class="chip-icon" loading="lazy">' if icon else ""
+    return f'<span class="chip">{icon_tag}{html.escape(t)}</span>'
+
+# Photos d'équipe disponibles dans assets/img/people/
+PEOPLE_PHOTOS = {
+    "Damien Mordaque": "damien-mordaque",
+    "Kevin Mouzet": "kevin-mouzet",
+    "Emile Leenhardt": "emile-leenhardt",
+}
+
+def person_html(rel, accent, n):
+    slug = PEOPLE_PHOTOS.get(n)
+    if slug:
+        avatar = f'<img class="pp" src="{rel}assets/img/people/{slug}.png" alt="{html.escape(n)}" loading="lazy">'
+    else:
+        initials = "".join(w[0] for w in n.split()[:2]).upper()
+        avatar = f'<span class="pp" style="background:{accent}">{html.escape(initials)}</span>'
+    return f'<div class="person">{avatar}{html.escape(n)}</div>'
+
 # ------------------------------------------------------------------
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     cards = ""
-    poster_cards = L["lang"] == "fr"
     for p in projects:
         fg = p["hero_fg"]
         bg = p["hero_bg"]
         style = f"background:{bg};color:{fg};"
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
-        card_class = "project-card project-card-poster reveal" if poster_cards else "project-card reveal"
-        content_class = "card-content sr-only" if poster_cards else "card-content"
-        visual_class = "card-visual poster-visual" if poster_cards else "card-visual"
         cards += f"""
-    <a class="{card_class}" href="{proj_dir}{p['slug']}.html" style="{style}">
-      <div class="{content_class}">
+    <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
+      <div class="card-content">
         <span class="brand">{html.escape(p['brand'])}</span>
         <h3>{html.escape(p['hero_title'])}</h3>
         <p>{html.escape(p['hero_desc'])}</p>
         <span class="btn {btn}">{L['see_project']} →</span>
       </div>
-      <div class="{visual_class}">
-        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="{html.escape(p['hero_title'])}" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
+      <div class="card-visual">
+        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
       </div>
     </a>"""
 
@@ -156,6 +181,9 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
 def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_dir):
     fg = p["hero_fg"]
     btnstyle = f"color:{p['accent']}"
+    hero_bg_img_css = ""
+    if p.get("hero_bg_img"):
+        hero_bg_img_css = f"background-image:url('{rel}assets/img/{p['hero_bg_img']}');background-size:cover;background-position:bottom center;background-repeat:no-repeat;"
     challenges = ""
     for i, (t, d) in enumerate(p["challenges"], 1):
         desc = f"<p>{html.escape(d)}</p>" if d else ""
@@ -167,7 +195,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     if p["tasks2"]:
         items2 = "".join(f"<li>{html.escape(t)}</li>" for t in p["tasks2"])
         tasks2 = f'<h4 style="margin-top:32px">{LAB["tasks2"]}</h4><ul class="task-list secondary">{items2}</ul>'
-    chips = "".join(f'<span class="chip">{html.escape(t)}</span>' for t in p["toolkit"])
+    chips = "".join(chip_html(rel, t) for t in p["toolkit"])
     phases = "".join(f'<div class="phase">{html.escape(ph)}</div>' for ph in p["phases"])
     dpis = "".join(f"<span>{d}</span>" for d in LAB["dpis"])
 
@@ -206,18 +234,19 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
 
     thanks = ""
     for title, names in p["thanks"]:
-        people = "".join(f'<div class="person"><span class="pp" style="background:{p["accent"]}">{html.escape("".join(w[0] for w in n.split()[:2]).upper())}</span>{html.escape(n)}</div>' for n in names)
+        people = "".join(person_html(rel, p["accent"], n) for n in names)
         thanks += f'<div class="thanks-group reveal"><h4>{html.escape(title)}</h4><div class="people">{people}</div></div>'
 
     page = head(f"{p['name']} — {L['title']}", rel, L["lang"])
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
-  <section class="case-hero" style="background:{p['hero_bg']};color:{fg};">
+  <section class="case-hero" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
     <span class="brand">{html.escape(p['brand'])}</span>
     <h1>{html.escape(p['hero_title'])}</h1>
     <p>{html.escape(p['hero_desc'])}</p>
     <div class="hero-visual">
+      {f'<img class="hero-shadow" src="{rel}assets/img/{p["hero_shadow_img"]}" alt="" aria-hidden="true">' if p.get('hero_shadow_img') else ''}
       <img src="{rel}assets/img/{p['hero_img'][0]}" alt="{html.escape(p['hero_img'][1])}" data-ph="{html.escape(p['hero_img'][1])} ({p['hero_img'][0]})" data-tall="true">
     </div>
   </section>
@@ -244,6 +273,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     <h2 class="reveal">{LAB['planning']}</h2>
     <p class="lead reveal">{html.escape(p['planning_text'])}</p>
     <div class="phases reveal">{phases}</div>
+    {img_or_ph(rel, p.get('planning_img'))}
     <div class="dpis reveal">{dpis}</div>
   </section>
 """
