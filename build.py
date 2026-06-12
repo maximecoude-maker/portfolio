@@ -68,21 +68,25 @@ def img_or_ph(rel, img, tall=True):
 # ------------------------------------------------------------------
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     cards = ""
+    poster_cards = L["lang"] == "fr"
     for p in projects:
         fg = p["hero_fg"]
         bg = p["hero_bg"]
         style = f"background:{bg};color:{fg};"
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
+        card_class = "project-card project-card-poster reveal" if poster_cards else "project-card reveal"
+        content_class = "card-content sr-only" if poster_cards else "card-content"
+        visual_class = "card-visual poster-visual" if poster_cards else "card-visual"
         cards += f"""
-    <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
-      <div class="card-content">
+    <a class="{card_class}" href="{proj_dir}{p['slug']}.html" style="{style}">
+      <div class="{content_class}">
         <span class="brand">{html.escape(p['brand'])}</span>
         <h3>{html.escape(p['hero_title'])}</h3>
         <p>{html.escape(p['hero_desc'])}</p>
         <span class="btn {btn}">{L['see_project']} →</span>
       </div>
-      <div class="card-visual">
-        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
+      <div class="{visual_class}">
+        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="{html.escape(p['hero_title'])}" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
       </div>
     </a>"""
 
