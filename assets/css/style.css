@@ -168,6 +168,8 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   display: flex; flex-direction: column; justify-content: center; gap: clamp(16px, 1.6vw, 32px);
 }
 .project-card .brand { font-weight: 700; font-size: clamp(14px, 1vw, 20px); opacity: .85; display:flex; align-items:center; gap:10px; }
+.brand-logo { height: clamp(24px, 2vw, 40px); width: auto; display: block; }
+.case-hero .brand-logo { margin: 0 auto; height: clamp(28px, 2.4vw, 48px); }
 .project-card h3 { font-size: clamp(26px, 2.9vw, 56px); line-height: 1.2; }
 .project-card p { font-size: clamp(14px, 1.05vw, 20px); opacity: .85; max-width: 36em; }
 .project-card .card-visual { position: relative; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
@@ -228,7 +230,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   transition: background .2s, transform .2s;
 }
 .contact .socials a:hover { background: rgba(255,255,255,.12); transform: translateY(-3px); }
-.contact .socials svg { width: 55%; height: 55%; stroke: #fff; fill: none; stroke-width: 1.6; }
+.contact .socials img { width: 52%; height: 52%; object-fit: contain; filter: brightness(0) invert(1); }
 .contact .coords { font-size: clamp(14px, 1.05vw, 20px); line-height: 2; opacity: .9; padding-bottom: clamp(48px, 6vw, 120px); }
 .contact .coords strong { font-size: 1.1em; }
 .contact .avatar-corner {

@@ -6,16 +6,20 @@ from data_en import LANDING_EN, PROJECTS_EN, CASE_LABELS_EN
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-SOCIALS = """
-<a href="https://www.linkedin.com/in/maximecoude" aria-label="LinkedIn" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24"><path d="M4 4h4v16H4zM6 2a2 2 0 1 1 0 .01M10 9h4v2c.8-1.4 2.2-2.3 4-2.3 3 0 4 2 4 5V20h-4v-5.5c0-1.5-.5-2.5-2-2.5s-2 1-2 2.5V20h-4z"/></svg></a>
-<a href="https://join.slack.com" aria-label="Slack" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24"><path d="M9 3a2 2 0 1 0 0 4h2V5a2 2 0 0 0-2-2zM15 21a2 2 0 1 0 0-4h-2v2a2 2 0 0 0 2 2zM3 15a2 2 0 1 0 4 0v-2H5a2 2 0 0 0-2 2zM21 9a2 2 0 1 0-4 0v2h2a2 2 0 0 0 2-2zM9 9h6v6H9z"/></svg></a>
-<a href="https://wa.me/33675434488" aria-label="WhatsApp" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 9.5c.5 2.5 3.5 5.5 6 6l1.5-1.5-2-1.5-1 .8c-1-.5-2.3-1.8-2.8-2.8l.8-1-1.5-2z"/></svg></a>
-<a href="mailto:maxime.coude@gmail.com" aria-label="Email">
-  <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
-"""
+SOCIAL_LINKS = [
+    ("https://www.linkedin.com/in/maximecoude", "LinkedIn", "icon-linkedin.png", "_blank"),
+    ("https://join.slack.com", "Slack", "icon-slack.png", "_blank"),
+    ("https://wa.me/33675434488", "WhatsApp", "icon-whatsapp.png", "_blank"),
+    ("mailto:maxime.coude@gmail.com", "Envoyez-moi un message", "icon-message.png", ""),
+]
+
+def socials_html(rel):
+    out = ""
+    for href, label, icon, target in SOCIAL_LINKS:
+        t = f' target="{target}" rel="noopener"' if target else ""
+        out += (f'<a href="{href}" aria-label="{label}"{t}>'
+                f'<img src="{rel}assets/img/{icon}" alt="{label}"></a>\n')
+    return out
 
 def head(title, css_rel, lang):
     return f"""<!DOCTYPE html>
@@ -51,7 +55,7 @@ def contact(L, rel):
 <section class="contact" id="contact">
   <div class="contact-inner">
     <h2 class="reveal">{L['contact_h2']}</h2>
-    <div class="socials reveal">{SOCIALS}</div>
+    <div class="socials reveal">{socials_html(rel)}</div>
     <p class="coords reveal">{L['contact_coords']}</p>
   </div>
   <img class="avatar-corner" src="{rel}assets/img/avatar-contact.png" alt="" data-ph="avatar 3D (contact)">
@@ -85,6 +89,14 @@ PEOPLE_PHOTOS = {
     "Emile Leenhardt": "emile-leenhardt",
 }
 
+def brand_html(rel, p):
+    logo = p.get("brand_logo")
+    esc = html.escape(p["brand"])
+    if logo:
+        return (f'<span class="brand"><img class="brand-logo" src="{rel}assets/img/{logo}" '
+                f'alt="{esc}" onerror="this.parentNode.textContent=this.alt"></span>')
+    return f'<span class="brand">{esc}</span>'
+
 def person_html(rel, accent, n):
     slug = PEOPLE_PHOTOS.get(n)
     if slug:
@@ -107,7 +119,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         cards += f"""
     <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       <div class="card-content">
-        <span class="brand">{html.escape(p['brand'])}</span>
+        {brand_html(rel, p)}
         <h3{title_style}>{title_html}</h3>
         <p>{html.escape(p['hero_desc'])}</p>
         <span class="btn {btn}">{L['see_project']} →</span>
@@ -247,7 +259,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     page += f"""
 <main>
   <section class="case-hero" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
-    <span class="brand">{html.escape(p['brand'])}</span>
+    {brand_html(rel, p)}
     <h1{title_style}>{title_html}</h1>
     <p>{html.escape(p['hero_desc'])}</p>
     <div class="hero-visual">
