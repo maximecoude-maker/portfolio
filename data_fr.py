@@ -44,7 +44,7 @@ PROJECTS_FR = [
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA", "brand_logo": "logo-mma.png",
- "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C",
+ "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left",
  "card_desc_only": False,
  "hero_title": "Faciliter l'assurance pour faciliter la vie",
  "hero_desc": "Remboursements, litiges, relations avec les agents. Découvrez l’ensemble du process design pour rendre encore plus simple la vie des assurés MMA.",
@@ -90,7 +90,7 @@ PROJECTS_FR = [
 # ============================================================ SINCRO SAAS
 {
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
- "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF",
+ "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF", "hero_align": "left",
  "card_bg": True, "card_text": "left",
  "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
  "hero_title": "La suite applicative pour une gestion plus facile que jamais",
@@ -131,8 +131,9 @@ PROJECTS_FR = [
 # ============================================================ SINCRO MOBILE
 {
  "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
- "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4",
+ "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4", "hero_align": "right",
  "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
+ "card_bg_color": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "card_brand_logo": "logo-sincro-white.png",
  "hero_title": "L’app de poche des consultants en mission",
  "hero_desc": "Saisie des temps, rapport d’activité, absences. La meilleure app quotidienne pour tous les consultants.",
  "hero_img": ("sincro-mobile-hero.png", "Écrans de l’application mobile Sincro"),
@@ -170,7 +171,7 @@ PROJECTS_FR = [
 # ============================================================ AFNOR
 {
  "slug": "afnor", "name": "Afnor", "brand": "Afnor — Opéra 2", "brand_logo": "logo-afnor.png",
- "accent": "#8C6A45", "hero_bg": "#F3E7DC", "hero_fg": "#2B097C", "hero_title_color": "#2B097C",
+ "accent": "#8C6A45", "hero_bg": "#F3E7DC", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left",
  "hero_title": "Une plateforme unique, des audits transparents",
  "hero_desc": "Avec plus de 3500 audits, Opéra 2 permet aux clients de suivre chacune des étapes des audits tout en simplifiant les échanges au sein de la plateforme avec les auditeurs.",
  "hero_img": ("afnor-hero.png", "Interface de la plateforme Opéra 2"),
@@ -240,7 +241,7 @@ PROJECTS_FR = [
 # ============================================================ HELLO PROMO
 {
  "slug": "hello-promo", "name": "Hello Promo", "brand": "Hello Promo — Médiaperformances", "brand_logo": "logo-hello-promo.png",
- "accent": "#3FBF61", "hero_bg": "linear-gradient(23deg, #6AE5B3 12%, #66E2B0 30%, #5CD9A8 46%, #54D3A2 54%)", "hero_fg": "#4C4C4C",
+ "accent": "#3FBF61", "hero_bg": "linear-gradient(23deg, #6AE5B3 12%, #66E2B0 30%, #5CD9A8 46%, #54D3A2 54%)", "hero_fg": "#4C4C4C", "hero_align": "left",
  "card_bg": True, "card_text": "left",
  "hero_title": "Obtenez votre QR Code et commencez à faire des économies en caisse",
  "hero_title_html": "<span style=\"color:#FFFFFF\">Obtenez votre QR Code</span> <span style=\"color:#0A0A0A\">et commencez à faire des économies en caisse</span>",

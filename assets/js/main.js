@@ -18,4 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // 3) Menu burger (mobile)
+  const burger = document.querySelector('.nav-burger');
+  const navEl = document.querySelector('.nav');
+  if (burger && navEl) {
+    const setOpen = (open) => {
+      navEl.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    burger.addEventListener('click', (e) => { e.stopPropagation(); setOpen(!navEl.classList.contains('open')); });
+    navEl.querySelectorAll('.nav-links a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('click', (e) => { if (!navEl.contains(e.target)) setOpen(false); });
+  }
 });

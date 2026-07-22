@@ -43,10 +43,15 @@ def nav(L, rel, lang_href, home_href):
 <header class="nav-wrap">
   <nav class="nav">
     <a class="nav-cta" href="{home_href}">{n['name']}</a>
-    <a href="{home_href}#projets">{n['projects']}</a>
-    <a href="{home_href}#apropos">{n['about']}</a>
-    <a href="{home_href}#contact">{n['contact']}</a>
-    <a class="nav-lang" href="{lang_href}">{L['other_lang_label']}</a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="{home_href}#projets">{n['projects']}</a>
+      <a href="{home_href}#apropos">{n['about']}</a>
+      <a href="{home_href}#contact">{n['contact']}</a>
+      <a class="nav-lang" href="{lang_href}">{L['other_lang_label']}</a>
+    </div>
   </nav>
 </header>"""
 
@@ -89,8 +94,8 @@ PEOPLE_PHOTOS = {
     "Emile Leenhardt": "emile-leenhardt",
 }
 
-def brand_html(rel, p):
-    logo = p.get("brand_logo")
+def brand_html(rel, p, logo=None):
+    logo = logo or p.get("brand_logo")
     esc = html.escape(p["brand"])
     if logo:
         return (f'<span class="brand"><img class="brand-logo" src="{rel}assets/img/{logo}" '
@@ -118,7 +123,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         title_html = p.get("hero_title_html") or html.escape(p['hero_title'])
         title_style = f' style="color:{title_color}"' if title_color else ""
         content = (f'<div class="card-content">\n'
-                   f'        {brand_html(rel, p)}\n'
+                   f'        {brand_html(rel, p, p.get("card_brand_logo"))}\n'
                    f'        <h3{title_style}>{title_html}</h3>\n'
                    f'        <p>{html.escape(p["hero_desc"])}</p>\n'
                    f'        <span class="btn {btn}">{L["see_project"]} →</span>\n'
@@ -126,7 +131,8 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         if p.get("card_bg"):
             align = p.get("card_text", "left")
             pos = {"left": "right", "right": "left", "center": "center"}[align]
-            style = (f"background-color:{bg};color:{fg};"
+            bg_color = p.get("card_bg_color", bg)
+            style = (f"background-color:{bg_color};color:{fg};"
                      f"background-image:url('{rel}assets/img/{p['slug']}-thumb.png');"
                      f"background-size:cover;background-repeat:no-repeat;background-position:{pos} center;")
             cards += f"""
@@ -267,12 +273,13 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
 
     title_html = p.get("hero_title_html") or html.escape(p["hero_title"])
     title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
+    align_cls = f' align-{p["hero_align"]}' if p.get("hero_align") else ""
 
     page = head(f"{p['name']} — {L['title']}", rel, L["lang"])
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
-  <section class="case-hero" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
+  <section class="case-hero{align_cls}" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
     {brand_html(rel, p)}
     <h1{title_style}>{title_html}</h1>
     <p>{html.escape(p['hero_desc'])}</p>

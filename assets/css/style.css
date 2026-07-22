@@ -75,6 +75,9 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .nav .nav-cta { background: var(--black); color: var(--white); }
 .nav .nav-cta:hover { background: var(--blue); }
 .nav .nav-lang { border: 1px solid var(--grey-2); }
+/* Desktop : les liens participent au flex de .nav comme avant ; burger masqué */
+.nav-links { display: contents; }
+.nav-burger { display: none; }
 
 /* ---------- Boutons ---------- */
 .btn {
@@ -272,6 +275,15 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   position: absolute; inset: -10% -10% -20% -10%; width: 120%; height: auto;
   z-index: -1; pointer-events: none; opacity: .5; border-radius: 0;
 }
+/* Alignement du hero selon la maquette Figma (desktop) */
+.case-hero.align-left { text-align: left; }
+.case-hero.align-left .brand { justify-content: flex-start; }
+.case-hero.align-left h1 { margin-left: 0; margin-right: auto; }
+.case-hero.align-left p { margin-left: 0; margin-right: auto; }
+.case-hero.align-right { text-align: right; }
+.case-hero.align-right .brand { justify-content: flex-end; }
+.case-hero.align-right h1 { margin-left: auto; margin-right: 0; }
+.case-hero.align-right p { margin-left: auto; margin-right: 0; }
 
 .case-section { padding-block: clamp(56px, 7vw, 150px); }
 .case-section.tight { padding-top: 0; }
@@ -407,11 +419,43 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .offers-grid, .challenges { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 760px) {
-  .project-card { grid-template-columns: 1fr; min-height: 0; }
-  .project-card .card-visual { min-height: 260px; align-items: center; padding: 0 24px 24px; }
   .offers-grid, .challenges, .insights, .feedbacks-grid { grid-template-columns: 1fr; }
-  .nav { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; }
   .offer h4 { min-height: 0; }
+
+  /* Menu burger */
+  .nav { position: relative; gap: 8px; }
+  .nav-burger {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    width: 44px; height: 44px; padding: 0 11px; background: none; border: none; cursor: pointer;
+  }
+  .nav-burger span { display: block; width: 22px; height: 2px; background: var(--black); border-radius: 2px; transition: transform .25s, opacity .2s; }
+  .nav.open .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav.open .nav-burger span:nth-child(2) { opacity: 0; }
+  .nav.open .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links {
+    display: none; position: absolute; top: calc(100% + 12px); right: 0;
+    flex-direction: column; align-items: stretch; gap: 4px; min-width: 210px;
+    background: #fff; border: 1px solid var(--grey-2); border-radius: 20px; padding: 10px;
+    box-shadow: 0 14px 34px rgba(10,10,10,.14);
+  }
+  .nav.open .nav-links { display: flex; }
+  .nav-links a { padding: 13px 18px; border-radius: 12px; }
+
+  /* H1 accueil : réduit pour tenir sur 3 lignes max */
+  .hero h1 { font-size: clamp(23px, 6.4vw, 34px); }
+
+  /* Cartes projets : visuel masqué, logo mis en avant */
+  .project-card { grid-template-columns: 1fr; min-height: 0; }
+  .project-card .card-visual { display: none; }
+  .project-card.card-bg { background-image: none !important; }
+  .project-card.card-bg .card-content { width: 100%; }
+  .brand-logo { height: clamp(40px, 11vw, 56px); }
+
+  /* Hero pages projets : centré sur mobile pour la lisibilité */
+  .case-hero.align-left, .case-hero.align-right { text-align: center; }
+  .case-hero.align-left .brand, .case-hero.align-right .brand { justify-content: center; }
+  .case-hero.align-left h1, .case-hero.align-right h1,
+  .case-hero.align-left p, .case-hero.align-right p { margin-left: auto; margin-right: auto; }
 }
 
 /* Reveal animation */

@@ -15,14 +15,19 @@
 <header class="nav-wrap">
   <nav class="nav">
     <a class="nav-cta" href="../index.html">Maxime COUDE</a>
-    <a href="../index.html#projets">Projets</a>
-    <a href="../index.html#apropos">À propos</a>
-    <a href="../index.html#contact">Me contacter</a>
-    <a class="nav-lang" href="../en/projects/sincro-mobile.html">🇬🇧 EN</a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="../index.html#projets">Projets</a>
+      <a href="../index.html#apropos">À propos</a>
+      <a href="../index.html#contact">Me contacter</a>
+      <a class="nav-lang" href="../en/projects/sincro-mobile.html">🇬🇧 EN</a>
+    </div>
   </nav>
 </header>
 <main>
-  <section class="case-hero" style="background:#FFFFFF;color:#000000;">
+  <section class="case-hero align-right" style="background:#FFFFFF;color:#000000;">
     <span class="brand"><img class="brand-logo" src="../assets/img/logo-sincro.png" alt="Sincro" onerror="this.parentNode.textContent=this.alt"></span>
     <h1 style="color:#6482D4">L’app de poche des consultants en mission</h1>
     <p>Saisie des temps, rapport d’activité, absences. La meilleure app quotidienne pour tous les consultants.</p>

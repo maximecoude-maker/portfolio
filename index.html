@@ -15,10 +15,15 @@
 <header class="nav-wrap">
   <nav class="nav">
     <a class="nav-cta" href="index.html">Maxime COUDE</a>
-    <a href="index.html#projets">Projets</a>
-    <a href="index.html#apropos">À propos</a>
-    <a href="index.html#contact">Me contacter</a>
-    <a class="nav-lang" href="en/index.html">🇬🇧 EN</a>
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#projets">Projets</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#contact">Me contacter</a>
+      <a class="nav-lang" href="en/index.html">🇬🇧 EN</a>
+    </div>
   </nav>
 </header>
 <main>
@@ -74,9 +79,9 @@
         <span class="btn btn-light">Voir le projet →</span>
       </div>
     </a>
-    <a class="project-card card-bg text-right reveal" href="projets/sincro-mobile.html" style="background-color:#FFFFFF;color:#FFFFFF;background-image:url('assets/img/sincro-mobile-thumb.png');background-size:cover;background-repeat:no-repeat;background-position:left center;">
+    <a class="project-card card-bg text-right reveal" href="projets/sincro-mobile.html" style="background-color:linear-gradient(135deg, #4975E9 0%, #7B61FF 100%);color:#FFFFFF;background-image:url('assets/img/sincro-mobile-thumb.png');background-size:cover;background-repeat:no-repeat;background-position:left center;">
       <div class="card-content">
-        <span class="brand"><img class="brand-logo" src="assets/img/logo-sincro.png" alt="Sincro" onerror="this.parentNode.textContent=this.alt"></span>
+        <span class="brand"><img class="brand-logo" src="assets/img/logo-sincro-white.png" alt="Sincro" onerror="this.parentNode.textContent=this.alt"></span>
         <h3 style="color:#FFFFFF">L’app de poche des consultants en mission</h3>
         <p>Saisie des temps, rapport d’activité, absences. La meilleure app quotidienne pour tous les consultants.</p>
         <span class="btn btn-light">Voir le projet →</span>
