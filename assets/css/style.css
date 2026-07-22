@@ -103,7 +103,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 }
 
 /* ---------- Section présentation ---------- */
-.about { padding: clamp(64px, 9vw, 200px) 0; }
+.about { padding-block: clamp(64px, 9vw, 200px); }
 .about-grid {
   display: grid; grid-template-columns: minmax(300px, 574fr) minmax(300px, 986fr);
   gap: clamp(40px, 6vw, 200px);
@@ -207,7 +207,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .big-stats .l { font-size: clamp(14px, 1.05vw, 20px); opacity: .9; margin-top: 8px; }
 
 /* ---------- Autres clients ---------- */
-.clients { padding: clamp(64px, 8vw, 160px) 0; text-align: center; }
+.clients { padding-block: clamp(64px, 8vw, 160px); text-align: center; }
 .clients h2 { margin-bottom: clamp(36px, 6vw, 120px); }
 .clients-row {
   display: flex; flex-wrap: nowrap; align-items: center; justify-content: center;
@@ -273,7 +273,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   z-index: -1; pointer-events: none; opacity: .5; border-radius: 0;
 }
 
-.case-section { padding: clamp(56px, 7vw, 150px) 0; }
+.case-section { padding-block: clamp(56px, 7vw, 150px); }
 .case-section.tight { padding-top: 0; }
 .case-section h2 { margin-bottom: clamp(24px, 2.6vw, 50px); }
 .case-section .lead { max-width: 70ch; font-size: clamp(15px, 1.15vw, 22px); }
