@@ -61,7 +61,7 @@ PROJECTS_EN = [
  "tasks": ["Interview and Scope", "Research and ideation", "Design execution and validation", "Design system creation, integration and handover"],
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview", "Card sorting", "Survey", "ZeroHeight"],
- "phases": ["MVP Scope", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototyping & Testing"],
+ "phases": ["MVP Scope", "Business Research", "User Interviews", "User flow", "Wireframing", "User Interface Design", "Prototyping & Testing"],
  "planning_text": "The project unfolded in 5 main phases: scope definition for the MVP, business research & user interviews, userflow & wireframing, final interface and design system creation, prototyping and user testing.", "planning_img": ("mma-planning.png", "MMA project planning"),
  "research": [
    ("Competition", ["Together with the MMA team, we benchmarked major competitors among other insurance apps with a similar product. We looked at how they present information and organize their home screen.",
@@ -144,7 +144,7 @@ PROJECTS_EN = [
  "tasks": ["Interview and Scope", "Research and ideation", "Design execution and prototyping", "Design validation"],
  "tasks2": [],
  "toolkit": ["Miro", "Sketch", "Zeplin", "Interview", "After Effects", "Maze"],
- "phases": ["Scope Definition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototyping", "User testing"],
+ "phases": ["Scope Definition", "User Interviews", "User flow", "Wireframing", "User Interface Design", "Prototyping", "User testing"],
  "planning_text": "The project unfolded in 4 main phases: scope definition, user interviews, journeys & userflow, wireframing, interface finalization, prototyping and user testing.", "planning_img": ("sincro-mobile-planning.png", "Sincro Mobile project planning"),
  "research": [
    ("Usage analysis", ["First, to build our research deck, we leveraged the web solution's data (KPIs) to analyze how users actually use the platform. Our analysis covered different criteria depending on user typologies: population/audience, mobility, timing of needs, frequency, engagement, performance and satisfaction. We also cross-referenced all this data with individual interviews.",
@@ -249,7 +249,7 @@ PROJECTS_EN = [
  "tasks": ["Interview and Scope", "Research and ideation", "Design execution and validation"],
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview"],
- "phases": ["Scope Definition", "Business Research", "User Interviews", "Wireframing", "User Interface Design"],
+ "phases": ["Scope Definition", "Business Research", "User Interviews", "User flow", "Wireframing", "User Interface Design"],
  "planning_text": "The project unfolded in 5 main phases: scope definition, business research & user interviews, journeys & userflow, wireframing, interface finalization & prototype.", "planning_img": ("hello-promo-planning.png", "Hello Promo project planning"),
  "research": [
    ("Interviews", ["The research phase was carried out by the Médiaperformances teams. For confidentiality reasons the interviews cannot be shared, but here are the main insights that emerged from this phase."], None),

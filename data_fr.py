@@ -62,7 +62,7 @@ PROJECTS_FR = [
  "tasks": ["Interview et Scope", "Recherche et idéation", "Exécution du design et validation", "Création, intégration et passation du Design system"],
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview", "Card sorting", "Survey", "ZeroHeight"],
- "phases": ["Scope MVP", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototypage & Tests"],
+ "phases": ["Scope MVP", "Business Research", "User Interviews", "User flow", "Wireframing", "User Interface Design", "Prototypage & Tests"],
  "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention MVP, business research & interviews utilisateurs, userflow & wireframing, conception des interfaces finales et du Design system, prototypage et tests utilisateurs.", "planning_img": ("mma-planning.png", "Planning du projet MMA"),
  "research": [
    ("Concurrence", ["En collaboration avec l’équipe MMA, nous avons comparé de grands concurrents parmi quelques autres applications du secteur de l'assurance qui possèdent une application et un produit similaires. Nous avons examiné comment ils présentent les informations et organisent leur page d'accueil.",
@@ -145,7 +145,7 @@ PROJECTS_FR = [
  "tasks": ["Interview et Scope", "Recherche et idéation", "Exécution du design et prototypage", "Validation des designs"],
  "tasks2": [],
  "toolkit": ["Miro", "Sketch", "Zeplin", "Interview", "After Effects", "Maze"],
- "phases": ["Scope Définition", "Business Research", "User Interviews", "Wireframing", "User Interface Design", "Prototypage", "Tests utilisateurs"],
+ "phases": ["Scope Définition", "User Interviews", "User flow", "Wireframing", "User Interface Design", "Prototypage", "Tests utilisateurs"],
  "planning_text": "Le projet s’est déroulé en 4 grandes phases : définition du scope d’intervention, interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces, prototypage et tests utilisateurs.", "planning_img": ("sincro-mobile-planning.png", "Planning du projet Sincro Mobile"),
  "research": [
    ("Analyse des usages", ["Premièrement pour constituer notre deck de recherche, nous avons exploité les données (KPI) de la solution web afin d'analyser les usages des utilisateurs de la plateforme. Notre analyse s'est portée sur différents critères en fonction des typologies d'utilisateurs : population/audience, mobilité/itinérants, temporalité des besoins, fréquence, engagement, performance et satisfaction. Nous avons également croisé l'ensemble de ces données avec des entretiens individuels.",
@@ -250,7 +250,7 @@ PROJECTS_FR = [
  "tasks": ["Interview et Scope", "Recherche et idéation", "Exécution du design et validation"],
  "tasks2": [],
  "toolkit": ["Miro", "Figma", "Interview"],
- "phases": ["Scope Définition", "Business Research", "User Interviews", "Wireframing", "User Interface Design"],
+ "phases": ["Scope Définition", "Business Research", "User Interviews", "User flow", "Wireframing", "User Interface Design"],
  "planning_text": "Le projet s’est déroulé en 5 grandes phases : définition du scope d’intervention, business research & interviews utilisateurs, parcours & userflow, wireframing, finalisation des interfaces & prototype.", "planning_img": ("hello-promo-planning.png", "Planning du projet Hello Promo"),
  "research": [
    ("Interviews", ["La phase de recherche a été réalisée par les équipes de Médiaperformances. Pour des raisons de confidentialité les interviews ne peuvent être partagées, mais voici les principaux insights qui ont émergé durant cette phase."], None),
