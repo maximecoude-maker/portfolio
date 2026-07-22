@@ -176,6 +176,17 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .project-card .card-visual img { width: 88%; height: auto; max-height: 100%; object-fit: contain; object-position: bottom; }
 .project-card .btn { align-self: flex-start; margin-top: 8px; }
 
+/* ---------- Cartes à visuel de fond ---------- */
+.project-card.card-bg { display: flex; align-items: center; }
+.project-card.card-bg .card-content { width: min(560px, 48%); }
+.project-card.card-bg.text-right { justify-content: flex-end; }
+.project-card.card-bg.text-center { justify-content: center; text-align: center; }
+.project-card.card-bg.text-center .card-content { width: min(760px, 66%); align-items: center; }
+@media (max-width: 760px) {
+  .project-card.card-bg .card-content { width: 100%; }
+  .project-card.card-bg.text-center .card-content { width: 100%; }
+}
+
 /* ---------- Section feedbacks ---------- */
 .feedbacks-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 8.3vw, 160px);
@@ -199,11 +210,16 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .clients { padding: clamp(64px, 8vw, 160px) 0; text-align: center; }
 .clients h2 { margin-bottom: clamp(36px, 6vw, 120px); }
 .clients-row {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  display: flex; flex-wrap: nowrap; align-items: center; justify-content: center;
   gap: clamp(28px, 5vw, 100px);
+  overflow-x: auto; scroll-snap-type: x proximity;
+  scrollbar-width: none; -ms-overflow-style: none;
+  padding-bottom: 8px;
 }
+.clients-row::-webkit-scrollbar { display: none; }
 .clients-row .client-logo {
-  height: clamp(40px, 5.2vw, 100px); display:flex; align-items:center;
+  height: clamp(40px, 5.2vw, 100px); flex: none; display:flex; align-items:center;
+  scroll-snap-align: center;
   filter: grayscale(1); opacity: .8; transition: filter .2s, opacity .2s;
   font-family: var(--font-title); font-weight: 800; font-size: clamp(18px, 1.6vw, 30px);
   color: #555;

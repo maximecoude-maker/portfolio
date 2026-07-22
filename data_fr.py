@@ -91,6 +91,7 @@ PROJECTS_FR = [
 {
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
  "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF",
+ "card_bg": True, "card_text": "left",
  "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
  "hero_title": "La suite applicative pour une gestion plus facile que jamais",
  "hero_desc": "Achats, facture, fournisseurs, devoir de vigilance, saisie des temps… Découvrez le processus design qui a simplifié la manière de gérer l’écosystème de la prestation intellectuelle.",
@@ -131,6 +132,7 @@ PROJECTS_FR = [
 {
  "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
  "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4",
+ "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
  "hero_title": "L’app de poche des consultants en mission",
  "hero_desc": "Saisie des temps, rapport d’activité, absences. La meilleure app quotidienne pour tous les consultants.",
  "hero_img": ("sincro-mobile-hero.png", "Écrans de l’application mobile Sincro"),
@@ -211,6 +213,7 @@ PROJECTS_FR = [
 {
  "slug": "ratp", "name": "RATP", "brand": "RATP — Visiter Paris", "brand_logo": "logo-ratp.png",
  "accent": "#00936E", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#00C4B4",
+ "card_bg": True, "card_text": "center",
  "hero_title": "Restez informé pour voyager plus sereinement",
  "hero_desc": "Plus de 10 millions de personnes en France utilisent les transports de la RATP (bus, métro, RER, tramway) chaque jour.",
  "hero_img": ("ratp-hero.png", "Application Visiter Paris — composants d’alerte"),
@@ -238,6 +241,7 @@ PROJECTS_FR = [
 {
  "slug": "hello-promo", "name": "Hello Promo", "brand": "Hello Promo — Médiaperformances", "brand_logo": "logo-hello-promo.png",
  "accent": "#3FBF61", "hero_bg": "linear-gradient(23deg, #6AE5B3 12%, #66E2B0 30%, #5CD9A8 46%, #54D3A2 54%)", "hero_fg": "#4C4C4C",
+ "card_bg": True, "card_text": "left",
  "hero_title": "Obtenez votre QR Code et commencez à faire des économies en caisse",
  "hero_title_html": "<span style=\"color:#FFFFFF\">Obtenez votre QR Code</span> <span style=\"color:#0A0A0A\">et commencez à faire des économies en caisse</span>",
  "hero_desc": "L’application pour profiter de bons de réduction immédiats et dématérialisés en caisse, valables dans vos hypermarchés.",

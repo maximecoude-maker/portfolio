@@ -110,20 +110,34 @@ def person_html(rel, accent, n):
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     cards = ""
     for p in projects:
-        fg = p["hero_fg"]
         bg = p["hero_bg"]
-        style = f"background:{bg};color:{fg};"
+        # La carte peut avoir des couleurs de texte propres (fond visuel) indépendantes du hero
+        fg = p.get("card_fg", p["hero_fg"])
+        title_color = p.get("card_title_color", p.get("hero_title_color"))
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
         title_html = p.get("hero_title_html") or html.escape(p['hero_title'])
-        title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
-        cards += f"""
+        title_style = f' style="color:{title_color}"' if title_color else ""
+        content = (f'<div class="card-content">\n'
+                   f'        {brand_html(rel, p)}\n'
+                   f'        <h3{title_style}>{title_html}</h3>\n'
+                   f'        <p>{html.escape(p["hero_desc"])}</p>\n'
+                   f'        <span class="btn {btn}">{L["see_project"]} →</span>\n'
+                   f'      </div>')
+        if p.get("card_bg"):
+            align = p.get("card_text", "left")
+            pos = {"left": "right", "right": "left", "center": "center"}[align]
+            style = (f"background-color:{bg};color:{fg};"
+                     f"background-image:url('{rel}assets/img/{p['slug']}-thumb.png');"
+                     f"background-size:cover;background-repeat:no-repeat;background-position:{pos} center;")
+            cards += f"""
+    <a class="project-card card-bg text-{align} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
+      {content}
+    </a>"""
+        else:
+            style = f"background:{bg};color:{fg};"
+            cards += f"""
     <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
-      <div class="card-content">
-        {brand_html(rel, p)}
-        <h3{title_style}>{title_html}</h3>
-        <p>{html.escape(p['hero_desc'])}</p>
-        <span class="btn {btn}">{L['see_project']} →</span>
-      </div>
+      {content}
       <div class="card-visual">
         <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
       </div>
@@ -149,7 +163,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
   <section class="hero">
     <h1>{L['hero_h1']}</h1>
     <p class="sub">{L['hero_sub']}</p>
-    <img class="avatar" src="{rel}assets/img/avatar-hero.png" alt="Avatar 3D de Maxime" data-ph="avatar 3D du hero (avatar-hero.png)" data-tall="true">
+    <img class="avatar" src="{rel}assets/img/avatar.png" alt="Avatar 3D de Maxime" data-ph="avatar 3D du hero (avatar.png)" data-tall="true">
   </section>
 
   <section class="about container" id="apropos">

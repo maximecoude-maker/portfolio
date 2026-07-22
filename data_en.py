@@ -90,6 +90,7 @@ PROJECTS_EN = [
 {
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
  "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF",
+ "card_bg": True, "card_text": "left",
  "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
  "hero_title": "The app suite for easier management than ever",
  "hero_desc": "Purchasing, invoicing, vendors, duty of care, time tracking… Discover the design process that simplified the way the intellectual-services ecosystem is managed.",
@@ -130,6 +131,7 @@ PROJECTS_EN = [
 {
  "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
  "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4",
+ "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
  "hero_title": "The pocket app for consultants on assignment",
  "hero_desc": "Time tracking, activity reports, absences. The best everyday app for all consultants.",
  "hero_img": ("sincro-mobile-hero.png", "Sincro mobile app screens"),
@@ -210,6 +212,7 @@ PROJECTS_EN = [
 {
  "slug": "ratp", "name": "RATP", "brand": "RATP — Visiter Paris", "brand_logo": "logo-ratp.png",
  "accent": "#00936E", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#00C4B4",
+ "card_bg": True, "card_text": "center",
  "hero_title": "Stay informed to travel with greater peace of mind",
  "hero_desc": "More than 10 million people in France use RATP transport (bus, metro, RER, tramway) every day.",
  "hero_img": ("ratp-hero.png", "Visiter Paris app — alert components"),
@@ -237,6 +240,7 @@ PROJECTS_EN = [
 {
  "slug": "hello-promo", "name": "Hello Promo", "brand": "Hello Promo — Médiaperformances", "brand_logo": "logo-hello-promo.png",
  "accent": "#3FBF61", "hero_bg": "linear-gradient(23deg, #6AE5B3 12%, #66E2B0 30%, #5CD9A8 46%, #54D3A2 54%)", "hero_fg": "#4C4C4C",
+ "card_bg": True, "card_text": "left",
  "hero_title": "Get your QR Code and start saving at checkout",
  "hero_title_html": "<span style=\"color:#FFFFFF\">Get your QR Code</span> <span style=\"color:#0A0A0A\">and start saving at checkout</span>",
  "hero_desc": "The app to enjoy instant, paperless discount vouchers at checkout, valid in your hypermarkets.",
