@@ -44,7 +44,7 @@ PROJECTS_EN = [
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA",
- "accent": "#1D7AD9", "hero_bg": "#EAF3FD", "hero_fg": "#0A0A0A",
+ "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C",
  "hero_title": "Making insurance easier to make life easier",
  "hero_desc": "Reimbursements, claims, relationships with agents. Discover the entire design process that made life even simpler for MMA policyholders.",
  "hero_img": ("mma-hero.png", "MMA mobile app mockups"),
@@ -129,7 +129,7 @@ PROJECTS_EN = [
 # ============================================================ SINCRO MOBILE
 {
  "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro",
- "accent": "#1FA26A", "hero_bg": "#F1FBF5", "hero_fg": "#0A0A0A",
+ "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4",
  "hero_title": "The pocket app for consultants on assignment",
  "hero_desc": "Time tracking, activity reports, absences. The best everyday app for all consultants.",
  "hero_img": ("sincro-mobile-hero.png", "Sincro mobile app screens"),
@@ -167,7 +167,7 @@ PROJECTS_EN = [
 # ============================================================ AFNOR
 {
  "slug": "afnor", "name": "Afnor", "brand": "Afnor — Opéra 2",
- "accent": "#8C6A45", "hero_bg": "#F4EDE4", "hero_fg": "#0A0A0A",
+ "accent": "#8C6A45", "hero_bg": "#F3E7DC", "hero_fg": "#2B097C", "hero_title_color": "#2B097C",
  "hero_title": "A single platform, transparent audits",
  "hero_desc": "With more than 3,500 audits, Opéra 2 lets clients follow every step of their audits while simplifying exchanges with auditors within the platform.",
  "hero_img": ("afnor-hero.png", "Opéra 2 platform interface"),
@@ -209,7 +209,7 @@ PROJECTS_EN = [
 # ============================================================ RATP
 {
  "slug": "ratp", "name": "RATP", "brand": "RATP — Visiter Paris",
- "accent": "#00936E", "hero_bg": "#E3F4EE", "hero_fg": "#0A0A0A",
+ "accent": "#00936E", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#00C4B4",
  "hero_title": "Stay informed to travel with greater peace of mind",
  "hero_desc": "More than 10 million people in France use RATP transport (bus, metro, RER, tramway) every day.",
  "hero_img": ("ratp-hero.png", "Visiter Paris app — alert components"),
@@ -236,8 +236,9 @@ PROJECTS_EN = [
 # ============================================================ HELLO PROMO
 {
  "slug": "hello-promo", "name": "Hello Promo", "brand": "Hello Promo — Médiaperformances",
- "accent": "#3FBF61", "hero_bg": "#F0FAF2", "hero_fg": "#0A0A0A",
+ "accent": "#3FBF61", "hero_bg": "linear-gradient(23deg, #6AE5B3 12%, #66E2B0 30%, #5CD9A8 46%, #54D3A2 54%)", "hero_fg": "#4C4C4C",
  "hero_title": "Get your QR Code and start saving at checkout",
+ "hero_title_html": "<span style=\"color:#FFFFFF\">Get your QR Code</span> <span style=\"color:#0A0A0A\">and start saving at checkout</span>",
  "hero_desc": "The app to enjoy instant, paperless discount vouchers at checkout, valid in your hypermarkets.",
  "hero_img": ("hello-promo-hero.png", "Hello Promo web app — QR Code journey"),
  "mission": ["Hello Promo is a marketing solution (Web App) allowing a community of users to benefit from numerous free discounts usable in supermarkets and hypermarkets by presenting a QR Code. Each promotion is accessible through various social channels such as Facebook, Instagram or Twitter. As a senior product designer, I supported my clients in redesigning the \"shopper\" journey to deliver a simpler, more intuitive experience that fosters user sign-up and retention, while respecting personal-data rights."],

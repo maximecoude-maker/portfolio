@@ -159,6 +159,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   overflow: hidden;
   display: grid; grid-template-columns: 1.05fr 1fr;
   min-height: clamp(380px, 47.5vw, 913px);
+  box-shadow: 0 12px 40px rgba(10,10,10,.06);
   transition: transform .25s ease, box-shadow .25s ease;
 }
 .project-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(10,10,10,.14); }

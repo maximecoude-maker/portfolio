@@ -102,11 +102,13 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         bg = p["hero_bg"]
         style = f"background:{bg};color:{fg};"
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
+        title_html = p.get("hero_title_html") or html.escape(p['hero_title'])
+        title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
         cards += f"""
     <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       <div class="card-content">
         <span class="brand">{html.escape(p['brand'])}</span>
-        <h3>{html.escape(p['hero_title'])}</h3>
+        <h3{title_style}>{title_html}</h3>
         <p>{html.escape(p['hero_desc'])}</p>
         <span class="btn {btn}">{L['see_project']} →</span>
       </div>
@@ -237,13 +239,16 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
         people = "".join(person_html(rel, p["accent"], n) for n in names)
         thanks += f'<div class="thanks-group reveal"><h4>{html.escape(title)}</h4><div class="people">{people}</div></div>'
 
+    title_html = p.get("hero_title_html") or html.escape(p["hero_title"])
+    title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
+
     page = head(f"{p['name']} — {L['title']}", rel, L["lang"])
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
   <section class="case-hero" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
     <span class="brand">{html.escape(p['brand'])}</span>
-    <h1>{html.escape(p['hero_title'])}</h1>
+    <h1{title_style}>{title_html}</h1>
     <p>{html.escape(p['hero_desc'])}</p>
     <div class="hero-visual">
       {f'<img class="hero-shadow" src="{rel}assets/img/{p["hero_shadow_img"]}" alt="" aria-hidden="true">' if p.get('hero_shadow_img') else ''}
