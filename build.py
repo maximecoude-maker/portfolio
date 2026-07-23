@@ -214,7 +214,6 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
 # ------------------------------------------------------------------
 def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_dir):
     fg = p["hero_fg"]
-    btnstyle = f"color:{p['accent']}"
     hero_bg_img_css = ""
     if p.get("hero_bg_img"):
         hero_bg_img_css = f"background-image:url('{rel}assets/img/{p['hero_bg_img']}');background-size:cover;background-position:bottom center;background-repeat:no-repeat;"
@@ -335,8 +334,8 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
   </section>
 
   <div class="container case-footer-nav">
-    <a href="{home_href}#projets" style="{btnstyle}">{LAB['back']}</a>
-    <a href="{next_proj}" style="{btnstyle}">{LAB['next']}</a>
+    <a href="{home_href}#projets">{LAB['back']}</a>
+    <a href="{next_proj}">{LAB['next']}</a>
   </div>
 </main>"""
     page += contact(L, rel)
