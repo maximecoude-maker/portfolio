@@ -132,9 +132,16 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
             align = p.get("card_text", "left")
             pos = {"left": "right", "right": "left", "center": "center"}[align]
             bg_color = p.get("card_bg_color", bg)
-            style = (f"background-color:{bg_color};color:{fg};"
-                     f"background-image:url('{rel}assets/img/{p['slug']}-thumb.png');"
-                     f"background-size:cover;background-repeat:no-repeat;background-position:{pos} center;")
+            thumb_url = f"url('{rel}assets/img/{p['slug']}-thumb.png')"
+            if bg_color.startswith("linear-gradient"):
+                # thumb superposé au dégradé (les 2 sont des background-image)
+                bg_decl = (f"background-image:{thumb_url}, {bg_color};"
+                           f"background-size:cover, cover;background-repeat:no-repeat;"
+                           f"background-position:{pos} center, center;")
+            else:
+                bg_decl = (f"background-color:{bg_color};background-image:{thumb_url};"
+                           f"background-size:cover;background-repeat:no-repeat;background-position:{pos} center;")
+            style = f"--card-bg:{bg_color};color:{fg};{bg_decl}"
             cards += f"""
     <a class="project-card card-bg text-{align} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       {content}

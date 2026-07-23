@@ -6,7 +6,7 @@ LANDING_FR = {
     "title": "Maxime COUDE — Senior Experience Designer Freelance",
     "nav": {"name": "Maxime COUDE", "projects": "Projets", "about": "À propos", "contact": "Me contacter"},
     "hero_h1": "Salut à tous ! Je suis Maxime<br>Senior Experience Designer<br>Freelance",
-    "hero_sub": "9 ans dans le Design. Français. Basé en Bretagne",
+    "hero_sub": "12 ans dans le design<br>Basé en Bretagne",
     "about_title": "Pour me connaître",
     "about_text": "Designer passionné, j’aime me consacrer et j’accompagne les porteurs de projets innovants. Fort de multiples expériences en ESN comme consultant UX/UI ou en Startup comme Senior Product Designer. Je mets tout en oeuvre pour vous apporter des solutions rapides et concrètes, à la fois simples, ergonomiques et fonctionnelles tout en répondant aux contraintes business et marketing que vous rencontrez.",
     "stats": [("💼", "9 ans"), ("📱", "Mobile"), ("🖥️", "Saas")],
