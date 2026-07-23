@@ -326,7 +326,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   background: var(--grey-1); border: 1px solid var(--grey-2);
   font-weight: 600; font-size: clamp(13px, 0.95vw, 18px);
 }
-.chip-icon { width: 20px; height: 20px; object-fit: contain; flex: none; }
+.chip-icon { width: 22px; height: 22px; object-fit: contain; flex: none; border-radius: 22%; }
 
 .phases {
   display: flex; flex-wrap: wrap; gap: 14px;
@@ -411,7 +411,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   display: flex; justify-content: space-between; gap: 20px;
   padding: 0 0 clamp(48px, 5vw, 100px);
 }
-.case-footer-nav a { font-weight: 700; font-size: clamp(15px, 1.15vw, 22px); color: var(--blue); }
+.case-footer-nav a { font-weight: 700; font-size: clamp(15px, 1.15vw, 22px); color: var(--black); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
@@ -456,6 +456,23 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .case-hero.align-left .brand, .case-hero.align-right .brand { justify-content: center; }
   .case-hero.align-left h1, .case-hero.align-right h1,
   .case-hero.align-left p, .case-hero.align-right p { margin-left: auto; margin-right: auto; }
+
+  /* Planning : mini-cartes légèrement réduites */
+  .phases { gap: 10px; }
+  .phase { padding: 12px 16px; font-size: 12px; border-radius: 12px; gap: 9px; }
+  .phase::before { width: 26px; height: 26px; font-size: 13px; }
+
+  /* Impacts : 2 colonnes */
+  .impacts-grid { grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 5vw, 40px); }
+  .impact .v { font-size: clamp(32px, 9vw, 46px); }
+
+  /* Pour me connaître : bloc stats sans débordement */
+  .about-stats { padding-inline: 0; gap: 8px; }
+  .about-stats .stat { width: auto; flex: 1; min-width: 0; }
+
+  /* Footer projet : marges horizontales sur les 2 liens */
+  .case-footer-nav { gap: 16px; }
+  .case-footer-nav a { padding-inline: 6px; }
 }
 
 /* Reveal animation */
