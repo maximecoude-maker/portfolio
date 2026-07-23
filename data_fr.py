@@ -9,7 +9,7 @@ LANDING_FR = {
     "hero_sub": "12 ans dans le design<br>Basé en Bretagne",
     "about_title": "Pour me connaître",
     "about_text": "Designer passionné, j’aime me consacrer et j’accompagne les porteurs de projets innovants. Fort de multiples expériences en ESN comme consultant UX/UI ou en Startup comme Senior Product Designer. Je mets tout en oeuvre pour vous apporter des solutions rapides et concrètes, à la fois simples, ergonomiques et fonctionnelles tout en répondant aux contraintes business et marketing que vous rencontrez.",
-    "stats": [("💼", "9 ans"), ("📱", "Mobile"), ("🖥️", "Saas")],
+    "stats": [("💼", "12 ans"), ("📱", "Mobile"), ("🖥️", "Saas")],
     "offers_title": "Ce que je peux vous apporter ?",
     "offers": [
         ("Designer votre nouveau produit MVP", "Concevoir et designer vos produits pour en faire les leaders du marché"),
