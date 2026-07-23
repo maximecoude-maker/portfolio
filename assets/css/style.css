@@ -297,7 +297,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   grid-area: 1 / 2 / 4 / 3; margin: 0; max-width: none;
   align-self: center; justify-self: end; width: 100%;
 }
-.case-hero.hero-split .hero-visual img { margin: 0 0 0 auto; width: 100%; }
+.case-hero.hero-split .hero-visual img { margin: 0 0 0 auto; width: 100%; filter: drop-shadow(0 26px 55px rgba(10, 10, 10, .3)); }
 
 .case-section { padding-block: clamp(56px, 7vw, 150px); }
 .case-section.tight { padding-top: 0; }

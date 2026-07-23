@@ -92,7 +92,7 @@ PROJECTS_FR = [
  "slug": "sincro-saas", "name": "Sincro Saas", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
  "accent": "#4975E9", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF", "hero_split": True,
  "card_bg": True, "card_text": "left",
- "hero_bg_img": "decor-sincro-gradient.png", "hero_shadow_img": "decor-shadow.png",
+ "hero_bg_img": "decor-sincro-gradient.png",
  "hero_title": "La suite applicative pour une gestion plus facile que jamais",
  "hero_desc": "Achats, facture, fournisseurs, devoir de vigilance, saisie des temps… Découvrez le processus design qui a simplifié la manière de gérer l’écosystème de la prestation intellectuelle.",
  "hero_img": ("sincro-saas-hero.png", "Interface de la suite Sincro sur desktop"),
