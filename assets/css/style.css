@@ -284,6 +284,20 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .case-hero.align-right .brand { justify-content: flex-end; }
 .case-hero.align-right h1 { margin-left: auto; margin-right: 0; }
 .case-hero.align-right p { margin-left: auto; margin-right: 0; }
+/* Hero côte à côte : texte à gauche, visuel aligné au bord droit (ex. Sincro Saas) */
+.case-hero.hero-split {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  grid-template-rows: auto auto auto; column-gap: clamp(24px, 4vw, 72px);
+  align-items: center; text-align: left; padding-bottom: 0;
+}
+.case-hero.hero-split .brand { grid-area: 1 / 1; justify-content: flex-start; }
+.case-hero.hero-split h1 { grid-area: 2 / 1; margin: 0; }
+.case-hero.hero-split p { grid-area: 3 / 1; margin: clamp(16px, 2vw, 28px) 0 0; }
+.case-hero.hero-split .hero-visual {
+  grid-area: 1 / 2 / 4 / 3; margin: 0; max-width: none;
+  align-self: center; justify-self: end; width: 100%;
+}
+.case-hero.hero-split .hero-visual img { margin: 0 0 0 auto; width: 100%; }
 
 .case-section { padding-block: clamp(56px, 7vw, 150px); }
 .case-section.tight { padding-top: 0; }
@@ -456,6 +470,14 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .case-hero.align-left .brand, .case-hero.align-right .brand { justify-content: center; }
   .case-hero.align-left h1, .case-hero.align-right h1,
   .case-hero.align-left p, .case-hero.align-right p { margin-left: auto; margin-right: auto; }
+
+  /* Hero côte à côte : repli empilé et centré sur mobile */
+  .case-hero.hero-split { display: block; text-align: center; }
+  .case-hero.hero-split .brand { justify-content: center; }
+  .case-hero.hero-split h1, .case-hero.hero-split p { margin-left: auto; margin-right: auto; }
+  .case-hero.hero-split p { margin-bottom: 0; }
+  .case-hero.hero-split .hero-visual { justify-self: auto; margin: clamp(28px, 4vw, 64px) auto 0; }
+  .case-hero.hero-split .hero-visual img { margin: 0 auto; }
 
   /* Planning : mini-cartes légèrement réduites */
   .phases { gap: 10px; }

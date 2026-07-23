@@ -274,12 +274,13 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     title_html = p.get("hero_title_html") or html.escape(p["hero_title"])
     title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
     align_cls = f' align-{p["hero_align"]}' if p.get("hero_align") else ""
+    split_cls = ' hero-split' if p.get("hero_split") else ""
 
     page = head(f"{p['name']} — {L['title']}", rel, L["lang"])
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
-  <section class="case-hero{align_cls}" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
+  <section class="case-hero{align_cls}{split_cls}" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
     {brand_html(rel, p)}
     <h1{title_style}>{title_html}</h1>
     <p>{html.escape(p['hero_desc'])}</p>
