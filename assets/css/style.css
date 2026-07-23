@@ -106,7 +106,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 }
 
 /* ---------- Section présentation ---------- */
-.about { padding-block: clamp(64px, 9vw, 200px); }
+.about { padding-block: clamp(64px, 9vw, 200px); background: var(--grey-1); }
 .about-grid {
   display: grid; grid-template-columns: minmax(300px, 574fr) minmax(300px, 986fr);
   gap: clamp(40px, 6vw, 200px);
@@ -135,19 +135,11 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: clamp(28px, 3vw, 60px) clamp(24px, 3vw, 60px);
 }
-.offer .num {
-  width: clamp(56px, 4.7vw, 90px); height: clamp(56px, 4.7vw, 90px);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-title); font-weight: 800;
-  font-size: clamp(22px, 1.9vw, 36px);
+.offer-icon {
+  width: clamp(60px, 5vw, 90px); height: clamp(60px, 5vw, 90px);
+  object-fit: contain; object-position: left center; display: block;
   margin-bottom: clamp(16px, 1.25vw, 24px);
 }
-.offer:nth-child(1) .num { background: #E9F1FF; color: #4975E9; }
-.offer:nth-child(2) .num { background: #FFF3E4; color: #F2994A; }
-.offer:nth-child(3) .num { background: #EAFBF1; color: #27AE60; }
-.offer:nth-child(4) .num { background: #FDEAEA; color: #EB5757; }
-.offer:nth-child(5) .num { background: #F4EAFD; color: #9B51E0; }
-.offer:nth-child(6) .num { background: #E8FAFB; color: #2D9CDB; }
 .offer h4 {
   font-family: var(--font-title); font-weight: 800;
   font-size: clamp(17px, 1.25vw, 24px); line-height: 1.33;

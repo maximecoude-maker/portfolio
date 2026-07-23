@@ -152,7 +152,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     offers = ""
     for i, (t, d) in enumerate(L["offers"], 1):
         offers += f"""
-      <div class="offer reveal"><div class="num">{i}</div><h4>{t}</h4><p>{d}</p></div>"""
+      <div class="offer reveal"><img class="offer-icon" src="{rel}assets/img/offers/offer-{i}.png" alt="" loading="lazy"><h4>{t}</h4><p>{d}</p></div>"""
 
     stats = "".join(f'<div class="stat"><div class="emoji">{e}</div><div class="label">{l}</div></div>' for e, l in L["stats"])
     bigstats = "".join(f'<div><div class="v">{v}</div><div class="l">{l}</div></div>' for v, l in L["big_stats"])
@@ -172,20 +172,22 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     <img class="avatar" src="{rel}assets/img/avatar.png" alt="Avatar 3D de Maxime" data-ph="avatar 3D du hero (avatar.png)" data-tall="true">
   </section>
 
-  <section class="about container" id="apropos">
-    <div class="about-grid">
-      <div class="reveal">
-        <div class="quote-block">
-          <div class="quote-mark">“</div>
-          <h3>{L['about_title']}</h3>
-          <p>{L['about_text']}</p>
-          <div class="quote-mark end">”</div>
+  <section class="about" id="apropos">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <div class="quote-block">
+            <div class="quote-mark">“</div>
+            <h3>{L['about_title']}</h3>
+            <p>{L['about_text']}</p>
+            <div class="quote-mark end">”</div>
+          </div>
+          <div class="about-stats">{stats}</div>
         </div>
-        <div class="about-stats">{stats}</div>
-      </div>
-      <div class="offers reveal">
-        <h3 class="offers-title">{L['offers_title']}</h3>
-        <div class="offers-grid">{offers}
+        <div class="offers reveal">
+          <h3 class="offers-title">{L['offers_title']}</h3>
+          <div class="offers-grid">{offers}
+          </div>
         </div>
       </div>
     </div>
