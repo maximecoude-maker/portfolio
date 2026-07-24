@@ -170,6 +170,8 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .project-card .card-visual { position: relative; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
 .project-card .card-visual img { width: 88%; height: auto; max-height: 100%; object-fit: contain; object-position: bottom; }
 .project-card .btn { align-self: flex-start; margin-top: 8px; }
+.project-card .btn-dark { background: var(--cta, var(--black)); }
+.brand-logo-alt { display: none; }
 
 /* ---------- Cartes à visuel de fond ---------- */
 .project-card.card-bg { display: flex; align-items: center; }
@@ -200,6 +202,13 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .big-stats { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 48px); justify-content: center; height: 100%; }
 .big-stats .v { font-family: var(--font-title); font-weight: 800; font-size: clamp(48px, 5.2vw, 100px); line-height: 1; }
 .big-stats .l { font-size: clamp(14px, 1.05vw, 20px); opacity: .9; margin-top: 8px; }
+
+/* ---------- Auteur du feedback ---------- */
+.feedback-author { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+.feedback-author img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; }
+.feedback-author span { display: flex; flex-direction: column; line-height: 1.35; }
+.feedback-author strong { font-weight: 700; }
+.feedback-author em { font-style: normal; opacity: .85; font-size: .92em; }
 
 /* ---------- Autres clients ---------- */
 .clients { padding-block: clamp(64px, 8vw, 160px); text-align: center; }
@@ -504,6 +513,21 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 
   /* Footer contact : titre aligné sur l'échelle du H1 */
   .contact h2 { font-size: clamp(21px, 6vw, 34px); }
+
+  /* Cartes projets : contenu centré (logo, titre, description, CTA) */
+  .project-card .card-content { text-align: center; align-items: center; }
+  .project-card .card-content .brand { justify-content: center; }
+  .project-card .card-content .btn { align-self: center; }
+
+  /* Sincro App : carte sur fond blanc, titre bleu, texte noir, logo couleur */
+  .project-card.card-sincro-mobile { background: #fff !important; color: #000 !important; }
+  .project-card.card-sincro-mobile h3 { color: #6482D4 !important; }
+  .project-card.card-sincro-mobile .btn { background: var(--black) !important; color: #fff !important; }
+  .project-card.card-sincro-mobile .brand-logo-main { display: none; }
+  .project-card.card-sincro-mobile .brand-logo-alt { display: block; }
+
+  /* KPI : contenu centré */
+  .big-stats { align-items: center; text-align: center; }
 }
 
 /* Reveal animation */

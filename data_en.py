@@ -23,6 +23,7 @@ LANDING_EN = {
     "see_project": "See the project",
     "feedback_title": "Feedbacks",
     "feedback_text": "Throughout my career, I have had the chance to collaborate with amazing teams. Here are a few numbers and testimonials that sum up these years of experience.",
+    "feedback_author_role": "Co-founder @ Sincro",
     "big_stats": [("+20", "Projects delivered"), ("+250", "User interviews & workshops"), ("10 M", "Users reached by my designs")],
     "clients_title": "Other clients",
     "clients": ["Audencia", "SNCF", "Afnor", "Université de Nantes", "Zodiac", "Beteam"],
@@ -132,7 +133,7 @@ PROJECTS_EN = [
  "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
  "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4", "hero_align": "right",
  "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
- "card_bg_color": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "card_brand_logo": "logo-sincro-white.png",
+ "card_bg_color": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "card_brand_logo": "logo-sincro-white.png", "card_brand_logo_alt": "logo-sincro.png",
  "hero_title": "The pocket app for consultants on assignment",
  "hero_desc": "Time tracking, activity reports, absences. The best everyday app for all consultants.",
  "hero_img": ("sincro-mobile-hero.png", "Sincro mobile app screens"),
@@ -170,7 +171,7 @@ PROJECTS_EN = [
 # ============================================================ AFNOR
 {
  "slug": "afnor", "name": "Afnor", "brand": "Afnor — Opéra 2", "brand_logo": "logo-afnor.png",
- "accent": "#8C6A45", "hero_bg": "#F3E7DC", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left",
+ "accent": "#8C6A45", "hero_bg": "#F3E7DC", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left", "card_cta_color": "#2B097C",
  "hero_title": "A single platform, transparent audits",
  "hero_desc": "With more than 3,500 audits, Opéra 2 lets clients follow every step of their audits while simplifying exchanges with auditors within the platform.",
  "hero_img": ("afnor-hero.png", "Opéra 2 platform interface"),
@@ -212,7 +213,7 @@ PROJECTS_EN = [
 # ============================================================ RATP
 {
  "slug": "ratp", "name": "RATP", "brand": "RATP — Visiter Paris", "brand_logo": "logo-ratp.png",
- "accent": "#00936E", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#00C4B4",
+ "accent": "#00936E", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#00C4B4", "card_cta_color": "#00C4B4",
  "card_bg": True, "card_text": "center",
  "hero_title": "Stay informed to travel with greater peace of mind",
  "hero_desc": "More than 10 million people in France use RATP transport (bus, metro, RER, tramway) every day.",

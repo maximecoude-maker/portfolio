@@ -94,13 +94,16 @@ PEOPLE_PHOTOS = {
     "Emile Leenhardt": "emile-leenhardt",
 }
 
-def brand_html(rel, p, logo=None):
+def brand_html(rel, p, logo=None, logo_alt=None):
     logo = logo or p.get("brand_logo")
     esc = html.escape(p["brand"])
-    if logo:
-        return (f'<span class="brand"><img class="brand-logo" src="{rel}assets/img/{logo}" '
-                f'alt="{esc}" onerror="this.parentNode.textContent=this.alt"></span>')
-    return f'<span class="brand">{esc}</span>'
+    if not logo:
+        return f'<span class="brand">{esc}</span>'
+    imgs = (f'<img class="brand-logo brand-logo-main" src="{rel}assets/img/{logo}" '
+            f'alt="{esc}" onerror="this.parentNode.textContent=this.alt">')
+    if logo_alt:
+        imgs += f'<img class="brand-logo brand-logo-alt" src="{rel}assets/img/{logo_alt}" alt="{esc}">'
+    return f'<span class="brand">{imgs}</span>'
 
 def person_html(rel, accent, n):
     slug = PEOPLE_PHOTOS.get(n)
@@ -122,8 +125,9 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
         title_html = p.get("hero_title_html") or html.escape(p['hero_title'])
         title_style = f' style="color:{title_color}"' if title_color else ""
+        cta_var = f"--cta:{p['card_cta_color']};" if p.get("card_cta_color") else ""
         content = (f'<div class="card-content">\n'
-                   f'        {brand_html(rel, p, p.get("card_brand_logo"))}\n'
+                   f'        {brand_html(rel, p, p.get("card_brand_logo"), p.get("card_brand_logo_alt"))}\n'
                    f'        <h3{title_style}>{title_html}</h3>\n'
                    f'        <p>{html.escape(p["hero_desc"])}</p>\n'
                    f'        <span class="btn {btn}">{L["see_project"]} →</span>\n'
@@ -141,15 +145,15 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
             else:
                 bg_decl = (f"background-color:{bg_color};background-image:{thumb_url};"
                            f"background-size:cover;background-repeat:no-repeat;background-position:{pos} center;")
-            style = f"--card-bg:{bg_color};color:{fg};{bg_decl}"
+            style = f"--card-bg:{bg_color};{cta_var}color:{fg};{bg_decl}"
             cards += f"""
-    <a class="project-card card-bg text-{align} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
+    <a class="project-card card-bg card-{p['slug']} text-{align} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       {content}
     </a>"""
         else:
-            style = f"background:{bg};color:{fg};"
+            style = f"background:{bg};{cta_var}color:{fg};"
             cards += f"""
-    <a class="project-card reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
+    <a class="project-card card-{p['slug']} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       {content}
       <div class="card-visual">
         <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
@@ -206,6 +210,10 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         <div class="feedback-card purple">
           <h3>{L['feedback_title']}</h3>
           <p class="feedback-quote">{L['feedback_text']}</p>
+          <div class="feedback-author">
+            <img src="{rel}assets/img/people/damien-mordaque.png" alt="Damien Mordaque" loading="lazy">
+            <span><strong>Damien Mordaque</strong><em>{L['feedback_author_role']}</em></span>
+          </div>
         </div>
         <div class="feedback-card red"><div class="big-stats">{bigstats}</div></div>
       </div>
