@@ -604,8 +604,13 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 
 @media (min-width: 761px) {
   .case-section { padding-block: clamp(45px, 5.6vw, 120px); }
-  .case-section h2 { margin-bottom: clamp(19px, 2.08vw, 40px); }
-  .case-section .lead { font-size: clamp(12px, .92vw, 18px); }
+  .case-section.container { max-width: 1080px; }
+  .case-section h2 { margin-bottom: clamp(26px, 2.8vw, 52px); }
+  .case-section .lead {
+    max-width: 76ch;
+    font-size: clamp(14px, 1.02vw, 20px);
+    line-height: 1.78;
+  }
   .challenges {
     gap: clamp(22px, 2.8vw, 56px);
     margin-top: clamp(29px, 3.2vw, 64px);
@@ -618,19 +623,26 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .thanks-group h4 {
     font-size: clamp(14px, 1vw, 19px);
   }
-  .challenge p,
-  .task-list li,
-  .insight p {
-    font-size: clamp(12px, .84vw, 16px);
-  }
+  .challenge p, .insight p { font-size: clamp(13px, .9vw, 17px); }
   .role-grid {
     grid-template-columns: 1fr;
-    gap: clamp(29px, 4vw, 80px);
-    max-width: 900px;
+    gap: clamp(34px, 4vw, 76px);
+    max-width: 1080px;
   }
+  .role-grid > .reveal:first-child { max-width: 76ch; }
+  .role-grid > .reveal:nth-child(2) { max-width: 940px; }
+  .task-list li {
+    padding: 16px 0 16px 34px;
+    font-size: clamp(14px, .95vw, 18px);
+    line-height: 1.6;
+  }
+  .task-list + .task-list { margin-top: 42px; }
+  .role-grid h4[style] { margin-top: clamp(38px, 3.6vw, 68px) !important; }
+  .role-grid .toolkit { margin-top: clamp(40px, 4vw, 76px) !important; }
+  .toolkit-chips { gap: 16px; }
   .chip {
-    padding: 10px 19px;
-    font-size: clamp(12px, .76vw, 15px);
+    padding: 11px 21px;
+    font-size: clamp(13px, .82vw, 16px);
   }
   .phase {
     padding: 14px 19px;
@@ -642,6 +654,25 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     padding-bottom: clamp(38px, 4vw, 80px);
   }
   .case-footer-nav a { font-size: clamp(12px, .92vw, 18px); }
+
+  .case-hero.case-sincro-saas.hero-split,
+  .case-hero.case-sincro-mobile.hero-split {
+    min-height: clamp(360px, 30vw, 560px);
+    background-position: center bottom !important;
+  }
+  .case-hero.case-sincro-saas.hero-split .brand,
+  .case-hero.case-sincro-saas.hero-split h1,
+  .case-hero.case-sincro-saas.hero-split p {
+    transform: translateY(clamp(-56px, -2.4vw, -36px));
+  }
+  .case-hero.case-sincro-saas.hero-split p,
+  .case-hero.case-sincro-mobile.hero-split p {
+    display: none;
+  }
+  .case-hero.case-sincro-saas.hero-split h1,
+  .case-hero.case-sincro-mobile.hero-split h1 {
+    text-shadow: 0 10px 28px rgba(21, 34, 92, .22);
+  }
 }
 
 /* ---------- Responsive ---------- */
