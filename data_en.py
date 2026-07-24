@@ -130,13 +130,14 @@ PROJECTS_EN = [
 },
 # ============================================================ SINCRO MOBILE
 {
- "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
- "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4", "hero_align": "right",
+ "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
+ "accent": "#1FA26A", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF", "hero_split": True, "hero_bg_img": "decor-sincro-gradient.png",
  "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
  "card_bg_color": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "card_brand_logo": "logo-sincro-white.png", "card_brand_logo_alt": "logo-sincro.png",
  "hero_title": "The pocket app for consultants on assignment",
  "hero_desc": "Time tracking, activity reports, absences. The best everyday app for all consultants.",
- "hero_img": ("sincro-mobile-hero.png", "Sincro mobile app screens"),
+ "hero_img": ("sincro-mobile-ui.png", "Final Sincro interface synthesis"),
+ "mission_img": ("sincro-mobile-hero.png", "Sincro mobile app screens"),
  "mission": ["Sincro is the mobile app every consultant on assignment has been waiting for. The service lets users enter their activity time quickly and easily, wherever they are. Thanks to its direct connection with the web solution, users can fill in and complete their monthly activity report on the go. It was also essential to simplify the contract-addition request process, making it more accessible than ever, directly with their manager. For managers, Sincro is a powerful tool that lets them not only add new contracts but also validate reports and get a complete overview, including production time, time spent between contracts and absences across their whole team. The solution also measures the TACE (activity rate excluding leave). Our main goal was to simplify the user experience as much as possible and improve communication between these two user groups. Sincro was designed to be as intuitive and efficient as possible, making time and contract management as simple as possible for every user."],
  "challenges": [
    ("Simplify the time-entry experience", ""),

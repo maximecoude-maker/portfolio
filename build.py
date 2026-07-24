@@ -298,7 +298,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
-  <section class="case-hero{align_cls}{split_cls}" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
+  <section class="case-hero case-{p['slug']}{align_cls}{split_cls}" style="background:{p['hero_bg']};color:{fg};{hero_bg_img_css}">
     {brand_html(rel, p)}
     <h1{title_style}>{title_html}</h1>
     <p>{html.escape(p['hero_desc'])}</p>
@@ -311,6 +311,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
   <section class="case-section container">
     <h2 class="reveal">{LAB['mission']}</h2>
     <div class="reveal">{paras(p['mission'])}</div>
+    {img_or_ph(rel, p.get('mission_img'))}
     <div class="challenges{two}">{challenges}</div>
   </section>
 

@@ -131,13 +131,14 @@ PROJECTS_FR = [
 },
 # ============================================================ SINCRO MOBILE
 {
- "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro.png",
- "accent": "#1FA26A", "hero_bg": "#FFFFFF", "hero_fg": "#000000", "hero_title_color": "#6482D4", "hero_align": "right",
+ "slug": "sincro-mobile", "name": "Sincro Mobile", "brand": "Sincro", "brand_logo": "logo-sincro-white.png",
+ "accent": "#1FA26A", "hero_bg": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "hero_fg": "#FFFFFF", "hero_split": True, "hero_bg_img": "decor-sincro-gradient.png",
  "card_bg": True, "card_text": "right", "card_fg": "#FFFFFF", "card_title_color": "#FFFFFF",
  "card_bg_color": "linear-gradient(135deg, #4975E9 0%, #7B61FF 100%)", "card_brand_logo": "logo-sincro-white.png", "card_brand_logo_alt": "logo-sincro.png",
  "hero_title": "L’app de poche des consultants en mission",
  "hero_desc": "Saisie des temps, rapport d’activité, absences. La meilleure app quotidienne pour tous les consultants.",
- "hero_img": ("sincro-mobile-hero.png", "Écrans de l’application mobile Sincro"),
+ "hero_img": ("sincro-mobile-ui.png", "Synthèse des interfaces finales Sincro"),
+ "mission_img": ("sincro-mobile-hero.png", "Écrans de l’application mobile Sincro"),
  "mission": ["Sincro est l'application mobile attendue par tous les consultants en mission. Le service permet aux utilisateurs de saisir facilement et rapidement leur temps d'activité, où qu'ils se trouvent. Grâce à sa connexion directe avec la solution web, les utilisateurs peuvent remplir et compléter leur rapport mensuel d'activité en toute mobilité. De plus, il était essentiel de simplifier la démarche de demande d'ajout de contrat, la rendant plus accessible que jamais, directement auprès de leur manager. Pour les managers, Sincro est un outil puissant qui leur permet non seulement d'ajouter de nouveaux contrats, mais aussi de valider les rapports, d'avoir une vue d'ensemble complète, incluant le temps de production, le temps passé en intercontrat et les absences de toute leur équipe. Cette solution offre également la capacité de mesurer le TACE (Taux d'activité Congés exclus). Notre objectif principal était de simplifier au maximum l'expérience des utilisateurs et d'améliorer la communication entre ces deux groupes d'utilisateurs. Sincro a été conçue pour être aussi intuitive et efficace que possible, rendant la gestion du temps et des contrats aussi simple que possible pour tous les utilisateurs."],
  "challenges": [
    ("Simplifier l’expérience de saisie des temps", ""),
