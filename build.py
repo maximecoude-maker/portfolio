@@ -182,7 +182,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
   <section class="about" id="apropos">
     <div class="container">
       <div class="about-grid">
-        <div class="reveal">
+        <div class="reveal about-intro">
           <div class="quote-block">
             <div class="quote-mark">“</div>
             <h3>{L['about_title']}</h3>
