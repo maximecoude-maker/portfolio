@@ -8,7 +8,7 @@ LANDING_FR = {
     "hero_h1": "Salut à tous ! Je suis Maxime<br>Senior Experience Designer<br>Freelance",
     "hero_sub": "12 ans dans le design<br>Basé en Bretagne",
     "about_title": "Pour me connaître",
-    "about_text": "Designer passionné, j’aime me consacrer et j’accompagne les porteurs de projets innovants. Fort de multiples expériences en ESN comme consultant UX/UI ou en Startup comme Senior Product Designer. Je mets tout en oeuvre pour vous apporter des solutions rapides et concrètes, à la fois simples, ergonomiques et fonctionnelles tout en répondant aux contraintes business et marketing que vous rencontrez.",
+    "about_text": "Product Designer Senior fort de plus de 10 ans d’expérience, je conçois des parcours complexes dans la banque, le paiement et le SaaS. J’allie vision produit, excellence UX/UI et compréhension des enjeux business pour transformer des sujets ambitieux en expériences simples, ergonomiques et fonctionnelles. J’avance en étroite collaboration avec les équipes produit, tech et métier, et j’intègre aujourd’hui l’IA générative et le vibe coding à ma pratique, sur des missions Product Design Senior et Lead.",
     "stats": [("💼", "12 ans"), ("📱", "Mobile"), ("🖥️", "Saas")],
     "offers_title": "Ce que je peux vous apporter ?",
     "offers": [

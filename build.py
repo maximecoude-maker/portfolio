@@ -75,16 +75,18 @@ def img_or_ph(rel, img, tall=True):
     t = ' data-tall="true"' if tall else ''
     return f'<figure class="fig"><img src="{rel}assets/img/{src}" alt="{html.escape(alt)}" data-ph="{html.escape(alt)} — exporter depuis Figma : {src}"{t} loading="lazy"><figcaption>{html.escape(alt)}</figcaption></figure>'
 
-# Icônes toolkit disponibles dans assets/img/icons/
+# Icônes toolkit (assets transparents à la racine assets/img/)
 TOOL_ICONS = {
-    "Miro": "miro", "Figma": "figma", "Interview": "interview",
-    "Card sorting": "card-sorting", "Survey": "survey", "Board": "board",
-    "Sketch": "sketch", "Zeplin": "zeplin", "After Effects": "after-effects",
+    "Miro": "miro", "Figma": "Figma", "Interview": "Interview",
+    "Card sorting": "CardSorting", "Survey": "Survey", "Board": "Notes",
+    "Sketch": "sketch", "Zeplin": "zepplin", "After Effects": "Aftereffect",
+    "ZeroHeight": "Zeroheight", "Maze": "maze", "Eye Tracking": "Eyetracking",
+    "Illustrator": "illlustrator",
 }
 
 def chip_html(rel, t):
     icon = TOOL_ICONS.get(t)
-    icon_tag = f'<img src="{rel}assets/img/icons/{icon}.png" alt="" class="chip-icon" loading="lazy">' if icon else ""
+    icon_tag = f'<img src="{rel}assets/img/{icon}.png" alt="" class="chip-icon" loading="lazy">' if icon else ""
     return f'<span class="chip">{icon_tag}{html.escape(t)}</span>'
 
 # Photos d'équipe disponibles dans assets/img/people/

@@ -341,7 +341,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   background: var(--grey-1); border: 1px solid var(--grey-2);
   font-weight: 600; font-size: clamp(13px, 0.95vw, 18px);
 }
-.chip-icon { width: 22px; height: 22px; object-fit: contain; flex: none; border-radius: 22%; }
+.chip-icon { width: 22px; height: 22px; object-fit: contain; flex: none; }
 
 .phases {
   display: flex; flex-wrap: wrap; gap: 14px;
