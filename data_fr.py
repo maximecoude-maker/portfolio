@@ -45,7 +45,7 @@ PROJECTS_FR = [
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA", "brand_logo": "logo-mma.png",
- "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left",
+ "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_split": True,
  "card_desc_only": False,
  "hero_title": "Faciliter l'assurance pour faciliter la vie",
  "hero_desc": "Remboursements, litiges, relations avec les agents. Découvrez l’ensemble du process design pour rendre encore plus simple la vie des assurés MMA.",

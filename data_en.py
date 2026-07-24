@@ -45,7 +45,7 @@ PROJECTS_EN = [
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA", "brand_logo": "logo-mma.png",
- "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_align": "left",
+ "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_split": True,
  "hero_title": "Making insurance easier to make life easier",
  "hero_desc": "Reimbursements, claims, relationships with agents. Discover the entire design process that made life even simpler for MMA policyholders.",
  "hero_img": ("mma-hero.png", "MMA mobile app mockups"),
