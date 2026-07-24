@@ -669,6 +669,13 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .case-hero.case-sincro-mobile.hero-split p {
     display: none;
   }
+  .case-hero.case-sincro-mobile.hero-split .brand,
+  .case-hero.case-sincro-mobile.hero-split h1 {
+    transform: translateX(clamp(48px, 5.2vw, 96px));
+  }
+  .case-hero.case-sincro-mobile.hero-split .hero-visual {
+    transform: translateX(clamp(-72px, -3.6vw, -44px));
+  }
   .case-hero.case-sincro-saas.hero-split h1,
   .case-hero.case-sincro-mobile.hero-split h1 {
     text-shadow: 0 10px 28px rgba(21, 34, 92, .22);
