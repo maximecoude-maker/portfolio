@@ -13,6 +13,7 @@ assets/css/style.css       ← Design system (Montserrat/Gilroy, #4975E9)
 assets/js/main.js          ← Placeholders d'images + animations au scroll
 assets/img/                ← À remplir avec les exports Figma (voir IMAGES.md)
 build.py + data_fr.py + data_en.py  ← Générateur : modifie les textes ici puis `python3 build.py`
+CLAUDE.md + docs/          ← Mémoire projet durable
 ```
 
 ## Déployer sur Vercel
@@ -48,6 +49,14 @@ proche). Si tu possèdes les fichiers Gilroy (.woff2), dépose-les dans
 Édite `data_fr.py` / `data_en.py` puis relance `python3 build.py` — toutes les
 pages sont régénérées. (Tu peux aussi éditer les .html directement, mais le
 générateur évite de répéter 14 fois la même correction.)
+
+## Mémoire projet
+
+- `CLAUDE.md` : contexte court à lire au démarrage d'une session.
+- `docs/portfolio-context.md` : architecture, conventions, décisions UX/UI.
+- `docs/tasks.md` : terminé, en cours, prochaines actions.
+- `docs/assets.md` : conventions et points de vigilance sur les images.
+- `docs/deployment.md` : GitHub, Vercel, domaine Hostinger.
 
 ## À compléter (repéré dans le Figma)
 
