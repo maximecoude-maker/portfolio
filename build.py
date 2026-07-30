@@ -109,12 +109,12 @@ def person_html(rel, accent, n):
     slug = people_slug(n)
     initials = "".join(w[0] for w in n.split()[:2]).upper()
     esc = html.escape(n)
-    # Photo attendue en people/<slug>.png ; repli auto sur les initiales si absente
-    return (f'<div class="person">'
-            f'<img class="pp" src="{rel}assets/img/people/{slug}.png" alt="{esc}" loading="lazy" '
-            f'onerror="const s=document.createElement(\'span\');s.className=\'pp\';'
-            f's.style.background=\'{accent}\';s.textContent=\'{initials}\';this.replaceWith(s)">'
-            f'{esc}</div>')
+    photo = os.path.join(ROOT, "assets", "img", "people", f"{slug}.png")
+    if os.path.exists(photo):
+        avatar = f'<img class="pp" src="{rel}assets/img/people/{slug}.png" alt="{esc}" loading="lazy">'
+    else:
+        avatar = f'<span class="pp" style="background:{accent}">{html.escape(initials)}</span>'
+    return f'<div class="person">{avatar}{esc}</div>'
 
 # ------------------------------------------------------------------
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir):

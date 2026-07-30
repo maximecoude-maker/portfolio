@@ -35,9 +35,11 @@ Slugs projet :
 - Garder les noms stables : ils sont references dans `build.py`, `data_fr.py` et `data_en.py`.
 - Ne pas committer `.DS_Store`.
 - Documenter tout nouvel asset important dans `IMAGES.md` ou ce fichier.
+- Pour les photos de remerciements, utiliser le slug genere depuis le nom :
+  minuscules, sans accents, espaces remplaces par des tirets.
+  Exemple : `Rémi Joyaux` -> `remi-joyaux.png`.
 
 ## Points a verifier
 
 - `IMAGES.md` est partiellement obsolete : plusieurs assets listes existent deja, d'autres nouveaux assets ne sont pas documentes.
-- Les logos clients generiques `logo-audencia.png`, `logo-sncf.png`, `logo-universite-de-nantes.png`, `logo-zodiac.png`, `logo-beteam.png` semblent encore absents.
-- `mma-wireframe.png`, `mma-concurrence.png` et `sincro-saas-sitemap.png` sont listes dans `IMAGES.md` mais doivent etre confirmes dans les assets reels.
+- `farid-sayah.png` n'est pas present a date ; le site affiche donc ses initiales automatiquement.
