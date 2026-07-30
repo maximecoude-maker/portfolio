@@ -28,7 +28,6 @@
 
 ## A corriger
 
-- Remplacer ou supprimer le lien Slack generique dans le footer.
 - Verifier les liens sociaux definitifs.
 - Clarifier la donnee MMA `x %` pour les telechargements, ou la retirer.
 - Revoir les assets manquants ou obsoletes dans `IMAGES.md`.

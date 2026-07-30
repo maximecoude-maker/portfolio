@@ -66,5 +66,4 @@ générateur évite de répéter 14 fois la même correction.)
 - La page « CA » (Crédit Agricole) du Figma contient encore le contenu MMA
   (brouillon) et n'est pas reliée à la landing : elle n'a pas été générée.
   Dis-moi quand le contenu sera prêt et on l'ajoutera en 2 minutes.
-- Les liens sociaux du footer (LinkedIn, Slack, WhatsApp) pointent vers des
-  URL génériques — remplace-les dans `build.py` (bloc SOCIALS).
+- Vérifier les liens sociaux définitifs dans `build.py` (`SOCIAL_LINKS`).

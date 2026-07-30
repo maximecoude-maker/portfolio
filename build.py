@@ -8,7 +8,6 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 
 SOCIAL_LINKS = [
     ("https://www.linkedin.com/in/maximecoude", "LinkedIn", "icon-linkedin.png", "_blank"),
-    ("https://join.slack.com", "Slack", "icon-slack.png", "_blank"),
     ("https://wa.me/33675434488", "WhatsApp", "icon-whatsapp.png", "_blank"),
     ("mailto:maxime.coude@gmail.com", "Envoyez-moi un message", "icon-message.png", ""),
 ]
