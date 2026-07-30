@@ -82,7 +82,7 @@ PROJECTS_FR = [
    ("Prototype", ["__PROTO__"], None),
  ],
  "impacts_text": "L’application étant en cours de développement je ne suis pas en mesure de donner plus d’informations sur l’impact de notre travail. Les données seront actualisées prochainement.",
- "impacts": [("4,7", "Note sur les stores"), ("x %", "Téléchargements"), ("+100k", "Utilisateurs actifs"), ("81 %", "Satisfaction utilisateur"), ("85-15", "Consultation Mobile vs Web")],
+ "impacts": [("4,7", "Note sur les stores"), ("+354 %", "Téléchargements"), ("+100k", "Utilisateurs actifs"), ("81 %", "Satisfaction utilisateur"), ("85-15", "Consultation Mobile vs Web")],
  "thanks": [
    ("Merci à toute l’équipe MMA", ["Christophe Houze", "Virginie Mahé", "Rémi Joyaux", "Maxime Gourloo", "Lucie Chevrier", "Dorian Macerot"]),
    ("Merci également aux externes", ["Chris Le Guen", "Riham Dir Akilian"]),

@@ -127,6 +127,19 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .about-stats .emoji { font-size: clamp(36px, 3.3vw, 64px); line-height: 1; }
 .about-stats .label { margin-top: 14px; font-weight: 600; font-size: clamp(14px, 1vw, 20px); }
 
+/* Pour me connaître : citation + stats dans une carte blanche (toutes tailles) */
+.about-intro {
+  background: #fff; border-radius: var(--radius-card);
+  padding: clamp(28px, 3vw, 48px);
+  box-shadow: 0 12px 40px rgba(10, 10, 10, .05);
+  align-self: start;
+}
+.about-intro .quote-block { padding: 0; }
+.about-intro .about-stats {
+  margin-top: clamp(28px, 3vw, 40px); padding: clamp(28px, 3vw, 40px) 0 0;
+  border-top: 1px solid var(--grey-2);
+}
+
 .offers h3.offers-title {
   font-family: var(--font-title); font-size: clamp(24px, 1.9vw, 37px);
   margin-bottom: clamp(28px, 3.8vw, 72px);
@@ -148,7 +161,9 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .offer p { font-size: clamp(14px, 0.95vw, 18px); color: #3d3d44; }
 
 /* ---------- Cartes projets (thumbnails) ---------- */
-.projects { display: grid; gap: clamp(40px, 8.3vw, 160px); padding-bottom: clamp(64px, 8vw, 160px); }
+.projects { display: grid; gap: clamp(40px, 8.3vw, 160px); padding-bottom: clamp(64px, 8vw, 160px); max-width: 1160px; margin-inline: auto; width: 100%; }
+/* Logos des cards projets : doublés (~+100%) */
+.project-card .brand-logo { height: clamp(44px, 3.6vw, 66px); }
 .project-card {
   border-radius: var(--radius-card);
   overflow: hidden;
@@ -434,6 +449,10 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   align-items: center; text-align: left; padding-bottom: 0;
 }
 .case-hero.hero-split .brand { grid-area: 1 / 1; justify-content: flex-start; }
+/* Logo aligné à gauche avec le texte (le margin auto par défaut le recentrait) */
+.case-hero.hero-split .brand-logo { margin: 0; }
+/* MMA : mockup 2 smartphones affiché entièrement, sans crop */
+.case-hero.case-mma .hero-visual img { object-fit: contain; }
 .case-hero.hero-split h1 { grid-area: 2 / 1; margin: 0; }
 .case-hero.hero-split p { grid-area: 3 / 1; margin: clamp(16px, 2vw, 28px) 0 0; }
 .case-hero.hero-split .hero-visual {
@@ -562,7 +581,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .impact { text-align: center; }
 .impact .v {
   font-family: var(--font-title); font-weight: 800;
-  font-size: clamp(44px, 4.7vw, 90px); line-height: 1; color: var(--blue);
+  font-size: clamp(44px, 4.7vw, 90px); line-height: 1; color: var(--black);
 }
 .impact .l { margin-top: 14px; font-size: clamp(13px, 0.95vw, 18px); color: #3d3d44; }
 

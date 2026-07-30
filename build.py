@@ -89,12 +89,11 @@ def chip_html(rel, t):
     icon_tag = f'<img src="{rel}assets/img/{icon}.png" alt="" class="chip-icon" loading="lazy">' if icon else ""
     return f'<span class="chip">{icon_tag}{html.escape(t)}</span>'
 
-# Photos d'équipe disponibles dans assets/img/people/
-PEOPLE_PHOTOS = {
-    "Damien Mordaque": "damien-mordaque",
-    "Kevin Mouzet": "kevin-mouzet",
-    "Emile Leenhardt": "emile-leenhardt",
-}
+# Photos de remerciements : convention people/<slug>.png (sans accents ni espaces)
+def people_slug(n):
+    import unicodedata
+    s = unicodedata.normalize("NFKD", n).encode("ascii", "ignore").decode().lower()
+    return "-".join(s.split())
 
 def brand_html(rel, p, logo=None, logo_alt=None):
     logo = logo or p.get("brand_logo")
@@ -108,13 +107,15 @@ def brand_html(rel, p, logo=None, logo_alt=None):
     return f'<span class="brand">{imgs}</span>'
 
 def person_html(rel, accent, n):
-    slug = PEOPLE_PHOTOS.get(n)
-    if slug:
-        avatar = f'<img class="pp" src="{rel}assets/img/people/{slug}.png" alt="{html.escape(n)}" loading="lazy">'
-    else:
-        initials = "".join(w[0] for w in n.split()[:2]).upper()
-        avatar = f'<span class="pp" style="background:{accent}">{html.escape(initials)}</span>'
-    return f'<div class="person">{avatar}{html.escape(n)}</div>'
+    slug = people_slug(n)
+    initials = "".join(w[0] for w in n.split()[:2]).upper()
+    esc = html.escape(n)
+    # Photo attendue en people/<slug>.png ; repli auto sur les initiales si absente
+    return (f'<div class="person">'
+            f'<img class="pp" src="{rel}assets/img/people/{slug}.png" alt="{esc}" loading="lazy" '
+            f'onerror="const s=document.createElement(\'span\');s.className=\'pp\';'
+            f's.style.background=\'{accent}\';s.textContent=\'{initials}\';this.replaceWith(s)">'
+            f'{esc}</div>')
 
 # ------------------------------------------------------------------
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
@@ -275,7 +276,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
 
     impacts = ""
     if p["impacts"]:
-        cells = "".join(f'<div class="impact"><div class="v" style="color:{p["accent"]}">{html.escape(v)}</div><div class="l">{html.escape(l)}</div></div>' for v, l in p["impacts"])
+        cells = "".join(f'<div class="impact"><div class="v">{html.escape(v)}</div><div class="l">{html.escape(l)}</div></div>' for v, l in p["impacts"])
         intro = f"<p class='lead'>{html.escape(p['impacts_text'])}</p>" if p["impacts_text"] else ""
         impacts = f"""
   <section class="case-section container">

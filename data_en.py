@@ -81,7 +81,7 @@ PROJECTS_EN = [
    ("Prototype", ["__PROTO__"], None),
  ],
  "impacts_text": "As the app is still in development, I am not able to share more information about the impact of our work. The data will be updated soon.",
- "impacts": [("4.7", "Store rating"), ("x %", "Downloads"), ("+100k", "Active users"), ("81 %", "User satisfaction"), ("85-15", "Mobile vs Web usage")],
+ "impacts": [("4.7", "Store rating"), ("+354 %", "Downloads"), ("+100k", "Active users"), ("81 %", "User satisfaction"), ("85-15", "Mobile vs Web usage")],
  "thanks": [
    ("Thanks to the whole MMA team", ["Christophe Houze", "Virginie Mahé", "Rémi Joyaux", "Maxime Gourloo", "Lucie Chevrier", "Dorian Macerot"]),
    ("Thanks also to the external partners", ["Chris Le Guen", "Riham Dir Akilian"]),
