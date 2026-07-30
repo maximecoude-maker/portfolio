@@ -9,7 +9,7 @@ LANDING_EN = {
     "hero_h1": "Hi There! I’m Maxime<br>Senior Experience Designer<br>Freelance",
     "hero_sub": "12 years in design<br>Vannes based",
     "about_title": "About me",
-    "about_text": "Senior Product Designer with 10+ years of experience, I craft complex journeys across banking, payment and SaaS. I blend product vision, UX/UI excellence and a strong grasp of business stakes to turn ambitious challenges into simple, ergonomic and functional experiences. I work in close collaboration with product, tech and business teams, and now bring generative AI and vibe coding into my practice, on Senior and Lead Product Design engagements.",
+    "about_text": "Senior Product Designer with over 10 years of experience, I imagine and design digital products for complex challenges, mainly across banking, payment and SaaS.<br><br>I enjoy turning technical and business topics into simple, intuitive and useful experiences, balancing user needs with business goals. Day to day, I work closely with Product, Tech and Business teams to help the best solutions emerge.<br><br>Today, I fully integrate generative AI and vibe coding into the way I design and prototype. These new tools help me accelerate exploration, test ideas quickly and create more value, while keeping a human-centered approach and a strong focus on experience quality.",
     "stats": [("💼", "12 years"), ("📱", "Mobile"), ("🖥️", "Saas")],
     "offers_title": "What can I offer you?",
     "offers": [
