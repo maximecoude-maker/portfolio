@@ -417,8 +417,12 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 }
 
 @media (min-width: 1024px) {
+  .project-card:not(.card-bg) {
+    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+  }
+
   .project-card.card-bg:not(.text-center) .card-content {
-    width: min(448px, 42%);
+    width: 40%;
   }
 
   .desktop-break {
@@ -431,6 +435,20 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 
   .project-card.card-sincro-mobile {
     background-position: calc(0% - 50px) center, center !important;
+  }
+
+  .project-card.card-sincro-saas {
+    background-size: auto 92%, cover !important;
+  }
+
+  .project-card.card-mma .card-visual img {
+    width: 82%;
+    max-height: 90%;
+  }
+
+  .project-card.card-afnor .card-visual img {
+    width: 96%;
+    max-height: 84%;
   }
 
   .project-card.card-hello-promo {
