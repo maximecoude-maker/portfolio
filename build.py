@@ -38,6 +38,8 @@ def head(title, css_rel, lang):
 
 def nav(L, rel, lang_href, home_href):
     n = L["nav"]
+    middle_link = (f'<a href="https://www.linkedin.com/in/maxime-coude-3a493865/" target="_blank" rel="noopener">{n["linkedin"]}</a>'
+                   if n.get("linkedin") else f'<a href="{home_href}#apropos">{n["about"]}</a>')
     return f"""
 <header class="nav-wrap">
   <nav class="nav">
@@ -47,7 +49,7 @@ def nav(L, rel, lang_href, home_href):
     </button>
     <div class="nav-links" id="nav-links">
       <a href="{home_href}#projets">{n['projects']}</a>
-      <a href="{home_href}#apropos">{n['about']}</a>
+      {middle_link}
       <a href="{home_href}#contact">{n['contact']}</a>
       <a class="nav-lang" href="{lang_href}">{L['other_lang_label']}</a>
     </div>
@@ -134,7 +136,17 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
                    f'        <p>{html.escape(p["hero_desc"])}</p>\n'
                    f'        <span class="btn {btn}">{L["see_project"]} →</span>\n'
                    f'      </div>')
-        if p.get("card_bg"):
+        if p.get("card_variant") == "split-visual-left":
+            bg_color = p.get("card_bg_color", bg)
+            style = f"background:{bg_color};{cta_var}color:{fg};"
+            cards += f"""
+    <a class="project-card card-split-left card-{p['slug']} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
+      <div class="card-visual">
+        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
+      </div>
+      {content}
+    </a>"""
+        elif p.get("card_bg"):
             align = p.get("card_text", "left")
             pos = {"left": "right", "right": "left", "center": "center"}[align]
             bg_color = p.get("card_bg_color", bg)
@@ -185,6 +197,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
     <img class="avatar" src="{rel}assets/img/avatar.png" alt="Avatar 3D de Maxime" data-ph="avatar 3D du hero (avatar.png)" data-tall="true">
   </section>
 
+  <div class="landing-body">
   <section class="about" id="apropos">
     <div class="container">
       <div class="about-grid">
@@ -221,6 +234,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
       </div>
     </div>
   </section>
+  </div>
 
   <section class="clients container">
     <h2 class="reveal">{L['clients_title']}</h2>
