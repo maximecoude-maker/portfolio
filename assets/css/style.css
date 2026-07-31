@@ -237,9 +237,22 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 }
 .feedback-card.purple { background: linear-gradient(157deg, #0094FF 0%, #8B4AF0 100%); }
 .feedback-card.red { background: linear-gradient(167deg, #D80D0D 0%, #B71D1D 100%); }
+.feedback-card.red {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .feedback-card h3 { font-size: clamp(26px, 2.5vw, 48px); margin-bottom: 24px; }
 .feedback-quote { font-size: clamp(15px, 1.15vw, 22px); line-height: 1.7; }
-.big-stats { display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 48px); justify-content: center; height: 100%; }
+.big-stats {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.5vw, 48px);
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
 .big-stats .v { font-family: var(--font-title); font-weight: 800; font-size: clamp(48px, 5.2vw, 100px); line-height: 1; }
 .big-stats .l { font-size: clamp(14px, 1.05vw, 20px); opacity: .9; margin-top: 8px; }
 
@@ -489,12 +502,20 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   }
 
   .project-card.card-sincro-saas {
-    background-size: auto 92%, cover !important;
+    background-size: auto 100%, cover !important;
   }
 
   .project-card.card-mma .card-visual img {
-    width: 82%;
-    max-height: 90%;
+    height: 100%;
+    max-height: none;
+    object-position: right bottom;
+    width: auto;
+  }
+
+  .project-card.card-sincro-mobile.card-split-left .card-visual img {
+    height: 100%;
+    max-height: none;
+    width: auto;
   }
 
   .project-card.card-afnor .card-visual img {
