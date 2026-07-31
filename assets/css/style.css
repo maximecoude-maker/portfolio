@@ -168,7 +168,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .project-card {
   border-radius: var(--radius-card);
   overflow: hidden;
-  display: grid; grid-template-columns: 1.05fr 1fr;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   height: clamp(380px, 47.5vw, 700px);
   max-height: 700px;
   min-height: 0;
@@ -192,7 +192,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .brand-logo-alt { display: none; }
 
 .project-card.card-split-left {
-  grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .project-card.card-split-left .card-visual {
   align-items: flex-end;
@@ -214,10 +214,10 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 
 /* ---------- Cartes à visuel de fond ---------- */
 .project-card.card-bg { display: flex; align-items: center; }
-.project-card.card-bg .card-content { width: min(560px, 48%); }
+.project-card.card-bg .card-content { width: 50%; }
 .project-card.card-bg.text-right { justify-content: flex-end; }
 .project-card.card-bg.text-center { justify-content: center; text-align: center; }
-.project-card.card-bg.text-center .card-content { width: min(760px, 66%); align-items: center; }
+.project-card.card-bg.text-center .card-content { width: min(720px, 50%); align-items: center; }
 .project-card.card-bg.text-center .btn { align-self: center; }
 .desktop-break { display: none; }
 .mobile-space { display: inline; }
@@ -435,7 +435,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     background-position: left center, center !important;
   }
   .project-card.card-bg.card-sincro-mobile .card-content {
-    width: min(448px, 42%);
+    width: 50%;
   }
   .project-card.card-afnor .card-visual {
     align-items: center;
@@ -451,7 +451,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     background-position: 112% center, center !important;
   }
   .project-card.card-hello-promo .card-content {
-    width: min(410px, 40%);
+    width: 50%;
   }
 
   .feedbacks-grid { gap: clamp(22px, 6.64vw, 128px); }
@@ -482,11 +482,11 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 
 @media (min-width: 1024px) {
   .project-card:not(.card-bg):not(.card-split-left) {
-    grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-card.card-split-left {
-    grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-card.card-sincro-mobile.card-split-left {
@@ -503,7 +503,11 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   }
 
   .project-card.card-bg:not(.text-center) .card-content {
-    width: 40%;
+    width: 50%;
+  }
+
+  .project-card.card-bg.text-center .card-content {
+    width: min(720px, 50%);
   }
 
   .desktop-break {
@@ -523,15 +527,15 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   }
 
   .project-card.card-mma .card-visual img {
-    height: 100%;
+    height: 94%;
     max-height: none;
     object-position: right bottom;
     width: auto;
   }
 
   .project-card.card-afnor .card-visual img {
-    width: 96%;
-    max-height: 84%;
+    width: 94%;
+    max-height: 82%;
   }
 
   .project-card.card-hello-promo {
