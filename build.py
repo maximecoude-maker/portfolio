@@ -125,7 +125,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         fg = p.get("card_fg", p["hero_fg"])
         title_color = p.get("card_title_color", p.get("hero_title_color"))
         btn = "btn-light" if fg == "#FFFFFF" else "btn-dark"
-        title_html = p.get("hero_title_html") or html.escape(p['hero_title'])
+        title_html = p.get("card_title_html") or p.get("hero_title_html") or html.escape(p['hero_title'])
         title_style = f' style="color:{title_color}"' if title_color else ""
         cta_var = f"--cta:{p['card_cta_color']};" if p.get("card_cta_color") else ""
         content = (f'<div class="card-content">\n'

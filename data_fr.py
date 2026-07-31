@@ -48,6 +48,7 @@ PROJECTS_FR = [
  "accent": "#1D7AD9", "hero_bg": "#FFFFFF", "hero_fg": "#2B097C", "hero_title_color": "#2B097C", "hero_split": True,
  "card_desc_only": False,
  "hero_title": "Faciliter l'assurance pour faciliter la vie",
+ "card_title_html": "Faciliter l'assurance<span class=\"mobile-space\"> </span><br class=\"desktop-break\">pour faciliter la vie",
  "hero_desc": "Remboursements, litiges, relations avec les agents. Découvrez l’ensemble du process design pour rendre encore plus simple la vie des assurés MMA.",
  "hero_img": ("mma-hero.png", "Mockups de l’application mobile MMA"),
  "mission": ["En tant que Senior Product Designer, j’ai dirigé la création de la toute première application mobile MMA, un acteur majeur de l'assurance en France, j'ai été confronté à un défi passionnant et complexe. Notre objectif était de créer un produit avec une expérience utilisateur exceptionnelle en partant de zéro, le tout en collaborant étroitement avec les équipes produits, marketing et de développement internes. L'une des principales priorités était de concevoir une application qui répondrait aux besoins diversifiés des utilisateurs et clients de MMA dans un large éventail de domaines, notamment la santé, l'habitation, l'automobile, la protection juridique, la chasse, l'assurance scolaire, les accidents de la vie et la multirisque. Pour ce faire, nous avons dû relever plusieurs défis clés :"],

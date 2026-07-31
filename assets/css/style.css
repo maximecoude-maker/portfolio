@@ -195,6 +195,8 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .project-card.card-bg.text-center { justify-content: center; text-align: center; }
 .project-card.card-bg.text-center .card-content { width: min(760px, 66%); align-items: center; }
 .project-card.card-bg.text-center .btn { align-self: center; }
+.desktop-break { display: none; }
+.mobile-space { display: inline; }
 @media (max-width: 760px) {
   .project-card.card-bg .card-content { width: 100%; }
   .project-card.card-bg.text-center .card-content { width: 100%; }
@@ -365,7 +367,7 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     background-position: right center, center !important;
   }
   .project-card.card-sincro-mobile {
-    background-size: auto 98%, cover !important;
+    background-size: auto 100%, cover !important;
     background-position: left center, center !important;
   }
   .project-card.card-sincro-mobile .card-content {
@@ -412,6 +414,28 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     padding-bottom: clamp(38px, 4.8vw, 96px);
   }
   .contact .avatar-corner { width: clamp(112px, 20.8vw, 407px); }
+}
+
+@media (min-width: 1024px) {
+  .project-card.card-bg:not(.text-center) .card-content {
+    width: min(448px, 42%);
+  }
+
+  .desktop-break {
+    display: inline;
+  }
+
+  .mobile-space {
+    display: none;
+  }
+
+  .project-card.card-sincro-mobile {
+    background-position: calc(0% - 50px) center, center !important;
+  }
+
+  .project-card.card-hello-promo {
+    background-position: calc(100% + 100px) bottom, center !important;
+  }
 }
 
 /* ============================================================
@@ -849,7 +873,14 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
   .project-card .card-content .btn { align-self: center; }
 
   /* Sincro App : carte sur fond blanc, titre bleu, texte noir, logo couleur */
-  .project-card.card-sincro-mobile { background: #fff !important; color: #000 !important; }
+  .project-card.card-sincro-mobile {
+    background-color: #fff !important;
+    background-image: url("../img/sincro-mobile-thumb.png") !important;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    background-size: auto 100% !important;
+    color: #000 !important;
+  }
   .project-card.card-sincro-mobile h3 { color: #6482D4 !important; }
   .project-card.card-sincro-mobile .btn { background: var(--black) !important; color: #fff !important; }
   .project-card.card-sincro-mobile .brand-logo-main { display: none; }
