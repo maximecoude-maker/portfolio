@@ -485,6 +485,19 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     grid-template-columns: minmax(0, 60%) minmax(0, 40%);
   }
 
+  .project-card.card-sincro-mobile.card-split-left {
+    background-color: #fff !important;
+    background-image: url("../img/sincro-mobile-thumb.png") !important;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    background-size: auto 100% !important;
+    grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+  }
+
+  .project-card.card-sincro-mobile.card-split-left .card-visual img {
+    opacity: 0;
+  }
+
   .project-card.card-bg:not(.text-center) .card-content {
     width: 40%;
   }
@@ -509,12 +522,6 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
     height: 100%;
     max-height: none;
     object-position: right bottom;
-    width: auto;
-  }
-
-  .project-card.card-sincro-mobile.card-split-left .card-visual img {
-    height: 100%;
-    max-height: none;
     width: auto;
   }
 
