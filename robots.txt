@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maximecoude.com/sitemap.xml

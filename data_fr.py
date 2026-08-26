@@ -3,9 +3,10 @@
 
 LANDING_FR = {
     "lang": "fr", "other_lang_label": "🇬🇧 EN",
-    "title": "Maxime COUDE — Senior Experience Designer Freelance",
+    "title": "Maxime COUDE — Senior Product Designer Freelance",
+    "meta_desc": "Maxime Coudé, Senior Product Designer UX/UI freelance basé en Bretagne. 12 ans d'expérience sur des produits banque, assurance et SaaS B2B. Découvrez mes études de cas.",
     "nav": {"name": "Maxime COUDE", "projects": "Projets", "linkedin": "Linkedin", "contact": "Contactez-moi"},
-    "hero_h1": "Salut à tous ! Je suis Maxime<br>Senior Experience Designer<br>Freelance",
+    "hero_h1": "Salut à tous ! Je suis Maxime<br>Senior Product Designer<br>Freelance",
     "hero_sub": "12 ans dans le design<br>Basé en Bretagne",
     "about_title": "Pour me connaître",
     "about_text": "Senior Product Designer avec plus de 12 ans d’expérience, je conçois des produits digitaux web et mobile pour des environnements exigeants : banque, assurance et SaaS B2B.<br><br>Je relie vision produit, enjeux business, contraintes techniques et besoins utilisateurs pour créer des expériences simples et cohérentes, en intégrant l’IA générative et le vibe coding avec une approche centrée utilisateur.",

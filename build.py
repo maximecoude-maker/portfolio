@@ -1,10 +1,22 @@
 # -*- coding: utf-8 -*-
 """Générateur du portfolio statique — python3 build.py"""
-import os, html
+import os, re, html
 from data_fr import LANDING_FR, PROJECTS_FR, CASE_LABELS_FR
 from data_en import LANDING_EN, PROJECTS_EN, CASE_LABELS_EN
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+BASE = "https://maximecoude.com/"          # domaine canonique
+OG_IMAGE = BASE + "assets/img/og-cover.jpg"  # aperçu de partage (jpg, non réécrit en webp)
+
+# Toutes les images raster sont servies en .webp (générées à part, PNG conservés en source).
+# On réécrit les références .png -> .webp au moment d'écrire la page (bijection 1:1).
+_PNG_REF = re.compile(r'((?:\.\./)*assets/img/[\w\-./]+?)\.png')
+
+def write_page(path, page):
+    page = _PNG_REF.sub(r'\1.webp', page)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(page)
 
 SOCIAL_LINKS = [
     ("https://www.linkedin.com/in/maximecoude", "LinkedIn", "icon-linkedin.png", "_blank"),
@@ -20,14 +32,31 @@ def socials_html(rel):
                 f'<img src="{rel}assets/img/{icon}" alt="{label}"></a>\n')
     return out
 
-def head(title, css_rel, lang):
+def head(title, css_rel, lang, description, canonical, alternates, og_type="website"):
+    desc = html.escape(description, quote=True)
+    alts = "".join(
+        f'\n<link rel="alternate" hreflang="{hl}" href="{href}">' for hl, href in alternates)
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
-<meta name="description" content="Maxime COUDE — Product Designer UX/UI Freelance">
+<meta name="description" content="{desc}">
+<link rel="canonical" href="{canonical}">{alts}
+<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="Maxime Coudé">
+<meta property="og:locale" content="{'fr_FR' if lang == 'fr' else 'en_US'}">
+<meta property="og:title" content="{html.escape(title, quote=True)}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(title, quote=True)}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{OG_IMAGE}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -119,7 +148,7 @@ def person_html(rel, accent, n):
     return f'<div class="person">{avatar}{esc}</div>'
 
 # ------------------------------------------------------------------
-def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
+def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, alternates):
     cards = ""
     for p in projects:
         bg = p["hero_bg"]
@@ -187,7 +216,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
         return "-".join(s.split())
     clients = "".join(f'<div class="client-logo" title="{c}"><img src="{rel}assets/img/logo-{slug(c)}.png" alt="{c}" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{{textContent:\'{c}\'}}))"></div>' for c in L["clients"])
 
-    page = head(L["title"], rel, L["lang"])
+    page = head(L["title"], rel, L["lang"], L["meta_desc"], canonical, alternates)
     page += nav(L, rel, lang_href, "index.html" if rel == "" else "../index.html")
     page += f"""
 <main>
@@ -242,10 +271,10 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir):
   </section>
 </main>"""
     page += contact(L, rel)
-    with open(out_path, "w", encoding="utf-8") as f: f.write(page)
+    write_page(out_path, page)
 
 # ------------------------------------------------------------------
-def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_dir):
+def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_dir, canonical, alternates):
     fg = p["hero_fg"]
     hero_bg_img_css = ""
     if p.get("hero_bg_img"):
@@ -308,7 +337,14 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     align_cls = f' align-{p["hero_align"]}' if p.get("hero_align") else ""
     split_cls = ' hero-split' if p.get("hero_split") else ""
 
-    page = head(f"{p['name']} — {L['title']}", rel, L["lang"])
+    intro = html.unescape(re.sub("<[^>]+>", " ", p["hero_desc"]))
+    if L["lang"] == "fr":
+        case_desc = f"{p['name']} · étude de cas Product Design UX/UI par Maxime Coudé. {intro}"
+    else:
+        case_desc = f"{p['name']} · Product Design UX/UI case study by Maxime Coudé. {intro}"
+    case_desc = case_desc[:157].rstrip() + "…" if len(case_desc) > 158 else case_desc
+    page = head(f"{p['name']} — {L['title']}", rel, L["lang"], case_desc, canonical, alternates,
+                og_type="article")
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
@@ -373,29 +409,67 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
   </div>
 </main>"""
     page += contact(L, rel)
-    with open(out_path, "w", encoding="utf-8") as f: f.write(page)
+    write_page(out_path, page)
 
 # ------------------------------------------------------------------
+def clean_url(path):
+    """URL absolue canonique : on retire index.html final."""
+    return BASE + re.sub(r'(^|/)index\.html$', r'\1', path)
+
+def build_seo_files(urls):
+    with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write("User-agent: *\nAllow: /\n\nSitemap: " + BASE + "sitemap.xml\n")
+    items = "".join(
+        f"\n  <url><loc>{u}</loc><changefreq>monthly</changefreq><priority>{pr}</priority></url>"
+        for u, pr in urls)
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write('<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                + items + "\n</urlset>\n")
+
+def alts(fr_path, en_path):
+    """Cluster hreflang partagé (fr + en + x-default) pour une paire de pages."""
+    fr, en = clean_url(fr_path), clean_url(en_path)
+    return [("fr", fr), ("en", en), ("x-default", fr)]
+
 def build_all():
+    sitemap = []
+    # Paires FR/EN (chemins relatifs à la racine du domaine)
+    landing = ("index.html", "en/index.html")
+    cases = [(f"projets/{p['slug']}.html", f"en/projects/{p['slug']}.html") for p in PROJECTS_FR]
+
     # FR
+    a = alts(*landing)
     build_landing(LANDING_FR, PROJECTS_FR, os.path.join(ROOT, "index.html"),
-                  rel="", lang_href="en/index.html", proj_dir="projets/")
+                  rel="", lang_href="en/index.html", proj_dir="projets/",
+                  canonical=clean_url(landing[0]), alternates=a)
+    sitemap.append((clean_url(landing[0]), "1.0"))
     for i, p in enumerate(PROJECTS_FR):
         nxt = PROJECTS_FR[(i + 1) % len(PROJECTS_FR)]["slug"] + ".html"
+        fr_path, en_path = cases[i]
         build_case(p, LANDING_FR, CASE_LABELS_FR,
                    os.path.join(ROOT, "projets", p["slug"] + ".html"),
                    rel="../", lang_href=f"../en/projects/{p['slug']}.html",
-                   home_href="../index.html", next_proj=nxt, proj_dir="")
+                   home_href="../index.html", next_proj=nxt, proj_dir="",
+                   canonical=clean_url(fr_path), alternates=alts(fr_path, en_path))
+        sitemap.append((clean_url(fr_path), "0.8"))
     # EN
     build_landing(LANDING_EN, PROJECTS_EN, os.path.join(ROOT, "en", "index.html"),
-                  rel="../", lang_href="../index.html", proj_dir="projects/")
+                  rel="../", lang_href="../index.html", proj_dir="projects/",
+                  canonical=clean_url(landing[1]), alternates=a)
+    sitemap.append((clean_url(landing[1]), "0.9"))
     for i, p in enumerate(PROJECTS_EN):
         nxt = PROJECTS_EN[(i + 1) % len(PROJECTS_EN)]["slug"] + ".html"
+        fr_path, en_path = cases[i]
         build_case(p, LANDING_EN, CASE_LABELS_EN,
                    os.path.join(ROOT, "en", "projects", p["slug"] + ".html"),
                    rel="../../", lang_href=f"../../projets/{p['slug']}.html",
-                   home_href="../index.html", next_proj=nxt, proj_dir="")
-    print("✔ 14 pages générées")
+                   home_href="../index.html", next_proj=nxt, proj_dir="",
+                   canonical=clean_url(en_path), alternates=alts(fr_path, en_path))
+        sitemap.append((clean_url(en_path), "0.7"))
+
+    build_seo_files(sitemap)
+    print("✔ 14 pages générées + robots.txt + sitemap.xml")
 
 if __name__ == "__main__":
     build_all()
