@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 .vercel/
 node_modules/
+
+# Fichiers police source (commerciale) — ne pas redistribuer
+_fonts-src/

@@ -4,6 +4,14 @@
    Accent : #4975E9
    ============================================================ */
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/gilroy-extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --blue: #4975E9;
   --black: #0A0A0A;
