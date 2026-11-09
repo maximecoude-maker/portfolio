@@ -195,6 +195,9 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .project-card p { font-size: clamp(14px, 1.05vw, 20px); opacity: .85; max-width: 36em; }
 .project-card .card-visual { position: relative; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; }
 .project-card .card-visual img { width: 88%; height: auto; max-height: 100%; object-fit: contain; object-position: bottom; }
+.project-card.card-cats .brand { font-size: 13px; }
+.project-card.card-cats .card-visual { align-items: center; }
+.project-card.card-cats .card-visual img { width: 100%; object-position: center; }
 .project-card .btn { align-self: flex-start; margin-top: 8px; }
 .project-card .btn-dark { background: var(--cta, var(--black)); }
 .brand-logo-alt { display: none; }
@@ -1015,3 +1018,61 @@ h3 { font-size: clamp(20px, 1.66vw, 32px); }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ------------------------------------------------------------------
+   Cadres mobiles (device frames)
+   Réservés aux vraies captures d'écrans mobiles. Les captures web
+   restent en figure simple : jamais de device frame sur du web.
+   ------------------------------------------------------------------ */
+.device-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.6vw, 28px);
+  padding: clamp(20px, 3vw, 56px);
+  border-radius: clamp(20px, 2vw, 32px);
+}
+.device {
+  flex: 0 1 clamp(128px, 14vw, 208px);
+  padding: 6px;
+  background: #10161a;
+  border-radius: clamp(18px, 1.8vw, 30px);
+  box-shadow: 0 18px 40px rgba(10, 10, 10, .22);
+}
+.device img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: clamp(13px, 1.4vw, 24px);
+  background: #fff;
+}
+.device-gallery figcaption { text-align: center; }
+
+/* Trio du hero : la capture centrale porte l'écran principal */
+.case-hero .hero-visual .device-gallery { margin: 0; }
+.case-hero .hero-visual .device-row {
+  padding: 0;
+  gap: clamp(10px, 1.1vw, 20px);
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+.case-hero .hero-visual .device { flex: 0 1 clamp(96px, 11vw, 172px); }
+.case-hero .hero-visual .device:nth-child(2) {
+  flex-basis: clamp(112px, 12.8vw, 198px);
+  z-index: 2;
+}
+.case-hero .hero-visual .device img { width: 100%; margin: 0; filter: none; }
+
+/* Crédit Agricole : panneau menthe derrière les écrans */
+.case-hero.case-cats .hero-visual .device-row {
+  background: #d8ead7;
+  padding: clamp(16px, 1.8vw, 34px);
+  border-radius: clamp(20px, 2vw, 30px);
+}
+
+@media (max-width: 760px) {
+  .case-hero .hero-visual .device-row { justify-content: center; }
+  .device { flex-basis: clamp(116px, 38vw, 170px); }
+}

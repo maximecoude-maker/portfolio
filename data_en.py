@@ -43,6 +43,113 @@ CASE_LABELS_EN = {
 }
 
 PROJECTS_EN = [
+# ============================================================ CRÉDIT AGRICOLE (CATS)
+# Structure taken from the Figma frame "CA" (node 1127-10249), filled with the
+# real CATS engagement. No business KPI: the only figures are raw test items
+# scored out of 7.
+{
+ "slug": "cats", "name": "Crédit Agricole", "brand": "Crédit Agricole Technologies & Services",
+ "accent": "#004652", "hero_bg": "#FFFFFF", "hero_fg": "#004652", "hero_title_color": "#004652",
+ "hero_split": True, "card_desc_only": False,
+ "card_img": "cats-system-en.svg",
+ "hero_title": "“100% human, 100% digital”",
+ "card_title_html": "One consistent card experience,<span class=\"mobile-space\"> </span><br class=\"desktop-break\">from customer to advisor",
+ "hero_desc": "Cards & banking services. The full design process behind a consistent card experience, from customer to advisor: on the web with NPC, inside the Ma Banque app and on the advisor portal.",
+ "hero_img": ("cats-system-en.svg", "NPC · Ma Banque · PUC"),
+ "hero_devices": [
+   ("ca/card-services.png", "Ma Banque — assistance and insurance attached to the card"),
+   ("ca/manage-card.png", "Ma Banque — Manage my card: status, key actions and access to the PIN"),
+   ("ca/card-details.png", "Ma Banque — card details and Wallet enrolment"),
+ ],
+ "mission": [
+   "From 2 November 2023 to 30 October 2026 — close to three years — I was Senior Product Designer UX/UI at Crédit Agricole Technologies & Services, working on card payments and banking card products.",
+   "Losing a card, checking a PIN, raising a spending limit or preparing a trip abroad are simple intentions. Carrying them out, however, depends on the cardholder, their rights, the state of the card, strong authentication, eligibility and business rules. My work was to let the system absorb that complexity: so the customer identifies the right card, understands what is possible and acts with confidence — on the web with NPC, inside the Ma Banque app, and through to the in-branch advisor portal. Several structural challenges followed:",
+ ],
+ "challenges": [
+   ("An architecture built to last", "The original Card Universe had reached its scalability limits: a strongly vertical layout pushed content below the fold, and every new service made the page longer. It needed a management view designed for multi-card holders: card list, selected card, status and key actions, then settings and secondary services."),
+   ("Rights, states and exceptions", "Joint accounts, minors and legal guardians, multiple holders, multiple accounts, differing eligibility; cards active, locked, expired, blocked or being renewed. These cases had to be handled inside the main journeys rather than at the edges, explaining why an action depends on a parent or another party."),
+   ("Making security understandable", "Making strong authentication and PIN retrieval intelligible, and clearing the recurring confusion between the code received by SMS and the card's own PIN."),
+   ("Designing trust, not just ease", "On e-commerce renewal and Card On File, ease of use was already there; acceptance was not. Beneficiaries, data flows and the revocability of consent had to be made explicit."),
+   ("Accessibility", "Audio PIN playback, screen readers, keyboard navigation, contrast and 200% zoom, within the supplier's technical constraints. Consistently separating the usability question from regulatory compliance, never presenting design work as an audit."),
+   ("Multichannel continuity", "The same words, the same statuses and the same consequences, whether the customer is on the web, in the app, or talking to an advisor who picks the case up from their own portal."),
+ ],
+ "role": [
+   "I led design for card products across three channels: NPC for the customer web, the starting point of the engagement; Ma Banque for the app, through progressive extension; and PUC, the staff portal, run in parallel as the advisor-side counterpart of every self-service feature.",
+   "I owned information architecture, user flows, wireframes, UI, Figma prototypes, test protocols and moderation, then documentation and delivery support. This was done with Product Owners and Business Analysts, card-payment business teams, the NPC, Ma Banque and PUC teams, developers, the Design Chapter, and the Muesli Design System and accessibility leads.",
+ ],
+ "tasks": [
+   "Product framing and experience architecture",
+   "Continuous discovery: protocols, moderation and research playback",
+   "User flows, wireframes and detailed interface design",
+   "Figma prototypes, documentation and delivery support",
+ ],
+ "tasks2": [
+   "Contributions to the Muesli Design System and its patterns",
+   "Cross-team arbitration between business, engineering and accessibility",
+ ],
+ "toolkit": ["Figma", "Miro", "Interview", "Card sorting", "Survey", "ZeroHeight"],
+ "phases": [
+   "UT1 · Card management", "UT2 · V1 / V2 comparison", "UT3 · Virtual cards & Card On File",
+   "UT4 · Renewal & Apple Pay", "UT5 · ePIN, permanent virtual cards, minors & blocking",
+ ],
+ "planning_text": "The engagement did not follow a linear plan but a three-year continuous discovery cycle, paced by five waves of user testing. Each wave covered a distinct scope with its own panel: they illuminate different subjects and do not describe progress from one wave to the next.",
+ "planning_img": None,
+ "research": [
+   ("Continuous research", [
+     "Hundreds of users were interviewed across various campaigns on this scope, beyond the five main waves. The figures collected are raw items scored out of 7, not normalised scores: panels and subjects differ, so no improvement curve can be drawn from them.",
+     "Playback always follows the same order: observation, user impact, recommendation. Ratios are strictly grounded in the verbatims and their actual panel size; no verbatim was rewritten for this portfolio.",
+   ], ("cats/research-tu3.webp", "UT3 playback — Card On File: 4.7/7 on need, 6.5/7 on ease of use")),
+   ("Mobile Payment / CA Pay sprint", [
+     "On 19, 20 and 21 May 2026, a three-day sprint explored bringing Paiement Mobile CA — until then a separate app — into Ma Banque. Lean Canvas, benchmark, Experience Map and How Might We on day one; 5 Whys, Big Idea, user flow and wireframes on day two; prototype and user testing on day three.",
+     "On a four-person panel, 3/4 found access simpler thanks to the integration into Ma Banque and 4/4 found enrolment simple, smooth and reassuring. These ratios describe a panel reacting to a prototype, not adoption or any deployment effect.",
+   ], ("cats/sprint-map.webp", "How the three workshop days were organised")),
+ ],
+ "insights": [
+   ("The gap between ease and acceptance", "On Card On File, usage is rated easy (6.5/7) but the perceived need is far lower (4.7/7). A smooth journey does not create acceptance: beneficiaries, data flows and control over consent have to be designed explicitly."),
+   ("A PIN must be both readable and private", "ePIN is well received (6.5/7 on need and ease, 6.7/7 on comprehension). “Show the code” is preferred and Securipass reassures, but the confusion between the SMS code and the card PIN persists, and audio playback raises a privacy question in public spaces."),
+   ("Blocking a card reassures but takes too long", "The self-service journey is understood and felt reassuring (5.2/7 on need, 5.8/7 on ease), but too long in a real loss or theft situation. Avenues explored: an SOS entry point, fewer steps, and explicit replacement, delay and fees."),
+   ("A misread status becomes an alert", "On an expired card, red combined with the icon could read as a blocked or stolen card. Status, wording and hierarchy were reworked; “7 rolling days” was also read as the next seven days."),
+ ],
+ "solution": [
+   ("Card Universe", [
+     "The full redesign moved from a page that keeps growing to a management view: card list, selected card, status and key actions, then settings and secondary services. Key actions stay identifiable without the page expanding with every new service.",
+     "The comparison below puts the 2023 and 2026 design files side by side. It is a design comparison: it does not document production release dates.",
+   ], ("cats/universe-comparison.webp", "NPC Card Universe — 2023 and 2026 design files")),
+   ("Settings and secondary actions", [
+     "Testing showed that Settings is a natural landmark: it is where users look for anything that is not an immediate action. Secondary services were grouped there, which frees the top of the screen for status and key actions.",
+   ], ("cats/universe-detail.webp", "NPC settings, 2026 design file")),
+   ("ePIN", [
+     "Checking a PIN securely, visually or by audio, meant handling authentication, legibility and privacy together. The extracts below come from the NPC web screens of the UT5 protocol; the code was already blurred at source and the visible “10” is a countdown.",
+   ], ("cats/epin-choice.webp", "ePIN — choosing between visual and audio playback (NPC web, UT5)")),
+   ("Ma Banque interfaces", [
+     "In the app, the Card Universe brings together on a single screen the card's identity, its status, the key actions — lock, SOS card, show details, settings — and access to the PIN. Attached services, assistance and insurance, can be consulted without leaving the card's context, and Wallet enrolment is treated as a natural continuation of viewing the card details.",
+     "Names, card numbers, expiry dates and security codes visible at source have been masked. No interface was recreated or artificially upscaled.",
+   ], {"devices": [
+        ("ca/manage-card.png", "Ma Banque — Manage my card: status, multi-card carousel, key actions and access to the PIN"),
+        ("ca/card-details.png", "Ma Banque — card details and Apple and Google Wallet enrolment"),
+        ("ca/card-services.png", "Ma Banque — assistance and insurance attached to the card"),
+      ], "panel": "#d8ead7",
+         "caption": "Ma Banque screens — personal data masked"}),
+   ("Muesli Design System", [
+     "The rule was to look for the answer in Muesli first, then question or evolve the pattern if the context demanded it, rather than creating a component by default. Buttons, Link, Chips, bottom sheets, navigation, forms and funnels served as the common base across all three channels.",
+   ], ("cats/muesli-detail.webp", "Muesli — Primary button rule: one primary button per page")),
+   ("Prototype", ["__PROTO__"], None),
+ ],
+ "impacts_text": "The figures below are raw items scored out of 7 from the test protocols, not normalised scores or business indicators. Panels and scopes differ from one wave to the next: they do not describe progress. No adoption, deployment or volume figure is claimed here.",
+ "impacts": [
+   ("6.7/7", "UT1 — ease of use and fit to need, card management"),
+   ("4.7/7", "Card On File — perceived need (UT3)"),
+   ("6.5/7", "Card On File — ease of use (UT3)"),
+   ("6.7/7", "ePIN — comprehension (UT5)"),
+   ("4/4", "CA Pay enrolment found simple and reassuring (sprint, panel of 4)"),
+ ],
+ "thanks": [
+   ("Thanks to the whole CATS team", ["Product Owners", "Business Analysts", "Card Payment Teams",
+                                      "NPC Web", "Ma Banque", "PUC Portal",
+                                      "Developers", "Design Chapter"]),
+   ("Thanks also to the cross-team leads", ["Muesli Design System", "Accessibility Leads"]),
+ ],
+},
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA", "brand_logo": "logo-mma.png",
@@ -278,3 +385,140 @@ PROJECTS_EN = [
  "thanks": [("Thanks to the whole Médiaperformances team", ["Janis Hayat", "Romain Ledeuil", "Brice Marmonnier", "Anne-France Kleis", "Clair Koralewski", "Anne-Lise Blanc", "Kevin Song"])],
 },
 ]
+
+# CATS — dedicated narrative, rendered by the product case study template.
+# ARCHIVE — content of the former editorial CATS page (projets/cats.html before
+# 7 November 2026). Replaced by the Credit Agricole entry in PROJECTS_EN, built
+# from the Figma frame. Composed by archive/cats_page.py, no longer imported by
+# build.py. Kept as a source of reviewed content, not as a live page.
+CATS_EN = {
+    "hero_title": "A coherent card experience, from customer to adviser.",
+    "hero_desc": "Three years of senior UX/UI Product Design at Crédit Agricole Technologies & Services, making card products easier to understand on the web, in Ma Banque and in branches.",
+    "eyebrow": "CATS · Card products & payments",
+    "period": "2 November 2023 — 30 October 2026",
+    "reading_time": "About 10 min read",
+    "scale": [
+        {"value": "3 years", "label": "working in Product Design"},
+        {"value": "9 → 13 M", "label": "monthly active users of Ma Banque"},
+        {"value": "3 channels", "label": "web, app and adviser portal"},
+    ],
+    "scale_note": "Approximate Ma Banque audience during the assignment. An indication of the product’s scale, without attributing its growth to my contribution.",
+    "intro_title": "Let the system absorb the complexity.",
+    "intro": "Losing a card, checking a PIN or preparing for a trip are simple intentions. Acting on them depends on the cardholder, permissions, card status, authentication and business rules. My work connected these constraints to an understandable experience: identify the right card, understand what is possible and act with confidence. Each decision also needed to hold when a customer moved from web to mobile, or asked an adviser for help.",
+    "scope": [
+        {"name": "NPC", "tag": "Starting point · Web", "text": "Card management: list, details, selection, locking, limits, options, blocking a lost or stolen card, insurance and services. The initial challenge was to give this set of features a shared structure."},
+        {"name": "Ma Banque", "tag": "Gradual expansion · App", "text": "The card hub, ePIN, virtual cards, access for minors and payments. The scope expanded while maintaining the same focus on understanding and continuity across journeys."},
+        {"name": "PUC", "tag": "In parallel · Adviser", "text": "The staff portal provides the adviser counterpart to several services customers can use independently. I considered this handover so that a request retained its meaning across channels."},
+    ],
+    "role_title": "Frame, connect, design and test.",
+    "role_intro": "I worked mainly on card products in the payments domain, alongside POs, business analysts, business experts, developers, teams from the three channels, the Design Chapter, accessibility specialists and the Muesli Design System team. My contribution combined product framing and detailed design within a collective effort.",
+    "roles": [
+        {"title": "Frame the problem", "text": "Bring together business needs, user feedback and technical constraints to define the question before choosing an interface."},
+        {"title": "Structure the experience", "text": "Connect navigation, states and permissions. Check that a local decision remains coherent across the card hub."},
+        {"title": "Inform trade-offs", "text": "Design and facilitate test protocols, communicate findings and turn them into design questions with the team."},
+        {"title": "Stay close to the detail", "text": "Create flows, wireframes, UI and Figma prototypes; document behaviours and support the discussions needed for delivery."},
+    ],
+    "principles": [
+        {"title": "Clarity", "text": "Connect an intention to an identifiable action."},
+        {"title": "Continuity", "text": "Preserve familiar cues across web, mobile and advisers."},
+        {"title": "Reassurance", "text": "Explain the status, the action and its consequences."},
+        {"title": "Adaptability", "text": "Anticipate exceptions and the arrival of new services."},
+    ],
+    "decision_intro": "These four decisions capture how I work. They connect an observed problem to a design hypothesis, then to the available findings. A recommendation from testing remains a recommendation until its implementation and effects are confirmed.",
+    "decisions": [
+        {
+            "id": "carte",
+            "title": "Move from a vertical page to managing multiple cards.",
+            "problem": "The original structure had reached its limits. A heavily vertical layout pushed content below the fold and poorly supported customers managing several cards.",
+            "hypothesis": "An organisation centred on management can make the selected card, its status and its actions easier to understand, while accommodating new services.",
+            "decision": "I evolved the architecture towards a card list, contextual details and a hierarchy of actions. Essential uses remain identifiable; options and secondary services have dedicated spaces. Customers with multiple cards become a core design case.",
+            "learning": "Tests showed that quick actions were identifiable and that users naturally looked for secondary functions in Settings. In TU3, the List & Detail view was preferred to the carousel.",
+            "visual": "architecture",
+        },
+        {
+            "id": "droits",
+            "title": "Design exceptions alongside the main journey.",
+            "problem": "An action can depend on age, the cardholder, eligibility or card status. Hiding a control is not enough to explain a restriction.",
+            "hypothesis": "Showing permissions and the next available action can help explain what depends on the customer, a parent or an adviser.",
+            "decision": "Include minors, joint accounts, multiple cards, locking, expiry and lost or stolen cards in the flows. Consider the PUC handover when a request needs support.",
+            "learning": "Restrictions for minors were generally understood. Research also revealed a need for feedback, visible status and a way to ask a parent: recommendations to distinguish from mechanisms actually delivered.",
+            "visual": "rules",
+        },
+        {
+            "id": "epin",
+            "title": "Make security understandable, all the way to the PIN.",
+            "problem": "Viewing a confidential code combines an immediate need, authentication and privacy requirements. Confusing an SMS code with the PIN can disrupt understanding.",
+            "hypothesis": "An explicit action and steps with a clear purpose can support trust without multiplying explanations.",
+            "decision": "Work on the View code label, the role of Securipass and how the PIN is presented. Include visual and audio access in the design questions, with attention to accessibility and use in public spaces.",
+            "learning": "In TU5, ePIN scored 6.5/7 for ease of use and 6.7/7 for understanding. Securipass was reassuring; distinguishing the codes and protecting audio privacy remained points to watch.",
+            "visual": "epin",
+        },
+        {
+            "id": "confiance",
+            "title": "Design for trust beyond ease of use.",
+            "problem": "The e-commerce renewal service updates card details with certain merchants. A simple journey can still leave concerns about who receives the data and how it is controlled.",
+            "hypothesis": "Consent becomes easier to understand when the benefit, scope and ability to withdraw are explicit.",
+            "decision": "Treat the value proposition and consent as design questions: simplify the terminology, explain which merchants are involved and make control understandable.",
+            "learning": "In TU3, Card On File scored 6.5/7 for ease of use, but 4.7/7 for meeting needs. This gap points towards service acceptance as a design issue beyond usability.",
+            "visual": "trust",
+        },
+    ],
+    "research_intro": "Research accompanied the product’s evolution. Across the different campaigns in this scope, teams interviewed hundreds of users. I designed and facilitated several structured test protocols; the five waves below provide reference points for the questions and findings.",
+    "waves": [
+        {"id": "TU1", "date": "November 2023", "title": "Understand the initial cues", "text": "Card management, locking, limits and benefits. Access was considered simple; expired status, generic insurance content and the term rolling seven days caused misunderstandings.", "scores": [{"value": "≈ 6.7/7", "label": "ease of use and meeting needs"}]},
+        {"id": "TU2", "date": "December 2023", "title": "Refine the hierarchy", "text": "Version comparison, navigation across multiple cards and quick actions. Card information was appreciated; the card emergency entry point and visibility of options still needed clarification.", "scores": []},
+        {"id": "TU3", "date": "November–December 2024", "title": "Question the value of services", "text": "Emergency virtual card, Card On File and the card hub. An easy journey did not guarantee acceptance of the service. The List & Detail view was preferred to the carousel.", "scores": [{"value": "6.4/7", "label": "ease of use · emergency card"}, {"value": "4.7/7", "label": "meeting needs · Card On File"}]},
+        {"id": "TU4", "date": "April 2025", "title": "Observe transitions", "text": "E-commerce renewal, the card hub and adding a card to Apple Pay. The protocol explored understanding, flow, wording and the change of context between Ma Banque and Apple.", "scores": []},
+        {"id": "TU5", "date": "January 2026", "title": "Test sensitive situations", "text": "ePIN, permanent virtual cards, minors and blocking lost or stolen cards. ePIN was particularly well received; using a virtual card in stores and the length of the blocking journey still needed work.", "scores": [{"value": "6.5/7", "label": "ease of use · ePIN"}, {"value": "5.8/7", "label": "ease of use · blocking a card"}]},
+    ],
+    "research_note": "Raw ratings out of 7 from research summaries. Topics and panels differ: these results are not a measure of improvement over time.",
+    "stories_intro": "The same architecture needed to accommodate very different uses. These are other situations I worked on and what they brought to the product thinking.",
+    "stories": [
+        {"title": "Virtual cards: explain the use", "text": "The emergency CVE allows payments to continue after a card is blocked. The CVP serves an ongoing use. Their value for online purchases was clearer than their use in stores.", "learning": "Explain the role of the Wallet and make adding a card identifiable, while distinguishing the two products."},
+        {"title": "Blocking a card: consider the urgency", "text": "The journey customers could complete independently was understandable and reassuring, but sometimes too long in a loss or theft situation.", "learning": "Prioritise speed, emergency cues and replacement information. Shortening the journey remained a design recommendation."},
+        {"title": "Apple Pay: cross two systems", "text": "Adding a card from Ma Banque involves selection, authentication, a transition to Apple and confirmation, sometimes for an Apple Watch.", "learning": "Observe transitions and returns to the product as closely as the screens within each system."},
+        {"title": "Click to Pay: accommodate a new service", "text": "My recent contribution covered enrolment, consent, contact details and management of saved cards, with a protocol focused on understanding and trust.", "learning": "Check that the architecture stays understandable as new services and rules are introduced."},
+    ],
+    "sprint_intro": "On 19, 20 and 21 May 2026, a design sprint explored integrating Paiement Mobile CA into Ma Banque. The separate app fragmented the experience and complicated activation and configuration. The aim was to bring access closer to the intended use: making a first payment.",
+    "sprint_days": [
+        {"title": "Day 1 · Frame", "text": "Bring together data, benchmarking, a Lean Canvas and an Experience Map to share the problem and formulate design questions."},
+        {"title": "Day 2 · Converge", "text": "Explore causes, generate ideas, then build a user flow and wireframes around enrolment and payment."},
+        {"title": "Day 3 · Test", "text": "Prototype the integrated experience and test it to identify points of understanding that needed further work."},
+    ],
+    "sprint_results": [
+        {"value": "3/4", "text": "found access simpler through integration into Ma Banque"},
+        {"value": "4/4", "text": "found enrolment simple, smooth and reassuring"},
+    ],
+    "sprint_learning": "Integration was well received within this panel. Card selection, Activate by default, the term NFC and cashback remained less clear. The priority emerging from the sprint was to shorten the path to a first payment and better support that first use.",
+    "sprint_limit": "Qualitative findings from four participants using a prototype. They measure neither service adoption nor the effect of a production rollout.",
+    "system_intro": "Muesli provided a shared framework for designing and discussing interfaces. I first looked for an answer within existing components and patterns, then questioned their suitability when the business context or accessibility called for it.",
+    "system_points": [
+        {"title": "A shared hierarchy", "text": "Buttons, forms, navigation and guided flows provide common cues. Wording and action priority must remain coherent with the context."},
+        {"title": "Documented behaviours", "text": "States, permissions and exceptions belong in the specification. A screen alone does not describe what happens after an action or a change in status."},
+        {"title": "Accessibility within design", "text": "Consider contrast, wording, zoom, audio presentation and use with a screen reader. This work does not, on its own, constitute a declaration of compliance."},
+    ],
+    "channels_intro": "Customers should recognise their situation when they change channels. Continuity concerns card status, terminology and the consequences of actions; each channel retains its own uses and responsibilities.",
+    "channels": [
+        {"name": "NPC", "audience": "Customer · Web", "text": "View and manage cards in the online banking space."},
+        {"name": "Ma Banque", "audience": "Customer · Mobile", "text": "Access actions and services in everyday situations."},
+        {"name": "PUC", "audience": "Adviser · Branch", "text": "Support a request with cues consistent with those the customer sees."},
+    ],
+    "impact_intro": "The available material supports a description of my contributions and research findings. It does not isolate a measurable effect on production usage.",
+    "impacts": [
+        {"title": "For users", "text": "Identify ambiguities before development and clarify needs for understanding, control and reassurance in sensitive journeys."},
+        {"title": "For the product", "text": "Work on a shared architecture for cards and services, considering permissions, states and transitions between channels."},
+        {"title": "For the team", "text": "Provide prototypes, tests and findings to discuss choices with product, business, engineering, Muesli and accessibility teams."},
+    ],
+    "closing": "In a mature banking product, complexity remains. My responsibility as a designer is to decide where the system should absorb it, and what users need to understand to act with confidence.",
+    "labels": {
+        "context": "The context", "role": "My contribution", "decisions": "Four product decisions",
+        "research": "Research over time", "stories": "Other product situations",
+        "sprint": "From service to first payment", "system": "Designing with Muesli",
+        "channels": "Continuity across channels", "impact": "What this work contributes",
+        "problem": "The problem", "hypothesis": "The hypothesis", "decision": "The design choice",
+        "learning": "The learning", "diagram": "Summary diagram",
+        "source_note": "Editorial synthesis based on the supplied assignment context. Diagrams explain the thinking; they do not reproduce the product interfaces.",
+        "back": "Back to projects", "next": "Explore MMA",
+        "missing_visual": "Anonymised screens to be added",
+    },
+}

@@ -13,7 +13,7 @@ OG_IMAGE = BASE + "assets/img/og-cover.jpg"  # aperçu de partage (jpg, non ré�
 _PNG_REF = re.compile(r'((?:\.\./)*assets/img/[\w\-./]+?)\.png')
 
 def write_page(path, page):
-    page = _PNG_REF.sub(r'\1.webp', page)
+    page = _PNG_REF.sub(lambda m: m.group(0) if '/cats/' in m.group(1) else m.group(1) + '.webp', page)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write(page)
@@ -61,7 +61,7 @@ def head(title, css_rel, lang, description, canonical, alternates, og_type="webs
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="{css_rel}assets/fonts/gilroy-extrabold.woff2">
-<link rel="stylesheet" href="{css_rel}assets/css/style.css?v=20260826g">
+<link rel="stylesheet" href="{css_rel}assets/css/style.css?v=20261107ca">
 <link rel="icon" type="image/png" href="{css_rel}assets/img/icon-notes.png">
 </head>
 <body>"""
@@ -100,8 +100,22 @@ def contact(L, rel):
 </body>
 </html>"""
 
+def devices_html(rel, devices, panel=None, caption=None, extra_class=""):
+    """Grille de cadres mobiles. Réservé aux vraies captures d'écrans mobiles :
+    les captures web passent par img_or_ph, jamais par un device frame."""
+    cells = "".join(
+        f'<div class="device"><img src="{rel}assets/img/{src}" '
+        f'alt="{html.escape(alt)}" loading="lazy"></div>'
+        for src, alt in devices)
+    style = f' style="background:{panel}"' if panel else ""
+    cap = f"<figcaption>{html.escape(caption)}</figcaption>" if caption else ""
+    cls = ("device-gallery " + extra_class).strip()
+    return f'<figure class="fig {cls}"><div class="device-row"{style}>{cells}</div>{cap}</figure>'
+
 def img_or_ph(rel, img, tall=True):
     if not img: return ""
+    if isinstance(img, dict):
+        return devices_html(rel, img["devices"], img.get("panel"), img.get("caption"))
     src, alt = img
     t = ' data-tall="true"' if tall else ''
     return f'<figure class="fig"><img src="{rel}assets/img/{src}" alt="{html.escape(alt)}" data-ph="{html.escape(alt)} — exporter depuis Figma : {src}"{t} loading="lazy"><figcaption>{html.escape(alt)}</figcaption></figure>'
@@ -152,6 +166,7 @@ def person_html(rel, accent, n):
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, alternates):
     cards = ""
     for p in projects:
+        card_img = p.get("card_img", p["slug"] + "-thumb.png")
         bg = p["hero_bg"]
         # La carte peut avoir des couleurs de texte propres (fond visuel) indépendantes du hero
         fg = p.get("card_fg", p["hero_fg"])
@@ -172,7 +187,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, al
             cards += f"""
     <a class="project-card card-split-left card-{p['slug']} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       <div class="card-visual">
-        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
+        <img src="{rel}assets/img/{card_img}" alt="" data-ph="visuel carte {html.escape(p['name'])} ({card_img})">
       </div>
       {content}
     </a>"""
@@ -180,7 +195,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, al
             align = p.get("card_text", "left")
             pos = {"left": "right", "right": "left", "center": "center"}[align]
             bg_color = p.get("card_bg_color", bg)
-            thumb_url = f"url('{rel}assets/img/{p['slug']}-thumb.png')"
+            thumb_url = f"url('{rel}assets/img/{card_img}')"
             if bg_color.startswith("linear-gradient"):
                 # thumb superposé au dégradé (les 2 sont des background-image)
                 bg_decl = (f"background-image:{thumb_url}, {bg_color};"
@@ -200,7 +215,7 @@ def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, al
     <a class="project-card card-{p['slug']} reveal" href="{proj_dir}{p['slug']}.html" style="{style}">
       {content}
       <div class="card-visual">
-        <img src="{rel}assets/img/{p['slug']}-thumb.png" alt="" data-ph="visuel carte {html.escape(p['name'])} ({p['slug']}-thumb.png)">
+        <img src="{rel}assets/img/{card_img}" alt="" data-ph="visuel carte {html.escape(p['name'])} ({card_img})">
       </div>
     </a>"""
 
@@ -333,6 +348,14 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
         people = "".join(person_html(rel, p["accent"], n) for n in names)
         thanks += f'<div class="thanks-group reveal"><h4>{html.escape(title)}</h4><div class="people">{people}</div></div>'
 
+    if p.get("hero_devices"):
+        hero_visual = devices_html(rel, p["hero_devices"], extra_class="hero-devices")
+    else:
+        hero_visual = (f'<img src="{rel}assets/img/{p["hero_img"][0]}" '
+                       f'alt="{html.escape(p["hero_img"][1])}" '
+                       f'data-ph="{html.escape(p["hero_img"][1])} ({p["hero_img"][0]})" '
+                       f'data-tall="true">')
+
     title_html = p.get("hero_title_html") or html.escape(p["hero_title"])
     title_style = f' style="color:{p["hero_title_color"]}"' if p.get("hero_title_color") else ""
     align_cls = f' align-{p["hero_align"]}' if p.get("hero_align") else ""
@@ -355,7 +378,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
     <p>{html.escape(p['hero_desc'])}</p>
     <div class="hero-visual">
       {f'<img class="hero-shadow" src="{rel}assets/img/{p["hero_shadow_img"]}" alt="" aria-hidden="true">' if p.get('hero_shadow_img') else ''}
-      <img src="{rel}assets/img/{p['hero_img'][0]}" alt="{html.escape(p['hero_img'][1])}" data-ph="{html.escape(p['hero_img'][1])} ({p['hero_img'][0]})" data-tall="true">
+      {hero_visual}
     </div>
   </section>
 
@@ -435,18 +458,20 @@ def alts(fr_path, en_path):
 
 def build_all():
     sitemap = []
+    projects_fr = list(PROJECTS_FR)
+    projects_en = list(PROJECTS_EN)
     # Paires FR/EN (chemins relatifs à la racine du domaine)
     landing = ("index.html", "en/index.html")
-    cases = [(f"projets/{p['slug']}.html", f"en/projects/{p['slug']}.html") for p in PROJECTS_FR]
+    cases = [(f"projets/{p['slug']}.html", f"en/projects/{p['slug']}.html") for p in projects_fr]
 
     # FR
     a = alts(*landing)
-    build_landing(LANDING_FR, PROJECTS_FR, os.path.join(ROOT, "index.html"),
+    build_landing(LANDING_FR, projects_fr, os.path.join(ROOT, "index.html"),
                   rel="", lang_href="en/index.html", proj_dir="projets/",
                   canonical=clean_url(landing[0]), alternates=a)
     sitemap.append((clean_url(landing[0]), "1.0"))
-    for i, p in enumerate(PROJECTS_FR):
-        nxt = PROJECTS_FR[(i + 1) % len(PROJECTS_FR)]["slug"] + ".html"
+    for i, p in enumerate(projects_fr):
+        nxt = projects_fr[(i + 1) % len(projects_fr)]["slug"] + ".html"
         fr_path, en_path = cases[i]
         build_case(p, LANDING_FR, CASE_LABELS_FR,
                    os.path.join(ROOT, "projets", p["slug"] + ".html"),
@@ -455,12 +480,12 @@ def build_all():
                    canonical=clean_url(fr_path), alternates=alts(fr_path, en_path))
         sitemap.append((clean_url(fr_path), "0.8"))
     # EN
-    build_landing(LANDING_EN, PROJECTS_EN, os.path.join(ROOT, "en", "index.html"),
+    build_landing(LANDING_EN, projects_en, os.path.join(ROOT, "en", "index.html"),
                   rel="../", lang_href="../index.html", proj_dir="projects/",
                   canonical=clean_url(landing[1]), alternates=a)
     sitemap.append((clean_url(landing[1]), "0.9"))
-    for i, p in enumerate(PROJECTS_EN):
-        nxt = PROJECTS_EN[(i + 1) % len(PROJECTS_EN)]["slug"] + ".html"
+    for i, p in enumerate(projects_en):
+        nxt = projects_en[(i + 1) % len(projects_en)]["slug"] + ".html"
         fr_path, en_path = cases[i]
         build_case(p, LANDING_EN, CASE_LABELS_EN,
                    os.path.join(ROOT, "en", "projects", p["slug"] + ".html"),
@@ -470,7 +495,7 @@ def build_all():
         sitemap.append((clean_url(en_path), "0.7"))
 
     build_seo_files(sitemap)
-    print("✔ 14 pages générées + robots.txt + sitemap.xml")
+    print(f"{len(projects_fr) + len(projects_en) + 2} pages générées + robots.txt + sitemap.xml")
 
 if __name__ == "__main__":
     build_all()

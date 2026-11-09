@@ -1,0 +1,81 @@
+{
+  "note": "Ecrans Ma Banque exportes du fichier Figma « Portfolio Maxime COUDE », frame « CA » (node 1127-10249), via le serveur Dev Mode MCP local le 7 novembre 2026. Ce sont les images sources des mockups iPhone du hero, recuperees en pleine resolution depuis le serveur d'assets Figma, et non des captures d'ecran de la maquette.",
+  "anonymisation": "Les zones listees dans masked_zones ont ete remplies ligne par ligne avec la couleur echantillonnee a gauche de la zone, a l'interieur de la carte : le degrade est conserve et la zone se lit comme volontairement masquee. Nom du titulaire, numero de carte, date de fin de validite et cryptogramme sont masques. Aucun pixel d'interface n'a ete recree, aucune image agrandie artificiellement.",
+  "usage": "Rendu dans des cadres mobiles CSS (.device), jamais en image composite. Device frame reserve aux vraies captures d'ecrans mobiles : les captures NPC web de assets/img/cats/ restent en figure simple.",
+  "assets": [
+    {
+      "key": "manage-card",
+      "source_figma_asset": "screen3.png",
+      "source_sha256": "e11c8c2126164ec35fc171c9ddb36b5cb0fa2b4ff98422e1b0358e10083434e9",
+      "size": [
+        747,
+        1612
+      ],
+      "masked_zones": [
+        [
+          80,
+          666,
+          360,
+          712
+        ],
+        [
+          80,
+          780,
+          372,
+          818
+        ]
+      ],
+      "png_bytes": 258569,
+      "webp_bytes": 36842
+    },
+    {
+      "key": "card-details",
+      "source_figma_asset": "screen1.png",
+      "source_sha256": "a91b24d09e5c29073e5d6855970be24751d91df679232174ae09565be0cccda7",
+      "size": [
+        681,
+        1469
+      ],
+      "masked_zones": [
+        [
+          70,
+          608,
+          330,
+          648
+        ],
+        [
+          70,
+          708,
+          330,
+          748
+        ],
+        [
+          70,
+          812,
+          165,
+          850
+        ],
+        [
+          270,
+          812,
+          325,
+          850
+        ]
+      ],
+      "png_bytes": 146614,
+      "webp_bytes": 23826
+    },
+    {
+      "key": "card-services",
+      "source_figma_asset": "screen2.png",
+      "source_sha256": "894efd642a4ef4a3d3382935c510c2d22ac55f4e135ed99bee29f1063816a72b",
+      "size": [
+        681,
+        1469
+      ],
+      "masked_zones": [],
+      "png_bytes": 173562,
+      "webp_bytes": 48694
+    }
+  ]
+}

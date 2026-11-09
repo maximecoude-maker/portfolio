@@ -43,6 +43,113 @@ CASE_LABELS_FR = {
 }
 
 PROJECTS_FR = [
+# ============================================================ CRÉDIT AGRICOLE (CATS)
+# Trame issue de la maquette Figma « CA » (node 1127-10249), remplie avec le
+# contenu réel de la mission CATS. Aucun KPI business : les seules valeurs
+# chiffrées sont des items bruts sur 7 issus des protocoles de tests.
+{
+ "slug": "cats", "name": "Crédit Agricole", "brand": "Crédit Agricole Technologies & Services",
+ "accent": "#004652", "hero_bg": "#FFFFFF", "hero_fg": "#004652", "hero_title_color": "#004652",
+ "hero_split": True, "card_desc_only": False,
+ "card_img": "cats-system-fr.svg",
+ "hero_title": "« 100 % humain, 100 % digital »",
+ "card_title_html": "Une expérience Carte cohérente,<span class=\"mobile-space\"> </span><br class=\"desktop-break\">du client au conseiller",
+ "hero_desc": "Cartes & services bancaires. Découvrez l’ensemble du process design qui a rendu l’expérience Carte cohérente, du client au conseiller : sur le web avec NPC, dans l’application Ma Banque et sur le portail des conseillers.",
+ "hero_img": ("cats-system-fr.svg", "NPC · Ma Banque · PUC"),
+ "hero_devices": [
+   ("ca/card-services.png", "Ma Banque — assistance et assurances rattachées à la carte"),
+   ("ca/manage-card.png", "Ma Banque — écran Gérer ma carte : statut, actions essentielles et accès au code PIN"),
+   ("ca/card-details.png", "Ma Banque — informations de la carte et ajout au Wallet"),
+ ],
+ "mission": [
+   "Du 2 novembre 2023 au 30 octobre 2026, soit près de trois ans, j’ai été Senior Product Designer UX/UI chez Crédit Agricole Technologies & Services, sur la Monétique et les produits cartes bancaires.",
+   "Perdre sa carte, consulter son code PIN, augmenter un plafond ou préparer un départ à l’étranger sont des intentions simples. Leur réalisation dépend pourtant du titulaire, des droits, de l’état de la carte, de l’authentification forte, de l’éligibilité et des règles métier. Mon travail consistait à faire absorber cette complexité par le système : que le client identifie la bonne carte, comprenne ce qui est possible et agisse avec confiance — sur le web avec NPC, dans l’application Ma Banque, et jusqu’au portail des conseillers en agence. Plusieurs défis structurants se sont imposés :",
+ ],
+ "challenges": [
+   ("Une architecture qui tient dans la durée", "La structure initiale de l’Univers Carte avait atteint ses limites de scalabilité : une lecture très verticale repoussait les contenus sous la ligne de flottaison, et chaque nouveau service allongeait la page. Il fallait une vision de gestion pensée pour les profils multicartes : liste des cartes, carte sélectionnée, statut et actions essentielles, puis paramètres et services secondaires."),
+   ("Droits, états et exceptions", "Compte joint, mineur et représentant légal, plusieurs titulaires, multicomptes, éligibilités différentes ; carte active, verrouillée, expirée, opposée ou en renouvellement. Traiter ces cas dans les parcours principaux plutôt qu’en marge, et expliquer pourquoi une action dépend du parent ou d’un autre interlocuteur."),
+   ("Rendre la sécurité compréhensible", "Rendre l’authentification forte et la restitution du code PIN intelligibles, en levant la confusion récurrente entre le code reçu par SMS et le code de la carte."),
+   ("Concevoir la confiance, pas seulement la facilité", "Sur le renouvellement e-commerce et le Card On File, la facilité d’usage était acquise, l’adhésion non. Il fallait rendre compréhensibles les bénéficiaires, la circulation des données et la révocabilité du consentement."),
+   ("Accessibilité", "Restitution audio du code PIN, lecteur d’écran, navigation clavier, contrastes et zoom 200 %, avec les contraintes techniques du fournisseur. Distinguer en permanence l’enjeu d’usage de la conformité réglementaire, sans présenter un travail de conception comme un audit."),
+   ("Continuité multicanal", "Les mêmes mots, les mêmes statuts et les mêmes conséquences, que le client soit sur le web, dans l’application, ou face à un conseiller qui reprend la main depuis son portail."),
+ ],
+ "role": [
+   "J’ai conduit le design des produits cartes sur trois canaux : NPC pour le web client, point de départ de la mission ; Ma Banque pour l’application, par extension progressive ; et PUC, le portail collaborateur, mené en parallèle comme pendant conseiller des services ouverts en autonomie.",
+   "J’ai pris en charge l’architecture de l’information, les user flows, les wireframes, l’UI, les prototypes Figma, les protocoles et l’animation des tests utilisateurs, puis la documentation et l’accompagnement du delivery. Ce travail s’est fait avec les Product Owners et Business Analysts, les métiers Monétique, les équipes NPC, Ma Banque et PUC, les développeurs, le Chapter Design, ainsi que les référents du Design System Muesli et de l’accessibilité.",
+ ],
+ "tasks": [
+   "Cadrage produit et architecture d’expérience",
+   "Continuous discovery : protocoles, animation et restitution des tests",
+   "User flows, wireframes et conception détaillée des interfaces",
+   "Prototypes Figma, documentation et accompagnement du delivery",
+ ],
+ "tasks2": [
+   "Contribution au Design System Muesli et à ses patterns",
+   "Arbitrages transverses entre métiers, technique et accessibilité",
+ ],
+ "toolkit": ["Figma", "Miro", "Interview", "Card sorting", "Survey", "ZeroHeight"],
+ "phases": [
+   "TU1 · Gestion des cartes", "TU2 · Comparaison V1 / V2", "TU3 · CVE & Card On File",
+   "TU4 · Renouvellement & Apple Pay", "TU5 · ePIN, CVP, mineurs & opposition",
+ ],
+ "planning_text": "La mission n’a pas suivi un planning linéaire mais un cycle de continuous discovery sur trois ans, rythmé par cinq vagues de tests utilisateurs. Chaque vague portait sur un périmètre distinct, avec son propre panel : elles éclairent des sujets différents et ne décrivent pas une progression d’une vague à l’autre.",
+ "planning_img": None,
+ "research": [
+   ("Recherche continue", [
+     "Des centaines d’utilisateurs ont été interrogés à travers différentes campagnes sur le périmètre, au-delà des cinq vagues principales. Les notes recueillies sont des items bruts sur 7, et non des scores normalisés : les panels et les sujets diffèrent, aucune courbe de progression ne peut en être tirée.",
+     "La restitution suit toujours le même ordre : observation, impact utilisateur, recommandation. Les ratios sont strictement fondés sur les verbatims et leur effectif réel ; aucun verbatim n’a été reformulé pour les besoins de ce portfolio.",
+   ], ("cats/research-tu3.webp", "Restitution TU3 — Card On File : 4,7/7 sur le besoin, 6,5/7 sur la facilité")),
+   ("Sprint Paiement Mobile / CA Pay", [
+     "Les 19, 20 et 21 mai 2026, un sprint de trois jours a exploré la reprise de Paiement Mobile CA — jusque-là une application distincte — dans Ma Banque. Lean Canvas, benchmark, Experience Map et How Might We le premier jour ; 5 Why’s, Big Idea, user flow et wireframes le deuxième ; prototype et tests utilisateurs le troisième.",
+     "Sur un panel de quatre personnes, 3/4 ont trouvé l’accès plus simple grâce à l’intégration dans Ma Banque et 4/4 ont jugé l’enrôlement simple, fluide et rassurant. Ces ratios décrivent la réaction d’un panel à un prototype, pas une adoption ni un effet de déploiement.",
+   ], ("cats/sprint-map.webp", "Organisation des trois journées d’atelier")),
+ ],
+ "insights": [
+   ("L’écart entre facilité et adhésion", "Sur le Card On File, l’usage est jugé facile (6,5/7) mais le besoin bien plus faible (4,7/7). Un parcours fluide ne produit pas l’adhésion : bénéficiaires, circulation des données et contrôle du consentement doivent être conçus explicitement."),
+   ("Le code PIN doit être lisible et confidentiel", "L’ePIN est bien reçu (6,5/7 sur le besoin et la facilité, 6,7/7 sur la compréhension). « Voir le code » est préféré, Securipass rassure, mais la confusion entre code SMS et code carte persiste et la restitution audio pose une question de confidentialité en espace public."),
+   ("L’opposition rassure mais prend trop de temps", "Le parcours en autonomie est compris et jugé rassurant (5,2/7 sur le besoin, 5,8/7 sur la facilité), mais trop long en situation réelle de perte ou de vol. Pistes travaillées : accès SOS, étapes raccourcies, remplacement, délai et frais explicites."),
+   ("Un statut mal lu devient une alerte", "Sur la carte expirée, la combinaison du rouge et du pictogramme pouvait évoquer une opposition ou un vol. Le statut, le wording et la hiérarchie ont été retravaillés ; « 7 jours glissants » était par ailleurs compris comme les sept prochains jours."),
+ ],
+ "solution": [
+   ("Univers Carte", [
+     "Le redesign complet est passé d’une page qui s’allonge à une vision de gestion : liste des cartes, carte sélectionnée, statut et actions essentielles, puis paramètres et services secondaires. Les actions essentielles restent identifiables sans que la page grandisse à chaque nouveau service.",
+     "La comparaison ci-dessous confronte les dossiers de conception 2023 et 2026. Il s’agit d’une comparaison de conception : elle ne documente pas des dates de mise en production.",
+   ], ("cats/universe-comparison.webp", "Univers Carte NPC — dossiers de conception 2023 et 2026")),
+   ("Paramètres et actions secondaires", [
+     "Les tests ont montré que Paramètres est un repère naturel : c’est là que les utilisateurs cherchent ce qui n’est pas une action immédiate. Les services secondaires y ont été regroupés, ce qui dégage la zone haute pour le statut et les actions essentielles.",
+   ], ("cats/universe-detail.webp", "Paramètres NPC, dossier de conception 2026")),
+   ("ePIN", [
+     "Consulter son code PIN en sécurité, visuellement ou en audio, demandait de traiter ensemble l’authentification, la lisibilité et la confidentialité. Les extraits ci-dessous proviennent des écrans NPC web du protocole TU5 ; le code était déjà flouté à la source et le « 10 » visible est un compte à rebours.",
+   ], ("cats/epin-choice.webp", "ePIN — choix entre restitution visuelle et restitution audio (NPC web, TU5)")),
+   ("Interfaces Ma Banque", [
+     "Dans l’application, l’Univers Carte réunit sur un même écran l’identification de la carte, son statut, les actions essentielles — verrouiller, SOS carte, afficher les informations, paramètres — et l’accès au code PIN. Les services rattachés, assistance et assurances, sont consultables sans quitter le contexte de la carte, et l’ajout au Wallet est traité comme une suite naturelle de la consultation des informations.",
+     "Les noms, numéros de carte, dates de validité et cryptogrammes visibles à la source ont été masqués. Aucune interface n’a été recréée ni agrandie artificiellement.",
+   ], {"devices": [
+        ("ca/manage-card.png", "Ma Banque — Gérer ma carte : statut, carrousel multicartes, actions essentielles et accès au code PIN"),
+        ("ca/card-details.png", "Ma Banque — informations de la carte et ajout aux Wallet Apple et Google"),
+        ("ca/card-services.png", "Ma Banque — assistance et assurances rattachées à la carte"),
+      ], "panel": "#d8ead7",
+         "caption": "Écrans Ma Banque — données personnelles masquées"}),
+   ("Design System Muesli", [
+     "La règle était de chercher d’abord la solution dans Muesli, puis de questionner ou faire évoluer le pattern si le contexte l’exigeait, plutôt que de créer un composant par défaut. Boutons, Link, Chips, bottom sheets, navigation, formulaires et tunnels ont servi de socle commun aux trois canaux.",
+   ], ("cats/muesli-detail.webp", "Muesli — règle Primary button : un seul bouton principal par page")),
+   ("Prototype", ["__PROTO__"], None),
+ ],
+ "impacts_text": "Les valeurs ci-dessous sont des items bruts sur 7 issus des protocoles de tests, pas des scores normalisés ni des indicateurs business. Les panels et les périmètres diffèrent d’une vague à l’autre : elles ne décrivent pas une progression. Aucun chiffre d’adoption, de déploiement ou de volume n’est revendiqué ici.",
+ "impacts": [
+   ("6,7/7", "TU1 — facilité et réponse au besoin, gestion des cartes"),
+   ("4,7/7", "Card On File — besoin exprimé (TU3)"),
+   ("6,5/7", "Card On File — facilité d’usage (TU3)"),
+   ("6,7/7", "ePIN — compréhension (TU5)"),
+   ("4/4", "Enrôlement CA Pay jugé simple et rassurant (sprint, panel de 4)"),
+ ],
+ "thanks": [
+   ("Merci à toute l’équipe CATS", ["Product Owners", "Business Analysts", "Métiers Monétique",
+                                    "NPC Web", "Ma Banque", "Portail PUC",
+                                    "Développeurs", "Chapter Design"]),
+   ("Merci également aux référents transverses", ["Design System Muesli", "Référents accessibilité"]),
+ ],
+},
 # ============================================================ MMA
 {
  "slug": "mma", "name": "MMA", "brand": "MMA", "brand_logo": "logo-mma.png",
@@ -280,3 +387,140 @@ PROJECTS_FR = [
  "thanks": [("Merci à toute l’équipe Médiaperformances", ["Janis Hayat", "Romain Ledeuil", "Brice Marmonnier", "Anne-France Kleis", "Clair Koralewski", "Anne-Lise Blanc", "Kevin Song"])],
 },
 ]
+
+# CATS — récit dédié, rendu par le template de cas produit.
+# ARCHIVE — contenu de l'ancienne page CATS editoriale (projets/cats.html avant
+# le 7 novembre 2026). Remplacee par l'entree Credit Agricole de PROJECTS_FR,
+# issue de la maquette Figma. Compose par archive/cats_page.py, plus importe
+# par build.py. Conserve comme source de contenu verifie, pas comme page active.
+CATS_FR = {
+    "hero_title": "Une expérience Carte cohérente, du client au conseiller.",
+    "hero_desc": "Trois ans de Product Design UX/UI senior chez Crédit Agricole Technologies & Services, pour rendre les produits cartes plus compréhensibles sur le web, dans Ma Banque et en agence.",
+    "eyebrow": "CATS · Monétique & produits cartes",
+    "period": "2 novembre 2023 — 30 octobre 2026",
+    "reading_time": "Environ 10 min de lecture",
+    "scale": [
+        {"value": "3 ans", "label": "de mission en Product Design"},
+        {"value": "9 → 13 M", "label": "d’utilisateurs actifs mensuels Ma Banque"},
+        {"value": "3 canaux", "label": "web, application et portail conseiller"},
+    ],
+    "scale_note": "Ordres de grandeur de l’audience Ma Banque pendant la mission. Un indicateur de l’échelle du produit, sans attribution à ma contribution.",
+    "intro_title": "Faire absorber la complexité par le système.",
+    "intro": "Perdre une carte, consulter son PIN ou préparer un voyage sont des intentions simples. Leur réalisation dépend pourtant du titulaire, des droits, de l’état de la carte, de l’authentification et des règles métier. Mon travail consistait à relier ces contraintes à une expérience lisible : identifier la bonne carte, comprendre ce qui est possible et agir avec confiance. Chaque décision devait aussi tenir lorsque le client passait du web au mobile, ou sollicitait un conseiller.",
+    "scope": [
+        {"name": "NPC", "tag": "Point de départ · Web", "text": "Gestion des cartes : liste, détail, sélection, verrouillage, plafonds, options, opposition, assurances et services. L’enjeu initial était de donner une structure commune à cet ensemble."},
+        {"name": "Ma Banque", "tag": "Extension progressive · Application", "text": "Univers Carte, ePIN, cartes virtuelles, accès mineur et paiements. Le périmètre s’est élargi en conservant une même attention à la compréhension et à la continuité des parcours."},
+        {"name": "PUC", "tag": "En parallèle · Conseiller", "text": "Le portail collaborateur constitue le pendant conseiller de plusieurs services en autonomie. J’intégrais ce relais pour éviter qu’une demande change de sens entre deux canaux."},
+    ],
+    "role_title": "Cadrer, relier, concevoir et mettre à l’épreuve.",
+    "role_intro": "J’intervenais principalement sur les produits cartes du domaine Monétique, avec les PO, BA, métiers, développeurs, équipes des trois canaux, Chapter Design, accessibilité et Design System Muesli. Ma contribution associait cadrage produit et conception détaillée, au sein d’un travail collectif.",
+    "roles": [
+        {"title": "Cadrer le problème", "text": "Croiser besoins métier, retours utilisateurs et contraintes techniques pour définir la question à résoudre avant de choisir une interface."},
+        {"title": "Structurer l’expérience", "text": "Relier navigation, états et droits. Vérifier qu’une décision locale reste cohérente dans l’ensemble de l’Univers Carte."},
+        {"title": "Éclairer les arbitrages", "text": "Concevoir et animer des protocoles de tests, restituer les apprentissages et les traduire en sujets de conception avec l’équipe."},
+        {"title": "Rester dans le détail", "text": "Produire flows, wireframes, UI et prototypes Figma ; documenter les comportements et accompagner les échanges nécessaires au delivery."},
+    ],
+    "principles": [
+        {"title": "Clarté", "text": "Relier une intention à une action identifiable."},
+        {"title": "Continuité", "text": "Préserver les repères entre web, mobile et conseiller."},
+        {"title": "Réassurance", "text": "Expliquer l’état, l’action et ses conséquences."},
+        {"title": "Évolutivité", "text": "Prévoir les exceptions et l’arrivée de nouveaux services."},
+    ],
+    "decision_intro": "Ces quatre décisions résument ma manière de travailler. Elles relient un problème observé à une hypothèse de conception, puis aux enseignements disponibles. Une piste issue des tests reste une piste tant que sa mise en œuvre et ses effets ne sont pas confirmés.",
+    "decisions": [
+        {
+            "id": "carte",
+            "title": "Passer d’une page verticale à une gestion multicartes.",
+            "problem": "La structure initiale avait atteint ses limites d’évolution. La lecture très verticale reléguait des contenus sous la ligne de flottaison et répondait mal à la gestion de plusieurs cartes.",
+            "hypothesis": "Une organisation centrée sur la gestion peut rendre plus lisibles la carte sélectionnée, son statut et ses actions, tout en accueillant de nouveaux services.",
+            "decision": "J’ai fait évoluer l’architecture vers une liste de cartes, un détail contextualisé et une hiérarchie d’actions. Les usages essentiels restent identifiables ; options et services secondaires disposent d’espaces dédiés. Les profils multi-cartes deviennent un cas de conception central.",
+            "learning": "Les tests ont fait ressortir des actions rapides bien identifiées et une recherche naturelle des fonctions secondaires dans Paramètres. En TU3, la vue Liste & Détail était préférée au carrousel.",
+            "visual": "architecture",
+        },
+        {
+            "id": "droits",
+            "title": "Concevoir les exceptions avec le parcours principal.",
+            "problem": "Une action peut dépendre de l’âge, du titulaire, de l’éligibilité ou de l’état de la carte. Masquer une commande ne suffit pas à expliquer une restriction.",
+            "hypothesis": "Rendre visibles les droits et la prochaine possibilité d’action aide à comprendre ce qui dépend du client, du parent ou du conseiller.",
+            "decision": "Intégrer les cas mineur, compte joint, multi-cartes, verrouillage, expiration et opposition dans les flows. Penser aussi le relais PUC lorsque la demande nécessite un accompagnement.",
+            "learning": "Les restrictions liées aux mineurs étaient globalement comprises. Les recherches ont aussi révélé un besoin de feedback, de statut et de demande au parent : des pistes à distinguer des mécanismes effectivement livrés.",
+            "visual": "rules",
+        },
+        {
+            "id": "epin",
+            "title": "Rendre la sécurité compréhensible, jusqu’au PIN.",
+            "problem": "Consulter un code confidentiel combine un besoin immédiat, une authentification et des exigences de confidentialité. Une confusion entre code SMS et PIN peut brouiller le parcours.",
+            "hypothesis": "Une action explicite et des étapes dont le rôle est clair peuvent soutenir la confiance sans multiplier les explications.",
+            "decision": "Travailler le libellé Voir le code, la place de Securipass et la restitution du PIN. Intégrer la consultation visuelle et audio aux questions de conception, avec une attention à l’accessibilité et à l’usage en espace public.",
+            "learning": "En TU5, ePIN obtient 6,5/7 en facilité et 6,7/7 en compréhension. Securipass rassure ; la distinction des codes et la confidentialité de l’audio restent des points de vigilance.",
+            "visual": "epin",
+        },
+        {
+            "id": "confiance",
+            "title": "Concevoir la confiance au-delà de la facilité.",
+            "problem": "Le renouvellement e-commerce actualise les données de carte chez certains commerçants. Un parcours simple peut laisser subsister des inquiétudes sur les destinataires et le contrôle des données.",
+            "hypothesis": "Le consentement devient plus compréhensible lorsque le bénéfice, le périmètre et la réversibilité sont explicites.",
+            "decision": "Traiter la proposition de valeur et le consentement comme des sujets de conception : simplifier les termes, expliquer les commerçants concernés et rendre le contrôle compréhensible.",
+            "learning": "En TU3, Card On File obtient 6,5/7 en facilité, mais 4,7/7 en réponse au besoin. Cet écart invite à travailler l’acceptabilité du service, au-delà de son utilisabilité.",
+            "visual": "trust",
+        },
+    ],
+    "research_intro": "La recherche accompagnait l’évolution du produit. À l’échelle des différentes campagnes menées sur le périmètre, les équipes ont interrogé des centaines d’utilisateurs. J’ai notamment construit et animé plusieurs protocoles structurés ; les cinq vagues ci-dessous donnent des repères sur les questions et les apprentissages.",
+    "waves": [
+        {"id": "TU1", "date": "Novembre 2023", "title": "Comprendre les premiers repères", "text": "Gestion des cartes, verrouillage, plafonds et garanties. L’accès était jugé simple ; le statut expiré, les assurances génériques et le terme 7 jours glissants soulevaient des incompréhensions.", "scores": [{"value": "≈ 6,7/7", "label": "facilité et réponse au besoin"}]},
+        {"id": "TU2", "date": "Décembre 2023", "title": "Affiner la hiérarchie", "text": "Comparaison des versions, navigation multi-cartes et actions rapides. Les informations carte étaient appréciées ; SOS carte et la visibilité des options demandaient encore à être clarifiés.", "scores": []},
+        {"id": "TU3", "date": "Novembre–décembre 2024", "title": "Questionner la valeur des services", "text": "Carte virtuelle de dépannage, Card On File et Univers Carte. La facilité du parcours ne garantissait pas l’adhésion au service. La vue Liste & Détail était préférée au carrousel.", "scores": [{"value": "6,4/7", "label": "facilité · carte de dépannage"}, {"value": "4,7/7", "label": "réponse au besoin · Card On File"}]},
+        {"id": "TU4", "date": "Avril 2025", "title": "Observer les transitions", "text": "Renouvellement e-commerce, Univers Carte et ajout à Apple Pay. Le protocole explorait compréhension, fluidité, rédaction et changement de contexte entre Ma Banque et Apple.", "scores": []},
+        {"id": "TU5", "date": "Janvier 2026", "title": "Tester les situations sensibles", "text": "ePIN, carte virtuelle permanente, mineurs et opposition. L’ePIN était particulièrement bien reçu ; l’usage en magasin de la carte virtuelle et la longueur de l’opposition restaient à travailler.", "scores": [{"value": "6,5/7", "label": "facilité · ePIN"}, {"value": "5,8/7", "label": "facilité · opposition"}]},
+    ],
+    "research_note": "Notes brutes sur 7, issues des synthèses de tests. Les sujets et panels diffèrent : ces résultats ne constituent pas une mesure de progression dans le temps.",
+    "stories_intro": "La même architecture devait accueillir des usages très différents. Voici d’autres situations sur lesquelles j’ai travaillé, avec ce qu’elles ont apporté à la réflexion produit.",
+    "stories": [
+        {"title": "Cartes virtuelles : expliquer l’usage", "text": "La CVE de dépannage permet de continuer à payer après opposition. La CVP répond à un usage permanent. Leur intérêt pour les achats en ligne était plus évident que leur usage en magasin.", "learning": "Expliquer le rôle du Wallet et rendre l’ajout identifiable, tout en distinguant les deux produits."},
+        {"title": "Opposition : tenir compte de l’urgence", "text": "Le parcours en autonomie était compris et rassurant, mais parfois trop long dans une situation de perte ou de vol.", "learning": "Prioriser la rapidité, la signalétique SOS et les informations sur le remplacement. Le raccourcissement restait une piste de conception."},
+        {"title": "Apple Pay : traverser deux systèmes", "text": "L’ajout depuis Ma Banque implique sélection de la carte, authentification, passage dans l’environnement Apple et confirmation, parfois pour une Apple Watch.", "learning": "Observer les transitions et les retours au produit, autant que les écrans de chaque système."},
+        {"title": "Click to Pay : accueillir un nouveau service", "text": "Ma contribution récente portait sur l’enrôlement, le consentement, les coordonnées et la gestion des cartes enregistrées, avec un protocole centré sur compréhension et confiance.", "learning": "Vérifier que l’architecture reste lisible lorsque s’ajoutent de nouveaux services et de nouvelles règles."},
+    ],
+    "sprint_intro": "Les 19, 20 et 21 mai 2026, un design sprint a exploré l’intégration de Paiement Mobile CA dans Ma Banque. L’application distincte fragmentait l’expérience et compliquait activation et configuration. L’objectif était de rapprocher l’accès au service de l’usage attendu : réaliser un premier paiement.",
+    "sprint_days": [
+        {"title": "Jour 1 · Cadrer", "text": "Croiser données, benchmark, Lean Canvas et Experience Map pour partager le problème et formuler les questions de conception."},
+        {"title": "Jour 2 · Converger", "text": "Explorer les causes, produire des idées puis construire un user flow et des wireframes autour de l’enrôlement et du paiement."},
+        {"title": "Jour 3 · Éprouver", "text": "Prototyper l’expérience intégrée et la tester pour identifier les points de compréhension à reprendre."},
+    ],
+    "sprint_results": [
+        {"value": "3/4", "text": "trouvent l’accès plus simple grâce à l’intégration dans Ma Banque"},
+        {"value": "4/4", "text": "trouvent l’enrôlement simple, fluide et rassurant"},
+    ],
+    "sprint_learning": "L’intégration était bien reçue dans ce panel. La sélection des cartes, Activer par défaut, le terme NFC et le cashback restaient moins clairs. La priorité issue du sprint était de réduire le chemin jusqu’au premier paiement et de mieux accompagner ce premier usage.",
+    "sprint_limit": "Résultats qualitatifs de quatre participants sur un prototype. Ils ne mesurent ni l’adoption du service ni l’effet d’un déploiement en production.",
+    "system_intro": "Muesli fournissait un cadre commun pour concevoir et discuter les interfaces. Je cherchais d’abord une réponse dans les composants et patterns existants, puis je questionnais leur adéquation lorsque le contexte métier ou l’accessibilité l’exigeait.",
+    "system_points": [
+        {"title": "Une hiérarchie partagée", "text": "Boutons, formulaires, navigation et tunnels fournissent des repères communs. Le wording et la priorité des actions doivent rester cohérents avec le contexte."},
+        {"title": "Des comportements documentés", "text": "Les états, droits et exceptions font partie de la spécification. Un écran seul ne décrit pas ce qui se passe après une action ou un changement de statut."},
+        {"title": "L’accessibilité dans la conception", "text": "Prendre en compte contrastes, rédaction, zoom, restitution audio et usages avec lecteur d’écran. Ces travaux ne constituent pas, à eux seuls, une déclaration de conformité."},
+    ],
+    "channels_intro": "Le client doit pouvoir reconnaître sa situation lorsqu’il change de canal. La continuité porte sur le statut de la carte, les mots employés et les conséquences des actions ; chaque canal conserve ses usages et ses responsabilités.",
+    "channels": [
+        {"name": "NPC", "audience": "Client · Web", "text": "Consulter et gérer ses cartes dans l’espace bancaire web."},
+        {"name": "Ma Banque", "audience": "Client · Mobile", "text": "Retrouver les actions et services dans les situations du quotidien."},
+        {"name": "PUC", "audience": "Conseiller · Agence", "text": "Accompagner la demande avec des repères cohérents avec ceux du client."},
+    ],
+    "impact_intro": "Les éléments disponibles permettent de décrire mes contributions et les apprentissages de recherche. Ils ne permettent pas d’isoler un effet chiffré sur les usages en production.",
+    "impacts": [
+        {"title": "Pour les utilisateurs", "text": "Repérer des ambiguïtés avant développement et préciser les besoins de compréhension, de contrôle et de réassurance sur des parcours sensibles."},
+        {"title": "Pour le produit", "text": "Travailler une architecture commune aux cartes et services, en tenant compte des droits, des états et des passages entre canaux."},
+        {"title": "Pour le collectif", "text": "Apporter des prototypes, des tests et des restitutions pour discuter les choix avec les équipes produit, métier, techniques, Muesli et accessibilité."},
+    ],
+    "closing": "Sur un produit bancaire mature, la complexité reste présente. Ma responsabilité de designer est de choisir où le système doit l’absorber, et ce que l’utilisateur doit comprendre pour agir en confiance.",
+    "labels": {
+        "context": "Le contexte", "role": "Ma contribution", "decisions": "Quatre décisions produit",
+        "research": "La recherche dans la durée", "stories": "D’autres situations produit",
+        "sprint": "Du service au premier paiement", "system": "Concevoir avec Muesli",
+        "channels": "Une continuité entre les canaux", "impact": "Ce que ce travail apporte",
+        "problem": "Le problème", "hypothesis": "L’hypothèse", "decision": "Le choix de conception",
+        "learning": "L’apprentissage", "diagram": "Schéma de synthèse",
+        "source_note": "Synthèse éditoriale issue du contexte de mission fourni. Les schémas expliquent le raisonnement ; ils ne reproduisent pas les interfaces du produit.",
+        "back": "Retour aux projets", "next": "Découvrir MMA",
+        "missing_visual": "Écrans anonymisés à intégrer",
+    },
+}

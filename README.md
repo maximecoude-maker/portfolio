@@ -1,14 +1,14 @@
 # Portfolio Maxime COUDE — Site statique FR/EN
 
-Reproduction en code du prototype Figma « Portfolio ». 14 pages : landing + 6 études de cas, en français et en anglais.
+Reproduction en code du prototype Figma « Portfolio ». 16 pages : landing + 7 études de cas, en français et en anglais.
 
 ## Structure
 
 ```
 index.html                 ← Landing FR
-projets/*.html             ← 6 études de cas FR (mma, sincro-saas, sincro-mobile, afnor, ratp, hello-promo)
+projets/*.html             ← 7 études de cas FR (cats, mma, sincro-saas, sincro-mobile, afnor, ratp, hello-promo)
 en/index.html              ← Landing EN
-en/projects/*.html         ← 6 études de cas EN
+en/projects/*.html         ← 7 études de cas EN
 assets/css/style.css       ← Design system (Montserrat/Gilroy, #4975E9)
 assets/js/main.js          ← Placeholders d'images + animations au scroll
 assets/img/                ← À remplir avec les exports Figma (voir IMAGES.md)
@@ -48,7 +48,7 @@ proche). Si tu possèdes les fichiers Gilroy (.woff2), dépose-les dans
 
 Édite `data_fr.py` / `data_en.py` puis relance `python3 build.py` — toutes les
 pages sont régénérées. (Tu peux aussi éditer les .html directement, mais le
-générateur évite de répéter 14 fois la même correction.)
+générateur évite de répéter 16 fois la même correction.)
 
 ## Mémoire projet
 

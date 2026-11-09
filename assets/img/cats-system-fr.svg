@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" role="img" aria-labelledby="title desc" lang="fr">
+  <title id="title">Une expérience Carte, trois canaux</title>
+  <desc id="desc">Schéma de principe : une carte sélectionnée, son état et ses actions forment le point commun entre le web NPC, l’application Ma Banque et le portail conseiller PUC. Illustration éditoriale, sans écran produit.</desc>
+  <defs>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#173F35" opacity=".09"/></pattern>
+  </defs>
+  <rect width="760" height="640" rx="28" fill="#EAF3EF"/>
+  <rect x="24" y="24" width="712" height="592" rx="16" fill="url(#dots)"/>
+  <g font-family="Montserrat, Arial, sans-serif" fill="#173F35">
+    <text x="40" y="53" font-size="16" font-weight="700" letter-spacing="1.5">UNE EXPÉRIENCE, TROIS CANAUX</text>
+    <g fill="none" stroke="#92B4A6" stroke-width="2">
+      <path d="M185 170V205H280V235"/>
+      <path d="M575 170V205H480V235"/>
+      <path d="M380 430V454H575V474"/>
+    </g>
+    <g fill="#173F35"><circle cx="280" cy="235" r="4"/><circle cx="480" cy="235" r="4"/><circle cx="380" cy="430" r="4"/></g>
+    <g>
+      <rect x="40" y="83" width="290" height="91" rx="12" fill="#FFFFFF" stroke="#CDDDD5"/>
+      <g transform="translate(61 108)" fill="none" stroke="#173F35" stroke-width="2"><rect width="34" height="27" rx="3"/><path d="M0 8H34M5 4H6M10 4H11"/></g>
+      <text x="112" y="120" font-size="25" font-weight="700">NPC</text>
+      <text x="112" y="148" font-size="18">Web client</text>
+    </g>
+    <g>
+      <rect x="430" y="83" width="290" height="91" rx="12" fill="#FFFFFF" stroke="#CDDDD5"/>
+      <g transform="translate(453 105)" fill="none" stroke="#173F35" stroke-width="2"><rect x="5" width="23" height="34" rx="5"/><path d="M13 5H20M14 29H19"/></g>
+      <text x="500" y="120" font-size="25" font-weight="700">Ma Banque</text>
+      <text x="500" y="148" font-size="18">Application client</text>
+    </g>
+    <g>
+      <rect x="172" y="235" width="416" height="195" rx="22" fill="#173F35"/>
+      <path d="M530 262h25v19h-25zM538 262v19M547 262v19M530 271h25" fill="none" stroke="#8CAB9F" stroke-width="1.5"/>
+      <text x="204" y="283" font-size="18" fill="#CEE0D7">Le point de départ commun</text>
+      <text x="204" y="328" font-size="38" font-weight="700" fill="#FFFFFF">Une carte</text>
+      <path d="M204 349H556" stroke="#638579"/>
+      <text x="204" y="383" font-size="22" font-weight="600" fill="#FFFFFF">Son état</text>
+      <text x="413" y="383" font-size="22" font-weight="600" fill="#FFFFFF">Ses actions</text>
+      <path d="M384 367V397" stroke="#638579"/>
+    </g>
+    <g>
+      <rect x="504" y="404" width="208" height="42" rx="21" fill="#FFFFFF" stroke="#CDDDD5"/>
+      <circle cx="523" cy="425" r="4" fill="#678B7B"/>
+      <text x="540" y="432" font-size="17" font-weight="600">Active</text>
+      <rect x="48" y="218" width="157" height="39" rx="19.5" fill="#F6FAF7" stroke="#CDDDD5"/>
+      <text x="65" y="244" font-size="16" font-weight="600">Verrouillée</text>
+    </g>
+    <g>
+      <rect x="430" y="474" width="290" height="91" rx="12" fill="#FFFFFF" stroke="#CDDDD5"/>
+      <g transform="translate(454 497)" fill="none" stroke="#173F35" stroke-width="2"><circle cx="15" cy="8" r="7"/><path d="M0 33v-4c0-8 6-12 15-12s15 4 15 12v4"/></g>
+      <text x="504" y="511" font-size="25" font-weight="700">PUC</text>
+      <text x="504" y="539" font-size="18">Portail conseiller</text>
+    </g>
+    <text x="40" y="500" font-size="20" font-weight="700">Une logique commune.</text>
+    <text x="40" y="528" font-size="18">Des contextes différents.</text>
+    <text x="40" y="607" font-size="14" fill="#49685B">Schéma de principe · sans écran produit</text>
+    <g fill="none" stroke="#9BB7A9" stroke-width="1.5"><path d="M665 546h50M690 521v50"/><circle cx="690" cy="546" r="20"/></g>
+  </g>
+</svg>

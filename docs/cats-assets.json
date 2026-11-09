@@ -1,0 +1,1132 @@
+{
+  "source_root": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS",
+  "prepared_on": "2026-10-28",
+  "originals_modified": false,
+  "notes": [
+    "All source PNG files preserved byte for byte.",
+    "ePIN and virtual-card extracts come from NPC web research boards, not mobile screens.",
+    "ePIN and virtual-card extracts have limited source resolution; no interface was reconstructed.",
+    "No PUC product screen found in the supplied folder.",
+    "The two NPC periods follow source-folder names and do not establish production release dates."
+  ],
+  "assets": [
+    {
+      "key": "universe-before",
+      "file": "assets/img/cats/universe-before.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/NPC - Carte 2023/Capture d’écran 2026-10-28 à 14.38.51.png",
+      "source_sha256": "3b864b011d1090fa512720018864cdc3ea8c021e60cd5572e47c8e768b192bd9",
+      "source_size": [
+        1116,
+        1696
+      ],
+      "crop_bounds": [
+        372,
+        55,
+        1107,
+        1465
+      ],
+      "output_size": [
+        735,
+        1410
+      ],
+      "bytes": 33140,
+      "section": "decision-architecture",
+      "period": "2023 (source folder; production status unverified)",
+      "caption_fr": "NPC web · Structure 2023 · Données personnelles masquées",
+      "anonymisation": [
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            170,
+            246,
+            194
+          ],
+          "source_bounds": [
+            418,
+            225,
+            618,
+            249
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            224,
+            245,
+            246
+          ],
+          "source_bounds": [
+            418,
+            279,
+            617,
+            301
+          ],
+          "kind": "card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "universe-after",
+      "file": "assets/img/cats/universe-after.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/NPC - Carte 2026/Capture d’écran 2026-10-28 à 14.41.04.png",
+      "source_sha256": "c31e0dc926af5a0c6bae4393c2698b6fa87d6314f370ea77b58e8f9e712b8cbe",
+      "source_size": [
+        1548,
+        1662
+      ],
+      "crop_bounds": [
+        160,
+        78,
+        1390,
+        1290
+      ],
+      "output_size": [
+        1230,
+        1212
+      ],
+      "bytes": 55328,
+      "section": "decision-architecture",
+      "period": "2026 (source folder; production status unverified)",
+      "caption_fr": "NPC web · Architecture de gestion multicartes 2026 · Données personnelles masquées",
+      "anonymisation": [
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            140,
+            245,
+            167
+          ],
+          "source_bounds": [
+            205,
+            218,
+            405,
+            245
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            169,
+            245,
+            190
+          ],
+          "source_bounds": [
+            205,
+            247,
+            405,
+            268
+          ],
+          "kind": "account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            166,
+            220,
+            385,
+            245
+          ],
+          "source_bounds": [
+            326,
+            298,
+            545,
+            323
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            167,
+            255,
+            249,
+            273
+          ],
+          "source_bounds": [
+            327,
+            333,
+            409,
+            351
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            330,
+            445,
+            354
+          ],
+          "source_bounds": [
+            205,
+            408,
+            605,
+            432
+          ],
+          "kind": "joint holders"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            360,
+            255,
+            379
+          ],
+          "source_bounds": [
+            205,
+            438,
+            415,
+            457
+          ],
+          "kind": "account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            167,
+            410,
+            385,
+            435
+          ],
+          "source_bounds": [
+            327,
+            488,
+            545,
+            513
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            168,
+            442,
+            249,
+            466
+          ],
+          "source_bounds": [
+            328,
+            520,
+            409,
+            544
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            168,
+            520,
+            395,
+            548
+          ],
+          "source_bounds": [
+            328,
+            598,
+            555,
+            626
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            168,
+            551,
+            249,
+            571
+          ],
+          "source_bounds": [
+            328,
+            629,
+            409,
+            649
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            549,
+            324,
+            775,
+            346
+          ],
+          "source_bounds": [
+            709,
+            402,
+            935,
+            424
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            549,
+            349,
+            642,
+            366
+          ],
+          "source_bounds": [
+            709,
+            427,
+            802,
+            444
+          ],
+          "kind": "card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "universe-detail",
+      "file": "assets/img/cats/universe-detail.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/NPC - Carte 2026/Capture d’écran 2026-10-28 à 14.41.17.png",
+      "source_sha256": "87fbdb7583d208396d52b18d00ad85d32f3cabfc3d6e69fc8a524a01f65b2fa5",
+      "source_size": [
+        1496,
+        1854
+      ],
+      "crop_bounds": [
+        655,
+        75,
+        1360,
+        895
+      ],
+      "output_size": [
+        705,
+        820
+      ],
+      "bytes": 29008,
+      "section": "product-proof",
+      "period": "2026 (source folder; production status unverified)",
+      "caption_fr": "NPC web · Paramètres de la carte · Version du dossier 2026",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "epin-choice",
+      "file": "assets/img/cats/epin-choice.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Protocole TU5/Capture d’écran 2026-10-26 à 15.44.23.png",
+      "source_sha256": "b38cdf21de7171e248a106ffe6022e66a005a5db4973943a3e50b87df92d5440",
+      "source_size": [
+        2536,
+        1618
+      ],
+      "crop_bounds": [
+        480,
+        705,
+        810,
+        935
+      ],
+      "output_size": [
+        330,
+        230
+      ],
+      "bytes": 4790,
+      "section": "decision-epin",
+      "period": "TU5 · January 2026 (brief)",
+      "caption_fr": "NPC web · Choix de consultation ePIN · Extrait TU5",
+      "anonymisation": [
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            49,
+            119,
+            61
+          ],
+          "source_bounds": [
+            526,
+            754,
+            599,
+            766
+          ],
+          "kind": "cardholder and account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            67,
+            119,
+            74
+          ],
+          "source_bounds": [
+            549,
+            772,
+            599,
+            779
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            74,
+            87,
+            81
+          ],
+          "source_bounds": [
+            549,
+            779,
+            567,
+            786
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            90,
+            119,
+            102
+          ],
+          "source_bounds": [
+            526,
+            795,
+            599,
+            807
+          ],
+          "kind": "joint holders and account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            109,
+            119,
+            115
+          ],
+          "source_bounds": [
+            549,
+            814,
+            599,
+            820
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            116,
+            88,
+            123
+          ],
+          "source_bounds": [
+            549,
+            821,
+            568,
+            828
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            133,
+            119,
+            140
+          ],
+          "source_bounds": [
+            549,
+            838,
+            599,
+            845
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            141,
+            88,
+            147
+          ],
+          "source_bounds": [
+            549,
+            846,
+            568,
+            852
+          ],
+          "kind": "card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "epin-visual",
+      "file": "assets/img/cats/epin-visual.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Protocole TU5/Capture d’écran 2026-10-26 à 15.44.23.png",
+      "source_sha256": "b38cdf21de7171e248a106ffe6022e66a005a5db4973943a3e50b87df92d5440",
+      "source_size": [
+        2536,
+        1618
+      ],
+      "crop_bounds": [
+        1325,
+        705,
+        1654,
+        936
+      ],
+      "output_size": [
+        329,
+        231
+      ],
+      "bytes": 4230,
+      "section": "decision-epin",
+      "period": "TU5 · January 2026 (brief)",
+      "caption_fr": "NPC web · Consultation visuelle ePIN · Extrait TU5",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "epin-audio",
+      "file": "assets/img/cats/epin-audio.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Protocole TU5/Capture d’écran 2026-10-26 à 15.44.23.png",
+      "source_sha256": "b38cdf21de7171e248a106ffe6022e66a005a5db4973943a3e50b87df92d5440",
+      "source_size": [
+        2536,
+        1618
+      ],
+      "crop_bounds": [
+        2166,
+        705,
+        2492,
+        936
+      ],
+      "output_size": [
+        326,
+        231
+      ],
+      "bytes": 3846,
+      "section": "decision-epin",
+      "period": "TU5 · January 2026 (brief)",
+      "caption_fr": "NPC web · Consultation audio ePIN · Extrait TU5",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "virtual-cards",
+      "file": "assets/img/cats/virtual-cards.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Protocole TU5/Capture d’écran 2026-10-26 à 15.44.23.png",
+      "source_sha256": "b38cdf21de7171e248a106ffe6022e66a005a5db4973943a3e50b87df92d5440",
+      "source_size": [
+        2536,
+        1618
+      ],
+      "crop_bounds": [
+        480,
+        1248,
+        810,
+        1476
+      ],
+      "output_size": [
+        330,
+        228
+      ],
+      "bytes": 7748,
+      "section": "product-stories",
+      "period": "TU5 · January 2026 (brief)",
+      "caption_fr": "NPC web · Carte virtuelle permanente · Extrait TU5",
+      "anonymisation": [
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            48,
+            119,
+            59
+          ],
+          "source_bounds": [
+            526,
+            1296,
+            599,
+            1307
+          ],
+          "kind": "cardholder and account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            66,
+            119,
+            73
+          ],
+          "source_bounds": [
+            549,
+            1314,
+            599,
+            1321
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            73,
+            88,
+            80
+          ],
+          "source_bounds": [
+            549,
+            1321,
+            568,
+            1328
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            102,
+            119,
+            109
+          ],
+          "source_bounds": [
+            549,
+            1350,
+            599,
+            1357
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            109,
+            88,
+            116
+          ],
+          "source_bounds": [
+            549,
+            1357,
+            568,
+            1364
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            46,
+            125,
+            119,
+            137
+          ],
+          "source_bounds": [
+            526,
+            1373,
+            599,
+            1385
+          ],
+          "kind": "joint holders and account number"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            154,
+            119,
+            161
+          ],
+          "source_bounds": [
+            549,
+            1402,
+            599,
+            1409
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            162,
+            88,
+            169
+          ],
+          "source_bounds": [
+            549,
+            1410,
+            568,
+            1417
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            191,
+            119,
+            198
+          ],
+          "source_bounds": [
+            549,
+            1439,
+            599,
+            1446
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            198,
+            88,
+            205
+          ],
+          "source_bounds": [
+            549,
+            1446,
+            568,
+            1453
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            215,
+            119,
+            222
+          ],
+          "source_bounds": [
+            549,
+            1463,
+            599,
+            1470
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            69,
+            222,
+            88,
+            228
+          ],
+          "source_bounds": [
+            549,
+            1470,
+            568,
+            1476
+          ],
+          "kind": "card identifier"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            154,
+            88,
+            188,
+            99
+          ],
+          "source_bounds": [
+            634,
+            1336,
+            668,
+            1347
+          ],
+          "kind": "cardholder and card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "sprint-map",
+      "file": "assets/img/cats/sprint-map.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Design sprint Paiement dans MB/Capture d’écran 2026-10-26 à 16.01.12.png",
+      "source_sha256": "7738c353276728b4980245adcd52f5128331b824ac4a5d0853b840504d898bf2",
+      "source_size": [
+        2574,
+        1434
+      ],
+      "crop_bounds": [
+        20,
+        20,
+        2550,
+        1320
+      ],
+      "output_size": [
+        1600,
+        822
+      ],
+      "bytes": 21718,
+      "section": "sprint",
+      "period": "19–21 May 2026 (brief and sprint deck)",
+      "caption_fr": "Design sprint · Organisation des trois journées · Mai 2026",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "sprint-enrolment",
+      "file": "assets/img/cats/sprint-enrolment.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Design sprint Paiement dans MB/Capture d’écran 2026-10-26 à 16.05.28.png",
+      "source_sha256": "23802e437c64c29e2543188a3c1366904fd3b3c6388e7881383b8811a267dccd",
+      "source_size": [
+        2576,
+        1440
+      ],
+      "crop_bounds": [
+        195,
+        305,
+        638,
+        1255
+      ],
+      "output_size": [
+        443,
+        950
+      ],
+      "bytes": 35086,
+      "section": "sprint",
+      "period": "19–21 May 2026 (brief and sprint deck)",
+      "caption_fr": "Prototype CA Pay · Point d’entrée retravaillé après les tests · Mai 2026",
+      "anonymisation": [
+        {
+          "shape": "polygon",
+          "crop_points": [
+            [
+              225,
+              338
+            ],
+            [
+              296,
+              310
+            ],
+            [
+              306,
+              330
+            ],
+            [
+              234,
+              359
+            ]
+          ],
+          "source_points": [
+            [
+              420,
+              643
+            ],
+            [
+              491,
+              615
+            ],
+            [
+              501,
+              635
+            ],
+            [
+              429,
+              664
+            ]
+          ],
+          "kind": "cardholder and card identifier"
+        },
+        {
+          "shape": "polygon",
+          "crop_points": [
+            [
+              303,
+              498
+            ],
+            [
+              370,
+              472
+            ],
+            [
+              379,
+              494
+            ],
+            [
+              313,
+              520
+            ]
+          ],
+          "source_points": [
+            [
+              498,
+              803
+            ],
+            [
+              565,
+              777
+            ],
+            [
+              574,
+              799
+            ],
+            [
+              508,
+              825
+            ]
+          ],
+          "kind": "cardholder and card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "sprint-payment",
+      "file": "assets/img/cats/sprint-payment.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Design sprint Paiement dans MB/Capture d’écran 2026-10-26 à 16.05.12.png",
+      "source_sha256": "79aa65d763a83ca38427b65f496821a474b57c3d77f03afe5cad2394952683c8",
+      "source_size": [
+        2576,
+        1438
+      ],
+      "crop_bounds": [
+        1504,
+        320,
+        2478,
+        1222
+      ],
+      "output_size": [
+        974,
+        902
+      ],
+      "bytes": 51888,
+      "section": "sprint",
+      "period": "19–21 May 2026 (brief and sprint deck)",
+      "caption_fr": "Prototype Paiement Mobile · Accès depuis le widget Ma Banque · Mai 2026",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "sprint-research",
+      "file": "assets/img/cats/sprint-research.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Design sprint Paiement dans MB/Capture d’écran 2026-10-26 à 16.05.12.png",
+      "source_sha256": "79aa65d763a83ca38427b65f496821a474b57c3d77f03afe5cad2394952683c8",
+      "source_size": [
+        2576,
+        1438
+      ],
+      "crop_bounds": [
+        120,
+        300,
+        1410,
+        1245
+      ],
+      "output_size": [
+        1290,
+        945
+      ],
+      "bytes": 132586,
+      "section": "sprint",
+      "period": "19–21 May 2026 (brief and sprint deck)",
+      "caption_fr": "Restitution du sprint · Éléments appréciés par le panel de quatre participants",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "muesli-documentation",
+      "file": "assets/img/cats/muesli-documentation.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/DS Muesli/Capture d’écran 2026-10-26 à 16.14.55.png",
+      "source_sha256": "7dd385b755ae7bfae6b247d3ef6946109a0523e636f2d5f5218cb561860ddc28",
+      "source_size": [
+        2554,
+        1648
+      ],
+      "crop_bounds": [
+        1000,
+        20,
+        2510,
+        1610
+      ],
+      "output_size": [
+        1510,
+        1590
+      ],
+      "bytes": 90374,
+      "section": "design-system",
+      "period": "Documentation captured 26 October 2026; visible update 2 December 2025",
+      "caption_fr": "Muesli · Spécifications, guidelines UX/UI et accessibilité du composant Link",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "research-tu3",
+      "file": "assets/img/cats/research-tu3.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/TU 3/Capture d’écran 2026-10-26 à 14.38.08.png",
+      "source_sha256": "f43e219e4f6205a7f8269ca6edc5394c22446b2b3bf3cf7516d92325758c06d6",
+      "source_size": [
+        2588,
+        1094
+      ],
+      "crop_bounds": [
+        18,
+        608,
+        828,
+        1062
+      ],
+      "output_size": [
+        810,
+        454
+      ],
+      "bytes": 17938,
+      "section": "decision-trust",
+      "period": "TU3 · November–December 2024 (brief)",
+      "caption_fr": "TU3 · Card On File · Notes brutes de réponse au besoin et de facilité sur 7",
+      "anonymisation": [],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "universe-mobile",
+      "file": "assets/img/cats/universe-mobile.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/App MB Carte/Capture d’écran 2026-10-26 à 16.35.17.png",
+      "source_sha256": "6fcb1a0a2d218e200cdf2cae4e3d05215093e9615bbcded088c699a3e0c3834a",
+      "source_size": [
+        520,
+        1584
+      ],
+      "crop_bounds": [
+        0,
+        0,
+        520,
+        1584
+      ],
+      "output_size": [
+        520,
+        1584
+      ],
+      "bytes": 37194,
+      "section": "hero",
+      "period": "Capture 26 October 2026; design period not independently dated",
+      "caption_fr": "Ma Banque · Univers Carte mobile · Capture du 26 octobre 2026 · Données personnelles masquées",
+      "anonymisation": [
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            397,
+            273,
+            422
+          ],
+          "source_bounds": [
+            45,
+            397,
+            273,
+            422
+          ],
+          "kind": "cardholder"
+        },
+        {
+          "shape": "rectangle",
+          "crop_bounds": [
+            45,
+            427,
+            148,
+            449
+          ],
+          "source_bounds": [
+            45,
+            427,
+            148,
+            449
+          ],
+          "kind": "card identifier"
+        }
+      ],
+      "transformation": "Technical crop, optional deterministic identity masking, WebP encoding. No business content, UI controls, research figures or monetary values altered.",
+      "production_status": "Not verified; shown as design material, not a claim of release."
+    },
+    {
+      "key": "universe-comparison",
+      "file": "assets/img/cats/universe-comparison.webp",
+      "sources": [
+        "universe-before",
+        "universe-after"
+      ],
+      "output_size": [
+        1800,
+        1210
+      ],
+      "bytes": 69990,
+      "section": "decision-architecture",
+      "caption_fr": "NPC web · Comparaison des structures 2023 et 2026 · Données personnelles masquées",
+      "transformation": "Side-by-side composition of the two exported anonymised authentic images. Added period labels and disclosure only."
+    },
+    {
+      "key": "muesli-detail",
+      "file": "assets/img/cats/muesli-detail.webp",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/DS Muesli/Capture d’écran 2026-10-26 à 16.14.29.png",
+      "source_sha256": "b1edf8405a612590d1274c15cf326cb54a9f56017a5c3dc528cd0cca84514dbb",
+      "source_size": [
+        1726,
+        1872
+      ],
+      "crop_bounds": [
+        32,
+        326,
+        800,
+        721
+      ],
+      "output_size": [
+        768,
+        395
+      ],
+      "bytes": 20942,
+      "section": "design-system",
+      "period": "Documentation captured 26 October 2026; underlying design date not established",
+      "caption_fr": "Muesli · Primary button · Un seul bouton principal par page · Extrait des guidelines UX/UI",
+      "anonymisation": [],
+      "transformation": "Technical crop and WebP encoding only. No rules, wording, UI controls or values altered.",
+      "production_status": "Design System documentation; not a claim of personal component authorship."
+    }
+  ],
+  "research_verification": [
+    {
+      "claim": "Card On File need 4.7/7 and ease 6.5/7",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/TU 3/Capture d’écran 2026-10-26 à 14.38.08.png",
+      "status": "Visually checked in the raw source and exported crop."
+    },
+    {
+      "claim": "ePIN need 6.5/7, ease 6.5/7, wording understanding 6.7/7",
+      "source_path": "/Users/macbookpromxm/Documents/Travail/[05] - Radness Studio - Freelance/CATS/Protocole TU5/Capture d’écran 2026-10-26 à 15.44.32.png",
+      "status": "Visually checked, middle row centre and right. Not exported; the authentication frame contains a masked phone number and was excluded."
+    }
+  ],
+  "privacy_review": {
+    "status": "All exported files visually reviewed on 2026-10-28",
+    "pin": "No readable PIN exported. The ePIN visual source already obscures the PIN. The number 10 is a display countdown, not the PIN.",
+    "sms": "No SMS/OTP value or phone number exported.",
+    "identity": "Names, account numbers and card identifiers masked wherever present in retained product screens.",
+    "artwork": "The NPC upgrade banner includes illustrative bank-card artwork with embossed sample digits; these are generic artwork, not linked to the anonymised customer context."
+  }
+}
