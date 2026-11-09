@@ -32,8 +32,10 @@ def socials_html(rel):
                 f'<img src="{rel}assets/img/{icon}" alt="{label}"></a>\n')
     return out
 
-def head(title, css_rel, lang, description, canonical, alternates, og_type="website"):
+def head(title, css_rel, lang, description, canonical, alternates, og_type="website",
+         noindex=False):
     desc = html.escape(description, quote=True)
+    robots = '\n<meta name="robots" content="noindex, nofollow">' if noindex else ""
     alts = "".join(
         f'\n<link rel="alternate" hreflang="{hl}" href="{href}">' for hl, href in alternates)
     return f"""<!DOCTYPE html>
@@ -43,7 +45,7 @@ def head(title, css_rel, lang, description, canonical, alternates, og_type="webs
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{canonical}">{alts}
+<link rel="canonical" href="{canonical}">{alts}{robots}
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="Maxime Coudé">
 <meta property="og:locale" content="{'fr_FR' if lang == 'fr' else 'en_US'}">
@@ -166,6 +168,8 @@ def person_html(rel, accent, n):
 def build_landing(L, projects, out_path, rel, lang_href, proj_dir, canonical, alternates):
     cards = ""
     for p in projects:
+        if p.get("hidden"):
+            continue
         card_img = p.get("card_img", p["slug"] + "-thumb.png")
         bg = p["hero_bg"]
         # La carte peut avoir des couleurs de texte propres (fond visuel) indépendantes du hero
@@ -368,7 +372,7 @@ def build_case(p, L, LAB, out_path, rel, lang_href, home_href, next_proj, proj_d
         case_desc = f"{p['name']} · Product Design UX/UI case study by Maxime Coudé. {intro}"
     case_desc = case_desc[:157].rstrip() + "…" if len(case_desc) > 158 else case_desc
     page = head(f"{p['name']} — {L['title']}", rel, L["lang"], case_desc, canonical, alternates,
-                og_type="article")
+                og_type="article", noindex=bool(p.get("hidden")))
     page += nav(L, rel, lang_href, home_href)
     page += f"""
 <main>
@@ -456,6 +460,16 @@ def alts(fr_path, en_path):
     fr, en = clean_url(fr_path), clean_url(en_path)
     return [("fr", fr), ("en", en), ("x-default", fr)]
 
+def next_visible(projects, i):
+    """Slug suivant dans la navigation de bas de page, en sautant les projets
+    masques. Un projet masque renvoie vers le premier projet visible."""
+    n = len(projects)
+    for step in range(1, n + 1):
+        nxt = projects[(i + step) % n]
+        if not nxt.get("hidden"):
+            return nxt["slug"] + ".html"
+    return projects[i]["slug"] + ".html"
+
 def build_all():
     sitemap = []
     projects_fr = list(PROJECTS_FR)
@@ -471,28 +485,30 @@ def build_all():
                   canonical=clean_url(landing[0]), alternates=a)
     sitemap.append((clean_url(landing[0]), "1.0"))
     for i, p in enumerate(projects_fr):
-        nxt = projects_fr[(i + 1) % len(projects_fr)]["slug"] + ".html"
+        nxt = next_visible(projects_fr, i)
         fr_path, en_path = cases[i]
         build_case(p, LANDING_FR, CASE_LABELS_FR,
                    os.path.join(ROOT, "projets", p["slug"] + ".html"),
                    rel="../", lang_href=f"../en/projects/{p['slug']}.html",
                    home_href="../index.html", next_proj=nxt, proj_dir="",
                    canonical=clean_url(fr_path), alternates=alts(fr_path, en_path))
-        sitemap.append((clean_url(fr_path), "0.8"))
+        if not p.get("hidden"):
+            sitemap.append((clean_url(fr_path), "0.8"))
     # EN
     build_landing(LANDING_EN, projects_en, os.path.join(ROOT, "en", "index.html"),
                   rel="../", lang_href="../index.html", proj_dir="projects/",
                   canonical=clean_url(landing[1]), alternates=a)
     sitemap.append((clean_url(landing[1]), "0.9"))
     for i, p in enumerate(projects_en):
-        nxt = projects_en[(i + 1) % len(projects_en)]["slug"] + ".html"
+        nxt = next_visible(projects_en, i)
         fr_path, en_path = cases[i]
         build_case(p, LANDING_EN, CASE_LABELS_EN,
                    os.path.join(ROOT, "en", "projects", p["slug"] + ".html"),
                    rel="../../", lang_href=f"../../projets/{p['slug']}.html",
                    home_href="../index.html", next_proj=nxt, proj_dir="",
                    canonical=clean_url(en_path), alternates=alts(fr_path, en_path))
-        sitemap.append((clean_url(en_path), "0.7"))
+        if not p.get("hidden"):
+            sitemap.append((clean_url(en_path), "0.7"))
 
     build_seo_files(sitemap)
     print(f"{len(projects_fr) + len(projects_en) + 2} pages générées + robots.txt + sitemap.xml")

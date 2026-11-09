@@ -152,6 +152,14 @@ Note dédiée dans Obsidian : [[memory/projects/design-system-muesli|Design Syst
 - Section « Remerciements » : aucun nom de coéquipier CATS n'étant documenté, les profils portent des **libellés de rôles** (Product Owners, Business Analysts, Métiers Monétique, NPC Web, Ma Banque, Portail PUC, Développeurs, Chapter Design, Design System Muesli, Référents accessibilité). Remplacer par de vrais noms dès que Maxime les fournit.
 - Vérifications effectuées le 7 novembre 2026 : build 16 pages, aucune image manquante, aucun débordement horizontal, un seul H1, desktop et mobile 375 px, FR et EN. **Aucun commit ni déploiement effectué.**
 
+### Projet CATS masque — 9 novembre 2026
+
+- Sur demande de Maxime, le projet `cats` porte `"hidden": True` dans `PROJECTS_FR` / `PROJECTS_EN`.
+- Effet : carte retiree des deux accueils, projet saute dans la navigation de bas de page (`next_visible()` dans `build.py`), URL absente du `sitemap.xml`, et page servie avec `<meta name="robots" content="noindex, nofollow">`.
+- La page reste generee et accessible par son URL directe `projets/cats.html` / `en/projects/cats.html` : le lien peut encore etre partage a la main. Le build produit toujours 16 pages.
+- Les visuels `assets/img/ca/` et `assets/img/cats/` restent publies et accessibles par leur URL. Pour les retirer aussi, il faut une depublication explicite.
+- Repasser `hidden` a `False` dans les deux fichiers de donnees suffit a republier le projet.
+
 ### Portfolio : récit, implémentation et état connu
 
 - Angle : **« Une expérience Carte cohérente, du client au conseiller. »** Le lecteur doit comprendre les arbitrages et la manière de penser de Maxime, pas seulement parcourir une succession de livrables.

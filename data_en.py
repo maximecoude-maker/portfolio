@@ -48,6 +48,10 @@ PROJECTS_EN = [
 # real CATS engagement. No business KPI: the only figures are raw test items
 # scored out of 7.
 {
+ # Masque a la demande de Maxime : retire des accueils, de la navigation entre
+ # projets et du sitemap, et servi en noindex. La page reste accessible par
+ # son URL directe. Repasser a False pour la republier.
+ "hidden": True,
  "slug": "cats", "name": "Crédit Agricole", "brand": "Crédit Agricole Technologies & Services",
  "accent": "#004652", "hero_bg": "#FFFFFF", "hero_fg": "#004652", "hero_title_color": "#004652",
  "hero_split": True, "card_desc_only": False,
