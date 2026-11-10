@@ -8,6 +8,11 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://maximecoude.com/"          # domaine canonique
 OG_IMAGE = BASE + "assets/img/og-cover.jpg"  # aperçu de partage (jpg, non réécrit en webp)
 
+# Verrou de refonte. True = toutes les routes publiques sont renvoyees vers
+# maintenance.html via vercel.json, et robots.txt interdit l'exploration.
+# Repasser a False puis rebuild pour rouvrir le site.
+MAINTENANCE = True
+
 # Toutes les images raster sont servies en .webp (générées à part, PNG conservés en source).
 # On réécrit les références .png -> .webp au moment d'écrire la page (bijection 1:1).
 _PNG_REF = re.compile(r'((?:\.\./)*assets/img/[\w\-./]+?)\.png')
@@ -444,9 +449,83 @@ def clean_url(path):
     """URL absolue canonique : on retire index.html final."""
     return BASE + re.sub(r'(^|/)index\.html$', r'\1', path)
 
+MAINTENANCE_HTML = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxime Coudé — Site en cours de refonte</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Le portfolio de Maxime Coudé, Senior Product Designer UX/UI freelance, est en cours de refonte. Contact par e-mail ou LinkedIn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/img/icon-notes.png">
+<style>
+:root{--blue:#4975E9;--black:#0A0A0A;--grey:#6E6E78;--grey-1:#F7F7F9}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:40px 24px;background:var(--grey-1);color:var(--black);
+  font-family:'Montserrat',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{width:100%;max-width:560px;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;margin-bottom:28px;
+  border-radius:999px;background:#fff;border:1px solid #E4E4EC;
+  font-size:13px;font-weight:600;letter-spacing:.01em;color:var(--grey)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+h1{margin:0 0 20px;font-size:clamp(28px,5.4vw,40px);line-height:1.18;font-weight:800;letter-spacing:-.02em}
+p{margin:0 auto 14px;max-width:44ch;font-size:clamp(15px,2.2vw,17px);line-height:1.6;color:var(--grey);font-weight:500}
+.en{margin-top:22px;padding-top:22px;border-top:1px solid #E4E4EC;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+a.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 26px;
+  border-radius:999px;font-size:15px;font-weight:700;text-decoration:none;transition:opacity .2s}
+a.primary{background:var(--blue);color:#fff}
+a.secondary{background:#fff;color:var(--black);border:1px solid #E4E4EC}
+a.btn:hover{opacity:.85}
+a.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <span class="badge"><span class="dot"></span>Refonte en cours</span>
+  <h1>Le site fait peau neuve</h1>
+  <p>Je retravaille la présentation de mon travail et de mes études de cas. Le portfolio sera de nouveau en ligne très prochainement.</p>
+  <p>En attendant, mes projets et mes disponibilités restent accessibles sur demande.</p>
+  <div class="actions">
+    <a class="btn primary" href="mailto:maxime.coude@gmail.com">Me contacter</a>
+    <a class="btn secondary" href="https://www.linkedin.com/in/maximecoude" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <p class="en"><strong>This portfolio is being redesigned.</strong><br>Maxime Coudé, Senior Product Designer UX/UI, freelance. Case studies available on request.</p>
+</main>
+</body>
+</html>
+"""
+
+def build_maintenance():
+    """Page d'attente servie a la place de tout le site quand MAINTENANCE est True."""
+    with open(os.path.join(ROOT, "maintenance.html"), "w", encoding="utf-8") as f:
+        f.write(MAINTENANCE_HTML)
+    cfg = (
+        '{\n'
+        '  "rewrites": [\n'
+        '    {\n'
+        '      "source": "/((?!assets/|maintenance\\\\.html|robots\\\\.txt).*)",\n'
+        '      "destination": "/maintenance.html"\n'
+        '    }\n'
+        '  ]\n'
+        '}\n'
+    )
+    with open(os.path.join(ROOT, "vercel.json"), "w", encoding="utf-8") as f:
+        f.write(cfg)
+
+
 def build_seo_files(urls):
     with open(os.path.join(ROOT, "robots.txt"), "w", encoding="utf-8") as f:
-        f.write("User-agent: *\nAllow: /\n\nSitemap: " + BASE + "sitemap.xml\n")
+        if MAINTENANCE:
+            f.write("User-agent: *\nDisallow: /\n")
+        else:
+            f.write("User-agent: *\nAllow: /\n\nSitemap: " + BASE + "sitemap.xml\n")
     items = "".join(
         f"\n  <url><loc>{u}</loc><changefreq>monthly</changefreq><priority>{pr}</priority></url>"
         for u, pr in urls)
@@ -511,6 +590,8 @@ def build_all():
             sitemap.append((clean_url(en_path), "0.7"))
 
     build_seo_files(sitemap)
+    if MAINTENANCE:
+        build_maintenance()
     print(f"{len(projects_fr) + len(projects_en) + 2} pages générées + robots.txt + sitemap.xml")
 
 if __name__ == "__main__":

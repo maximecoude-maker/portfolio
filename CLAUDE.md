@@ -152,13 +152,19 @@ Note dédiée dans Obsidian : [[memory/projects/design-system-muesli|Design Syst
 - Section « Remerciements » : aucun nom de coéquipier CATS n'étant documenté, les profils portent des **libellés de rôles** (Product Owners, Business Analysts, Métiers Monétique, NPC Web, Ma Banque, Portail PUC, Développeurs, Chapter Design, Design System Muesli, Référents accessibilité). Remplacer par de vrais noms dès que Maxime les fournit.
 - Vérifications effectuées le 7 novembre 2026 : build 16 pages, aucune image manquante, aucun débordement horizontal, un seul H1, desktop et mobile 375 px, FR et EN. **Aucun commit ni déploiement effectué.**
 
-### Projet CATS masque — 9 novembre 2026
+### Site en refonte — 10 novembre 2026
 
-- Sur demande de Maxime, le projet `cats` porte `"hidden": True` dans `PROJECTS_FR` / `PROJECTS_EN`.
-- Effet : carte retiree des deux accueils, projet saute dans la navigation de bas de page (`next_visible()` dans `build.py`), URL absente du `sitemap.xml`, et page servie avec `<meta name="robots" content="noindex, nofollow">`.
-- La page reste generee et accessible par son URL directe `projets/cats.html` / `en/projects/cats.html` : le lien peut encore etre partage a la main. Le build produit toujours 16 pages.
-- Les visuels `assets/img/ca/` et `assets/img/cats/` restent publies et accessibles par leur URL. Pour les retirer aussi, il faut une depublication explicite.
-- Repasser `hidden` a `False` dans les deux fichiers de donnees suffit a republier le projet.
+- **CATS est reintegre.** Le drapeau `hidden` a ete retire de `PROJECTS_FR` / `PROJECTS_EN` ; le projet revient en tete des deux accueils, dans la navigation et dans le sitemap. La mecanique `hidden` (`next_visible()`, exclusion sitemap, `noindex` via `head()`) reste en place dans `build.py` et resservira au besoin.
+- **Le site entier est ferme au public**, a la demande de Maxime, en attendant la refonte issue de l'audit du 9 novembre 2026. Mecanisme : `MAINTENANCE = True` en tete de `build.py`.
+  - `build_maintenance()` ecrit `maintenance.html` (page d'attente autonome, styles inline, FR + bloc EN, liens mailto et LinkedIn, `noindex`) et `vercel.json`.
+  - `vercel.json` renvoie toutes les routes vers `/maintenance.html`, sauf `assets/`, `maintenance.html` et `robots.txt`.
+  - `robots.txt` passe a `Disallow: /` et ne reference plus le sitemap.
+  - Les 16 pages continuent d'etre generees : rien n'est perdu, seule la diffusion est coupee.
+- **Rouvrir le site** : `MAINTENANCE = False` dans `build.py`, puis rebuild. Supprimer `vercel.json` a la main, car le build ne le reecrit pas quand le drapeau est a False.
+- Conserver `Disallow: /` le temps de la refonte maintient les pages deja indexees sans les rafraichir. Une fermeture longue finira par les faire sortir de l'index.
+- **KPI : rien n'a ete invente.** Maxime a demande des chiffres enthousiasmants meme approximatifs pour les projets sans KPI ; refuse, car un prospect lirait ces valeurs comme des resultats reels. Les pistes proposees a la place : chiffres de process verifiables, resultats qualitatifs des tests, et demande des vrais chiffres aux clients. Regle inchangee : aucune valeur chiffree sans source, periode et perimetre.
+- **Constats de l'audit verifies dans le depot** (non corriges a ce stade) : `projets/mma.html` annonce que l'impact est indisponible puis affiche cinq KPI dont `+354 %` ; le menu de `en/index.html` pointe vers `../index.html` (accueil FR) ; `projets/ratp.html` transforme une proportion de 57 % en tuile `+57 %` ; aucun lien d'evitement ; aucune `width`/`height` ni `srcset` sur les images.
+- Audit source : `/Users/macbookpromxm/Documents/ChatGPT/GoalGuess/artifacts/portfolio-benchmark-2026-11-09/audit-et-plan.md`.
 
 ### Portfolio : récit, implémentation et état connu
 

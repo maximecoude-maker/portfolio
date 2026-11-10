@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/((?!assets/|maintenance\\.html|robots\\.txt).*)",
+      "destination": "/maintenance.html"
+    }
+  ]
+}
