@@ -1,8 +1,7 @@
 {
-  "rewrites": [
-    {
-      "source": "/((?!assets/|maintenance\\.html|robots\\.txt).*)",
-      "destination": "/maintenance.html"
-    }
+  "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/(.*)", "dest": "/maintenance.html" }
   ]
 }

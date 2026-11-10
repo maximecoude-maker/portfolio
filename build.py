@@ -506,13 +506,15 @@ def build_maintenance():
     """Page d'attente servie a la place de tout le site quand MAINTENANCE est True."""
     with open(os.path.join(ROOT, "maintenance.html"), "w", encoding="utf-8") as f:
         f.write(MAINTENANCE_HTML)
+    # "routes" (et non "rewrites") : Vercel evalue le systeme de fichiers AVANT
+    # les rewrites, donc un rewrite ne peut pas masquer une page qui existe.
+    # Les routes, elles, sont evaluees avant le systeme de fichiers.
     cfg = (
         '{\n'
-        '  "rewrites": [\n'
-        '    {\n'
-        '      "source": "/((?!assets/|maintenance\\\\.html|robots\\\\.txt).*)",\n'
-        '      "destination": "/maintenance.html"\n'
-        '    }\n'
+        '  "routes": [\n'
+        '    { "src": "/assets/(.*)", "dest": "/assets/$1" },\n'
+        '    { "src": "/robots.txt", "dest": "/robots.txt" },\n'
+        '    { "src": "/(.*)", "dest": "/maintenance.html" }\n'
         '  ]\n'
         '}\n'
     )
